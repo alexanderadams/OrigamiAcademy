@@ -1,0 +1,524 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1136FAE41DA42B4600B86782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1136FAE31DA42B4600B86782 /* AppDelegate.swift */; };
+		1136FAE61DA42B4600B86782 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1136FAE51DA42B4600B86782 /* ViewController.swift */; };
+		1136FAE91DA42B4600B86782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1136FAE71DA42B4600B86782 /* Main.storyboard */; };
+		1136FAEC1DA42B4600B86782 /* OrigamiAcademy.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1136FAEA1DA42B4600B86782 /* OrigamiAcademy.xcdatamodeld */; };
+		1136FAEE1DA42B4600B86782 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1136FAED1DA42B4600B86782 /* Assets.xcassets */; };
+		1136FAF11DA42B4600B86782 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1136FAEF1DA42B4600B86782 /* LaunchScreen.storyboard */; };
+		1136FAFC1DA42B4700B86782 /* OrigamiAcademyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1136FAFB1DA42B4700B86782 /* OrigamiAcademyTests.swift */; };
+		1136FB071DA42B4700B86782 /* OrigamiAcademyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1136FB061DA42B4700B86782 /* OrigamiAcademyUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		1136FAF81DA42B4700B86782 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1136FAD81DA42B4600B86782 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1136FADF1DA42B4600B86782;
+			remoteInfo = OrigamiAcademy;
+		};
+		1136FB031DA42B4700B86782 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1136FAD81DA42B4600B86782 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1136FADF1DA42B4600B86782;
+			remoteInfo = OrigamiAcademy;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1136FAE01DA42B4600B86782 /* OrigamiAcademy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OrigamiAcademy.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1136FAE31DA42B4600B86782 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		1136FAE51DA42B4600B86782 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		1136FAE81DA42B4600B86782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		1136FAEB1DA42B4600B86782 /* OrigamiAcademy.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = OrigamiAcademy.xcdatamodel; sourceTree = "<group>"; };
+		1136FAED1DA42B4600B86782 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		1136FAF01DA42B4600B86782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		1136FAF21DA42B4600B86782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1136FAF71DA42B4700B86782 /* OrigamiAcademyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OrigamiAcademyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1136FAFB1DA42B4700B86782 /* OrigamiAcademyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrigamiAcademyTests.swift; sourceTree = "<group>"; };
+		1136FAFD1DA42B4700B86782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1136FB021DA42B4700B86782 /* OrigamiAcademyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OrigamiAcademyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1136FB061DA42B4700B86782 /* OrigamiAcademyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrigamiAcademyUITests.swift; sourceTree = "<group>"; };
+		1136FB081DA42B4700B86782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1136FADD1DA42B4600B86782 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1136FAF41DA42B4700B86782 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1136FAFF1DA42B4700B86782 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1136FAD71DA42B4600B86782 = {
+			isa = PBXGroup;
+			children = (
+				1136FAE21DA42B4600B86782 /* OrigamiAcademy */,
+				1136FAFA1DA42B4700B86782 /* OrigamiAcademyTests */,
+				1136FB051DA42B4700B86782 /* OrigamiAcademyUITests */,
+				1136FAE11DA42B4600B86782 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		1136FAE11DA42B4600B86782 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1136FAE01DA42B4600B86782 /* OrigamiAcademy.app */,
+				1136FAF71DA42B4700B86782 /* OrigamiAcademyTests.xctest */,
+				1136FB021DA42B4700B86782 /* OrigamiAcademyUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1136FAE21DA42B4600B86782 /* OrigamiAcademy */ = {
+			isa = PBXGroup;
+			children = (
+				1136FAE31DA42B4600B86782 /* AppDelegate.swift */,
+				1136FAE51DA42B4600B86782 /* ViewController.swift */,
+				1136FAE71DA42B4600B86782 /* Main.storyboard */,
+				1136FAED1DA42B4600B86782 /* Assets.xcassets */,
+				1136FAEF1DA42B4600B86782 /* LaunchScreen.storyboard */,
+				1136FAF21DA42B4600B86782 /* Info.plist */,
+				1136FAEA1DA42B4600B86782 /* OrigamiAcademy.xcdatamodeld */,
+			);
+			path = OrigamiAcademy;
+			sourceTree = "<group>";
+		};
+		1136FAFA1DA42B4700B86782 /* OrigamiAcademyTests */ = {
+			isa = PBXGroup;
+			children = (
+				1136FAFB1DA42B4700B86782 /* OrigamiAcademyTests.swift */,
+				1136FAFD1DA42B4700B86782 /* Info.plist */,
+			);
+			path = OrigamiAcademyTests;
+			sourceTree = "<group>";
+		};
+		1136FB051DA42B4700B86782 /* OrigamiAcademyUITests */ = {
+			isa = PBXGroup;
+			children = (
+				1136FB061DA42B4700B86782 /* OrigamiAcademyUITests.swift */,
+				1136FB081DA42B4700B86782 /* Info.plist */,
+			);
+			path = OrigamiAcademyUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1136FADF1DA42B4600B86782 /* OrigamiAcademy */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1136FB0B1DA42B4700B86782 /* Build configuration list for PBXNativeTarget "OrigamiAcademy" */;
+			buildPhases = (
+				1136FADC1DA42B4600B86782 /* Sources */,
+				1136FADD1DA42B4600B86782 /* Frameworks */,
+				1136FADE1DA42B4600B86782 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = OrigamiAcademy;
+			productName = OrigamiAcademy;
+			productReference = 1136FAE01DA42B4600B86782 /* OrigamiAcademy.app */;
+			productType = "com.apple.product-type.application";
+		};
+		1136FAF61DA42B4700B86782 /* OrigamiAcademyTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1136FB0E1DA42B4700B86782 /* Build configuration list for PBXNativeTarget "OrigamiAcademyTests" */;
+			buildPhases = (
+				1136FAF31DA42B4700B86782 /* Sources */,
+				1136FAF41DA42B4700B86782 /* Frameworks */,
+				1136FAF51DA42B4700B86782 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1136FAF91DA42B4700B86782 /* PBXTargetDependency */,
+			);
+			name = OrigamiAcademyTests;
+			productName = OrigamiAcademyTests;
+			productReference = 1136FAF71DA42B4700B86782 /* OrigamiAcademyTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		1136FB011DA42B4700B86782 /* OrigamiAcademyUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1136FB111DA42B4700B86782 /* Build configuration list for PBXNativeTarget "OrigamiAcademyUITests" */;
+			buildPhases = (
+				1136FAFE1DA42B4700B86782 /* Sources */,
+				1136FAFF1DA42B4700B86782 /* Frameworks */,
+				1136FB001DA42B4700B86782 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1136FB041DA42B4700B86782 /* PBXTargetDependency */,
+			);
+			name = OrigamiAcademyUITests;
+			productName = OrigamiAcademyUITests;
+			productReference = 1136FB021DA42B4700B86782 /* OrigamiAcademyUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1136FAD81DA42B4600B86782 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = adams;
+				TargetAttributes = {
+					1136FADF1DA42B4600B86782 = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+					1136FAF61DA42B4700B86782 = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = 1136FADF1DA42B4600B86782;
+					};
+					1136FB011DA42B4700B86782 = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = 1136FADF1DA42B4600B86782;
+					};
+				};
+			};
+			buildConfigurationList = 1136FADB1DA42B4600B86782 /* Build configuration list for PBXProject "OrigamiAcademy" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 1136FAD71DA42B4600B86782;
+			productRefGroup = 1136FAE11DA42B4600B86782 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1136FADF1DA42B4600B86782 /* OrigamiAcademy */,
+				1136FAF61DA42B4700B86782 /* OrigamiAcademyTests */,
+				1136FB011DA42B4700B86782 /* OrigamiAcademyUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1136FADE1DA42B4600B86782 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1136FAF11DA42B4600B86782 /* LaunchScreen.storyboard in Resources */,
+				1136FAEE1DA42B4600B86782 /* Assets.xcassets in Resources */,
+				1136FAE91DA42B4600B86782 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1136FAF51DA42B4700B86782 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1136FB001DA42B4700B86782 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1136FADC1DA42B4600B86782 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1136FAEC1DA42B4600B86782 /* OrigamiAcademy.xcdatamodeld in Sources */,
+				1136FAE61DA42B4600B86782 /* ViewController.swift in Sources */,
+				1136FAE41DA42B4600B86782 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1136FAF31DA42B4700B86782 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1136FAFC1DA42B4700B86782 /* OrigamiAcademyTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1136FAFE1DA42B4700B86782 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1136FB071DA42B4700B86782 /* OrigamiAcademyUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1136FAF91DA42B4700B86782 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1136FADF1DA42B4600B86782 /* OrigamiAcademy */;
+			targetProxy = 1136FAF81DA42B4700B86782 /* PBXContainerItemProxy */;
+		};
+		1136FB041DA42B4700B86782 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1136FADF1DA42B4600B86782 /* OrigamiAcademy */;
+			targetProxy = 1136FB031DA42B4700B86782 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		1136FAE71DA42B4600B86782 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1136FAE81DA42B4600B86782 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		1136FAEF1DA42B4600B86782 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1136FAF01DA42B4600B86782 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		1136FB091DA42B4700B86782 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		1136FB0A1DA42B4700B86782 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		1136FB0C1DA42B4700B86782 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = OrigamiAcademy/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = utcs.OrigamiAcademy;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		1136FB0D1DA42B4700B86782 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = OrigamiAcademy/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = utcs.OrigamiAcademy;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		1136FB0F1DA42B4700B86782 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = OrigamiAcademyTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = utcs.OrigamiAcademyTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/OrigamiAcademy.app/OrigamiAcademy";
+			};
+			name = Debug;
+		};
+		1136FB101DA42B4700B86782 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = OrigamiAcademyTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = utcs.OrigamiAcademyTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/OrigamiAcademy.app/OrigamiAcademy";
+			};
+			name = Release;
+		};
+		1136FB121DA42B4700B86782 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = OrigamiAcademyUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = utcs.OrigamiAcademyUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = OrigamiAcademy;
+			};
+			name = Debug;
+		};
+		1136FB131DA42B4700B86782 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = OrigamiAcademyUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = utcs.OrigamiAcademyUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = OrigamiAcademy;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1136FADB1DA42B4600B86782 /* Build configuration list for PBXProject "OrigamiAcademy" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1136FB091DA42B4700B86782 /* Debug */,
+				1136FB0A1DA42B4700B86782 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1136FB0B1DA42B4700B86782 /* Build configuration list for PBXNativeTarget "OrigamiAcademy" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1136FB0C1DA42B4700B86782 /* Debug */,
+				1136FB0D1DA42B4700B86782 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		1136FB0E1DA42B4700B86782 /* Build configuration list for PBXNativeTarget "OrigamiAcademyTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1136FB0F1DA42B4700B86782 /* Debug */,
+				1136FB101DA42B4700B86782 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		1136FB111DA42B4700B86782 /* Build configuration list for PBXNativeTarget "OrigamiAcademyUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1136FB121DA42B4700B86782 /* Debug */,
+				1136FB131DA42B4700B86782 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		1136FAEA1DA42B4600B86782 /* OrigamiAcademy.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				1136FAEB1DA42B4600B86782 /* OrigamiAcademy.xcdatamodel */,
+			);
+			currentVersion = 1136FAEB1DA42B4600B86782 /* OrigamiAcademy.xcdatamodel */;
+			path = OrigamiAcademy.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 1136FAD81DA42B4600B86782 /* Project object */;
+}
