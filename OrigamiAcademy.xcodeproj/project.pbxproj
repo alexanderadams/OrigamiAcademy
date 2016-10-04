@@ -15,6 +15,10 @@
 		1136FAF11DA42B4600B86782 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1136FAEF1DA42B4600B86782 /* LaunchScreen.storyboard */; };
 		1136FAFC1DA42B4700B86782 /* OrigamiAcademyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1136FAFB1DA42B4700B86782 /* OrigamiAcademyTests.swift */; };
 		1136FB071DA42B4700B86782 /* OrigamiAcademyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1136FB061DA42B4700B86782 /* OrigamiAcademyUITests.swift */; };
+		1136FB181DA42B5A00B86782 /* ijSS5.png in Resources */ = {isa = PBXBuildFile; fileRef = 1136FB141DA42B5A00B86782 /* ijSS5.png */; };
+		1136FB191DA42B5A00B86782 /* IMG_0761.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 1136FB151DA42B5A00B86782 /* IMG_0761.JPG */; };
+		1136FB1A1DA42B5A00B86782 /* IMG_0762.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 1136FB161DA42B5A00B86782 /* IMG_0762.JPG */; };
+		1136FB1B1DA42B5A00B86782 /* instruction.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1136FB171DA42B5A00B86782 /* instruction.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +53,10 @@
 		1136FB021DA42B4700B86782 /* OrigamiAcademyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OrigamiAcademyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1136FB061DA42B4700B86782 /* OrigamiAcademyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrigamiAcademyUITests.swift; sourceTree = "<group>"; };
 		1136FB081DA42B4700B86782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1136FB141DA42B5A00B86782 /* ijSS5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ijSS5.png; sourceTree = "<group>"; };
+		1136FB151DA42B5A00B86782 /* IMG_0761.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = IMG_0761.JPG; sourceTree = "<group>"; };
+		1136FB161DA42B5A00B86782 /* IMG_0762.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = IMG_0762.JPG; sourceTree = "<group>"; };
+		1136FB171DA42B5A00B86782 /* instruction.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = instruction.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +114,10 @@
 				1136FAEF1DA42B4600B86782 /* LaunchScreen.storyboard */,
 				1136FAF21DA42B4600B86782 /* Info.plist */,
 				1136FAEA1DA42B4600B86782 /* OrigamiAcademy.xcdatamodeld */,
+				1136FB141DA42B5A00B86782 /* ijSS5.png */,
+				1136FB151DA42B5A00B86782 /* IMG_0761.JPG */,
+				1136FB161DA42B5A00B86782 /* IMG_0762.JPG */,
+				1136FB171DA42B5A00B86782 /* instruction.jpg */,
 			);
 			path = OrigamiAcademy;
 			sourceTree = "<group>";
@@ -232,8 +244,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1136FB1B1DA42B5A00B86782 /* instruction.jpg in Resources */,
+				1136FB1A1DA42B5A00B86782 /* IMG_0762.JPG in Resources */,
 				1136FAF11DA42B4600B86782 /* LaunchScreen.storyboard in Resources */,
 				1136FAEE1DA42B4600B86782 /* Assets.xcassets in Resources */,
+				1136FB181DA42B5A00B86782 /* ijSS5.png in Resources */,
+				1136FB191DA42B5A00B86782 /* IMG_0761.JPG in Resources */,
 				1136FAE91DA42B4600B86782 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
