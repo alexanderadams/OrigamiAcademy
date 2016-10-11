@@ -453,9 +453,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="instruction.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="5dY-05-e2K">
-                                <rect key="frame" x="0.0" y="162" width="414" height="479"/>
-                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Creation Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zo3-hc-dr8">
                                 <rect key="frame" x="150" y="84" width="115" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -468,8 +465,21 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ITv-Th-YZk">
+                                <rect key="frame" x="163" y="223" width="88" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dOH-Q3-itG">
+                                <rect key="frame" x="148" y="411" width="118" height="30"/>
+                                <state key="normal" title="View Instructions"/>
+                                <connections>
+                                    <segue destination="hF6-d8-n0T" kind="show" id="d5i-dm-Dma"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PmG-k6-nrE">
-                                <rect key="frame" x="144" y="674" width="127" height="30"/>
+                                <rect key="frame" x="144" y="569" width="127" height="30"/>
                                 <state key="normal" title="Rate This Creation"/>
                                 <connections>
                                     <segue destination="f9O-Dp-7PM" kind="show" id="E7Z-Sh-sTx"/>
@@ -484,6 +494,17 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aHg-qe-yFS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2928" y="230"/>
+        </scene>
+        <!--Instruction View-->
+        <scene sceneID="NFW-1l-lXh">
+            <objects>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="pageCurl" navigationOrientation="horizontal" spineLocation="min" id="hF6-d8-n0T" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" title="Instruction View" id="ojo-zp-aPV"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
+                </pageViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="E6B-nh-HR8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3456" y="-66"/>
         </scene>
         <!--Rating-->
         <scene sceneID="P1p-Va-dcP">
@@ -529,7 +550,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wk3-IC-JmR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3501" y="230"/>
+            <point key="canvasLocation" x="3456" y="764"/>
         </scene>
         <!--Main Menu-->
         <scene sceneID="rpx-bO-exP">
@@ -582,7 +603,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HVc-PV-E99" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1674" y="1116"/>
+            <point key="canvasLocation" x="1674" y="1130"/>
         </scene>
         <!--Download User Instructions-->
         <scene sceneID="lb8-OE-c3E">
@@ -803,7 +824,6 @@
         <image name="IMG_0761.JPG" width="1536" height="2048"/>
         <image name="IMG_0762.JPG" width="1536" height="2048"/>
         <image name="ijSS5.png" width="600" height="113"/>
-        <image name="instruction.jpg" width="564" height="718"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="HyM-Pq-tA8"/>
