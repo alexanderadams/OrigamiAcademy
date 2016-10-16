@@ -22,15 +22,53 @@ class InstructionViewController: UIViewController, UIPageViewControllerDataSourc
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         getInstructionSet()
+        createPageViewController()
     }
 
+    private func createPageViewController() {
+        
+        let pageController = self.storyboard!.instantiateViewControllerWithIdentifier("InstructionView") as! UIPageViewController
+        pageController.dataSource = self
+        
+        if numOfSteps > 0 {
+            let firstController = getStepController(0)
+            let startingViewControllers = [firstController]
+            pageController.setViewControllers(startingViewControllers, direction: UIPageViewControllerNavigationDirection.Forward, animated: false, completion: nil)
+        }
+        
+        pageViewController = pageController
+        addChildViewController(pageViewController!)
+        self.view.addSubview(pageViewController!.view)
+        pageViewController!.didMoveToParentViewController(self)
+    }
+    
     
     func pageViewController(pageViewController: UIPageViewController, viewControllerBeforeViewController viewController: UIViewController) -> UIViewController? {
+        let stepController = viewController as! StepViewController
+        
+        if (stepController.stepIndex > 0) {
+            return getStepController(stepController.stepIndex - 1)
+        }
+        
         return nil
     }
     
     func pageViewController(pageViewController: UIPageViewController, viewControllerAfterViewController viewController: UIViewController) -> UIViewController? {
+        let stepController = viewController as! StepViewController
+        
+        if (stepController.stepIndex < numOfSteps) {
+            return getStepController(stepController.stepIndex + 1)
+        }
+        
         return nil
+    }
+    
+    func getStepController(stepIndex: Int) -> StepViewController{
+        let stepController = self.storyboard!.instantiateViewControllerWithIdentifier("StepView") as! StepViewController
+        stepController.stepIndex = stepIndex
+        stepController.imageName = images[stepIndex]
+        stepController.instructions = instructions[stepIndex]
+        return stepController
     }
     
     func getInstructionSet() {

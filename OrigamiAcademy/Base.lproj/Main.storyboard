@@ -498,7 +498,7 @@
         <!--Instruction View-->
         <scene sceneID="NFW-1l-lXh">
             <objects>
-                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="pageCurl" navigationOrientation="horizontal" spineLocation="none" id="hF6-d8-n0T" customClass="InstructionViewController" customModule="OrigamiAcademy" customModuleProvider="target" sceneMemberID="viewController">
+                <pageViewController storyboardIdentifier="InstructionView" autoresizesArchivedViewToFullSize="NO" transitionStyle="pageCurl" navigationOrientation="horizontal" spineLocation="none" id="hF6-d8-n0T" customClass="InstructionViewController" customModule="OrigamiAcademy" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" title="Instruction View" id="ojo-zp-aPV"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
                     <connections>
@@ -512,7 +512,7 @@
         <!--Instructions-->
         <scene sceneID="jRt-pm-Khy">
             <objects>
-                <viewController id="V5R-oI-JtO" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="StepView" id="V5R-oI-JtO" customClass="StepViewController" customModule="OrigamiAcademy" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="c3Q-FE-wS0"/>
                         <viewControllerLayoutGuide type="bottom" id="dNq-m1-3cr"/>
@@ -544,6 +544,11 @@
                     </view>
                     <navigationItem key="navigationItem" title="Instructions" id="Col-LZ-wjb"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
+                    <connections>
+                        <outlet property="image" destination="Fzi-2U-e31" id="FZi-4m-c6g"/>
+                        <outlet property="instructions" destination="imq-0n-aIv" id="H1I-r1-JmL"/>
+                        <outlet property="stepNumber" destination="iSO-Xv-gjg" id="PW1-Z8-BTW"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gqf-wJ-jFK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

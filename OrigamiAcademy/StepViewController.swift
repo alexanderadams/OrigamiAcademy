@@ -10,14 +10,19 @@ import UIKit
 
 class StepViewController: UIViewController {
     
-    var itemIndex: Int = 0
+    var stepIndex: Int = 0
     var imageName: String = ""
-    var stepNum: Int = 1
     var instructions: String = ""
+    
+    @IBOutlet weak var stepNumber: UILabel!
+    @IBOutlet weak var image: UIImageView!
+    @IBOutlet weak var instructionsLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        stepNumber.text = "Step \(stepIndex + 1)"
+        instructionsLabel.text = instructions
     }
     
 }
