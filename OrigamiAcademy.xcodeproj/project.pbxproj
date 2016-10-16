@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0E4087AC1DB4107C0066ED52 /* AuthenticationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E4087AB1DB4107C0066ED52 /* AuthenticationController.swift */; };
 		1136FAE41DA42B4600B86782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1136FAE31DA42B4600B86782 /* AppDelegate.swift */; };
 		1136FAE61DA42B4600B86782 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1136FAE51DA42B4600B86782 /* ViewController.swift */; };
 		1136FAE91DA42B4600B86782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1136FAE71DA42B4600B86782 /* Main.storyboard */; };
@@ -39,6 +40,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0E4087AB1DB4107C0066ED52 /* AuthenticationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticationController.swift; sourceTree = "<group>"; };
 		1136FAE01DA42B4600B86782 /* OrigamiAcademy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OrigamiAcademy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1136FAE31DA42B4600B86782 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1136FAE51DA42B4600B86782 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -118,6 +120,7 @@
 				1136FB151DA42B5A00B86782 /* IMG_0761.JPG */,
 				1136FB161DA42B5A00B86782 /* IMG_0762.JPG */,
 				1136FB171DA42B5A00B86782 /* instruction.jpg */,
+				0E4087AB1DB4107C0066ED52 /* AuthenticationController.swift */,
 			);
 			path = OrigamiAcademy;
 			sourceTree = "<group>";
@@ -276,6 +279,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1136FAEC1DA42B4600B86782 /* OrigamiAcademy.xcdatamodeld in Sources */,
+				0E4087AC1DB4107C0066ED52 /* AuthenticationController.swift in Sources */,
 				1136FAE61DA42B4600B86782 /* ViewController.swift in Sources */,
 				1136FAE41DA42B4600B86782 /* AppDelegate.swift in Sources */,
 			);
@@ -504,6 +508,7 @@
 				1136FB0D1DA42B4700B86782 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1136FB0E1DA42B4700B86782 /* Build configuration list for PBXNativeTarget "OrigamiAcademyTests" */ = {
 			isa = XCConfigurationList;
@@ -512,6 +517,7 @@
 				1136FB101DA42B4700B86782 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1136FB111DA42B4700B86782 /* Build configuration list for PBXNativeTarget "OrigamiAcademyUITests" */ = {
 			isa = XCConfigurationList;
@@ -520,6 +526,7 @@
 				1136FB131DA42B4700B86782 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

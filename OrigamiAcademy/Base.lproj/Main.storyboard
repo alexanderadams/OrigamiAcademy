@@ -21,21 +21,21 @@
                                 <rect key="frame" x="188" y="254" width="38" height="30"/>
                                 <state key="normal" title="Login"/>
                                 <connections>
-                                    <segue destination="dAc-gM-9ex" kind="show" id="DH9-Jc-XNW"/>
+                                    <segue destination="dAc-gM-9ex" kind="show" identifier="loginSegue" id="DH9-Jc-XNW"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WgA-Br-CHB">
                                 <rect key="frame" x="174" y="350" width="67" height="30"/>
                                 <state key="normal" title="New User"/>
                                 <connections>
-                                    <segue destination="dAc-gM-9ex" kind="show" identifier="New User" id="BlO-wp-vOh"/>
+                                    <segue destination="dAc-gM-9ex" kind="show" identifier="newUserSegue" id="BlO-wp-vOh"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y9b-Wz-dLA">
                                 <rect key="frame" x="177" y="451" width="60" height="30"/>
                                 <state key="normal" title="Not Now"/>
                                 <connections>
-                                    <segue destination="bBt-P7-AXr" kind="show" id="HyM-Pq-tA8"/>
+                                    <segue destination="bBt-P7-AXr" kind="show" identifier="notNowSegue" id="HyM-Pq-tA8"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Aq1-uC-4UF">
@@ -725,12 +725,12 @@
         <!--Login-->
         <scene sceneID="28E-gj-5f5">
             <objects>
-                <viewController title="Login" id="dAc-gM-9ex" sceneMemberID="viewController">
+                <viewController title="Login" id="dAc-gM-9ex" customClass="AuthenticationController" customModule="OrigamiAcademy" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="QRe-LM-gkU"/>
                         <viewControllerLayoutGuide type="bottom" id="spF-7U-qhK"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="w63-Lg-LeX">
+                    <view key="view" contentMode="scaleToFill" id="w63-Lg-LeX" customClass="AuthenticationViewController" customModule="OrigamiAcademy" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -738,7 +738,7 @@
                                 <rect key="frame" x="158" y="439" width="99" height="30"/>
                                 <state key="normal" title="Login/Register"/>
                                 <connections>
-                                    <segue destination="bBt-P7-AXr" kind="show" id="dR8-xa-sWk"/>
+                                    <segue destination="bBt-P7-AXr" kind="show" identifier="loginRegisterSegue" id="dR8-xa-sWk"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="D7V-tJ-Hov">
@@ -774,6 +774,12 @@
                     </view>
                     <navigationItem key="navigationItem" title="Login" id="foX-DD-zyC"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
+                    <connections>
+                        <outlet property="loginRegisterButton" destination="n1a-f5-g97" id="Yfz-4C-oRC"/>
+                        <outlet property="loginRegisterLabel" destination="7PM-nL-XsX" id="cOo-Xv-J62"/>
+                        <outlet property="passwordTextField" destination="blB-WZ-4TA" id="ty0-K2-IwQ"/>
+                        <outlet property="usernameTextField" destination="D7V-tJ-Hov" id="Yb6-PW-HgS"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f7f-EM-ECY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -806,9 +812,9 @@
         <image name="instruction.jpg" width="564" height="718"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="HyM-Pq-tA8"/>
-        <segue reference="DH9-Jc-XNW"/>
-        <segue reference="ZAc-9w-QAU"/>
         <segue reference="fdR-Hv-0by"/>
+        <segue reference="ZAc-9w-QAU"/>
+        <segue reference="dR8-xa-sWk"/>
+        <segue reference="DH9-Jc-XNW"/>
     </inferredMetricsTieBreakers>
 </document>
