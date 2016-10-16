@@ -582,7 +582,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HVc-PV-E99" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1674" y="1116"/>
+            <point key="canvasLocation" x="1657" y="1228"/>
         </scene>
         <!--Download User Instructions-->
         <scene sceneID="lb8-OE-c3E">
@@ -730,7 +730,7 @@
                         <viewControllerLayoutGuide type="top" id="QRe-LM-gkU"/>
                         <viewControllerLayoutGuide type="bottom" id="spF-7U-qhK"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="w63-Lg-LeX" customClass="AuthenticationViewController" customModule="OrigamiAcademy" customModuleProvider="target">
+                    <view key="view" contentMode="scaleToFill" id="w63-Lg-LeX">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -738,7 +738,7 @@
                                 <rect key="frame" x="158" y="439" width="99" height="30"/>
                                 <state key="normal" title="Login/Register"/>
                                 <connections>
-                                    <segue destination="bBt-P7-AXr" kind="show" identifier="loginRegisterSegue" id="dR8-xa-sWk"/>
+                                    <action selector="loginRegisterButtonClicked:" destination="dAc-gM-9ex" eventType="touchUpInside" id="Iy8-s2-Tsz"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="D7V-tJ-Hov">
@@ -769,16 +769,23 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Invalid Username or Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bKx-cB-Wcm">
+                                <rect key="frame" x="92" y="477" width="230" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Login" id="foX-DD-zyC"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
                     <connections>
+                        <outlet property="errorLabel" destination="bKx-cB-Wcm" id="ZtO-c7-YfK"/>
                         <outlet property="loginRegisterButton" destination="n1a-f5-g97" id="Yfz-4C-oRC"/>
                         <outlet property="loginRegisterLabel" destination="7PM-nL-XsX" id="cOo-Xv-J62"/>
                         <outlet property="passwordTextField" destination="blB-WZ-4TA" id="ty0-K2-IwQ"/>
                         <outlet property="usernameTextField" destination="D7V-tJ-Hov" id="Yb6-PW-HgS"/>
+                        <segue destination="bBt-P7-AXr" kind="show" identifier="loginRegisterSegue" id="mMR-1J-DCn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f7f-EM-ECY" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -814,7 +821,7 @@
     <inferredMetricsTieBreakers>
         <segue reference="fdR-Hv-0by"/>
         <segue reference="ZAc-9w-QAU"/>
-        <segue reference="dR8-xa-sWk"/>
+        <segue reference="mMR-1J-DCn"/>
         <segue reference="DH9-Jc-XNW"/>
     </inferredMetricsTieBreakers>
 </document>
