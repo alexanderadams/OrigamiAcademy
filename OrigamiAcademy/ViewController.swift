@@ -9,7 +9,12 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
+    
+    let loginSegue:String = "loginSegue"
+    let newUserSegue:String = "newUserSegue"
+    let notNowSegue:String = "notNowSegue"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -19,7 +24,19 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+       
+        if segue.identifier == loginSegue {
+            let destination = segue.destinationViewController as? AuthenticationController
+            destination?.newUser = false
+        } else if segue.identifier == newUserSegue {
+            let destination = segue.destinationViewController as? AuthenticationController
+            destination?.newUser = true
+        } else {
+            
+        }
+    }
 
 
 }
-

@@ -21,21 +21,21 @@
                                 <rect key="frame" x="188" y="254" width="38" height="30"/>
                                 <state key="normal" title="Login"/>
                                 <connections>
-                                    <segue destination="dAc-gM-9ex" kind="show" id="DH9-Jc-XNW"/>
+                                    <segue destination="dAc-gM-9ex" kind="show" identifier="loginSegue" id="DH9-Jc-XNW"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WgA-Br-CHB">
                                 <rect key="frame" x="174" y="350" width="67" height="30"/>
                                 <state key="normal" title="New User"/>
                                 <connections>
-                                    <segue destination="dAc-gM-9ex" kind="show" identifier="New User" id="BlO-wp-vOh"/>
+                                    <segue destination="dAc-gM-9ex" kind="show" identifier="newUserSegue" id="BlO-wp-vOh"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y9b-Wz-dLA">
                                 <rect key="frame" x="177" y="451" width="60" height="30"/>
                                 <state key="normal" title="Not Now"/>
                                 <connections>
-                                    <segue destination="bBt-P7-AXr" kind="show" id="HyM-Pq-tA8"/>
+                                    <segue destination="bBt-P7-AXr" kind="show" identifier="notNowSegue" id="HyM-Pq-tA8"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Aq1-uC-4UF">
@@ -99,7 +99,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fYK-Qq-wUy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1646" y="2151"/>
+            <point key="canvasLocation" x="1646" y="2323"/>
         </scene>
         <!--User Creation Menu-->
         <scene sceneID="ZQl-az-CLD">
@@ -582,7 +582,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HVc-PV-E99" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1674" y="1116"/>
+            <point key="canvasLocation" x="1657" y="1228"/>
         </scene>
         <!--Download User Instructions-->
         <scene sceneID="lb8-OE-c3E">
@@ -725,7 +725,7 @@
         <!--Login-->
         <scene sceneID="28E-gj-5f5">
             <objects>
-                <viewController title="Login" id="dAc-gM-9ex" sceneMemberID="viewController">
+                <viewController title="Login" id="dAc-gM-9ex" customClass="AuthenticationController" customModule="OrigamiAcademy" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="QRe-LM-gkU"/>
                         <viewControllerLayoutGuide type="bottom" id="spF-7U-qhK"/>
@@ -738,7 +738,7 @@
                                 <rect key="frame" x="158" y="439" width="99" height="30"/>
                                 <state key="normal" title="Login/Register"/>
                                 <connections>
-                                    <segue destination="bBt-P7-AXr" kind="show" id="dR8-xa-sWk"/>
+                                    <action selector="loginRegisterButtonClicked:" destination="dAc-gM-9ex" eventType="touchUpInside" id="Iy8-s2-Tsz"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="D7V-tJ-Hov">
@@ -769,11 +769,24 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Invalid Username or Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bKx-cB-Wcm">
+                                <rect key="frame" x="92" y="477" width="230" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Login" id="foX-DD-zyC"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
+                    <connections>
+                        <outlet property="errorLabel" destination="bKx-cB-Wcm" id="ZtO-c7-YfK"/>
+                        <outlet property="loginRegisterButton" destination="n1a-f5-g97" id="Yfz-4C-oRC"/>
+                        <outlet property="loginRegisterLabel" destination="7PM-nL-XsX" id="cOo-Xv-J62"/>
+                        <outlet property="passwordTextField" destination="blB-WZ-4TA" id="ty0-K2-IwQ"/>
+                        <outlet property="usernameTextField" destination="D7V-tJ-Hov" id="Yb6-PW-HgS"/>
+                        <segue destination="bBt-P7-AXr" kind="show" identifier="loginRegisterSegue" id="mMR-1J-DCn"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f7f-EM-ECY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -806,9 +819,9 @@
         <image name="instruction.jpg" width="564" height="718"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="HyM-Pq-tA8"/>
-        <segue reference="DH9-Jc-XNW"/>
-        <segue reference="ZAc-9w-QAU"/>
         <segue reference="fdR-Hv-0by"/>
+        <segue reference="ZAc-9w-QAU"/>
+        <segue reference="mMR-1J-DCn"/>
+        <segue reference="DH9-Jc-XNW"/>
     </inferredMetricsTieBreakers>
 </document>
