@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0E4087AC1DB4107C0066ED52 /* AuthenticationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E4087AB1DB4107C0066ED52 /* AuthenticationController.swift */; };
 		1136FAE41DA42B4600B86782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1136FAE31DA42B4600B86782 /* AppDelegate.swift */; };
 		1136FAE61DA42B4600B86782 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1136FAE51DA42B4600B86782 /* ViewController.swift */; };
 		1136FAE91DA42B4600B86782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1136FAE71DA42B4600B86782 /* Main.storyboard */; };
@@ -42,6 +43,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0E4087AB1DB4107C0066ED52 /* AuthenticationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticationController.swift; sourceTree = "<group>"; };
 		1136FAE01DA42B4600B86782 /* OrigamiAcademy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OrigamiAcademy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1136FAE31DA42B4600B86782 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1136FAE51DA42B4600B86782 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -127,6 +129,8 @@
 				11A46DED1DB4129A00F40BA7 /* crane_instructions.strings */,
 				11A46DEF1DB4177800F40BA7 /* InstructionViewController.swift */,
 				11A46DF11DB41C8000F40BA7 /* StepViewController.swift */,
+				1136FB171DA42B5A00B86782 /* instruction.jpg */,
+				0E4087AB1DB4107C0066ED52 /* AuthenticationController.swift */,
 			);
 			path = OrigamiAcademy;
 			sourceTree = "<group>";
@@ -286,6 +290,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1136FAEC1DA42B4600B86782 /* OrigamiAcademy.xcdatamodeld in Sources */,
+				0E4087AC1DB4107C0066ED52 /* AuthenticationController.swift in Sources */,
 				1136FAE61DA42B4600B86782 /* ViewController.swift in Sources */,
 				11A46DF21DB41C8000F40BA7 /* StepViewController.swift in Sources */,
 				1136FAE41DA42B4600B86782 /* AppDelegate.swift in Sources */,
