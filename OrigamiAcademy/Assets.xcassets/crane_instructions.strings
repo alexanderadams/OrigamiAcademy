@@ -1,0 +1,32 @@
+/* 
+  crane_instructions.strings
+  OrigamiAcademy
+
+  Created by Alexander Adams on 10/16/16.
+  Copyright © 2016 adams. All rights reserved.
+*/
+
+"step1" = "Start with a square piece of paper.";
+"step2" = "Fold the paper in half along the diagonal.";
+"step3" = "Fold it in half again by bringing the corners together.";
+"step4" = "Open the top flap and bring the corner to the bottom to form a square.";
+"step5" = "Repeat step 4 on the other side.";
+"step6" = "On the top square only, fold both corners towards the center.";
+"step7" = "Repeat step 5 on the other side.";
+"step8" = "Unfold the corners and lift up the top flap.";
+"step9" = "Fold the corners towards the center.";
+"step10" = "Repeat step 9 on the other side.";
+"step11" = "Fold the top corner down so it meets the bottom corner. Repeat on the other side.";
+"step12" = "Fold both corners towards the center.";
+"step13" = "Repeat step 12 on the other side.";
+"step14" = "Unfold the corners and lift the bottom corner.";
+"step15" = "Fold both sides towards the center.";
+"step16" = "Repeat steps 14 and 15 on the other side.";
+"step17" = "Fold the left side over the right side. Repeat on the other side.";
+"step18" = "Fold the bottom flap towards the top.";
+"step19" = "Repeat step 18 on the other side.";
+"step20" = "On the front side only, fold a third of the top flap downwards.";
+"step21" = "Fold the left side over the right side. Repeate on the other side.";
+"step22" = "On both sides, fold the top flaps downwards.";
+"step23" = "Pull both of the top pieces outwards.";
+"step24" = "Pull the wings outwards to finish the crane.";
