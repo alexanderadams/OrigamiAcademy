@@ -11,7 +11,6 @@ import CoreData
 
 class ViewController: UIViewController {
     
-    
     let loginSegue:String = "loginSegue"
     let newUserSegue:String = "newUserSegue"
     let notNowSegue:String = "notNowSegue"
@@ -83,6 +82,45 @@ class ViewController: UIViewController {
     }
     
     func instructionsInstaller() {
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        let managedContext = appDelegate.managedObjectContext
         
+        let instructionNumber = Int(NSLocalizedString("instructionNumber", tableName: "instruction_list", comment:"number of instructions"))
+        for i in 1...instructionNumber! {
+            // Create the entity we want to save
+            let entity =  NSEntityDescription.entityForName("Instruction", inManagedObjectContext: managedContext)
+            let instruction = NSManagedObject(entity: entity!, insertIntoManagedObjectContext:managedContext)
+            
+            // Set the attribute values
+            let creation = NSLocalizedString("instruction\(i)", tableName: "instruction_list", comment:"creation name")
+            instruction.setValue(creation, forKey: "creation")
+            let stepNumber = Int(NSLocalizedString("stepNumber", tableName: "\(creation)_instructions", comment:"number of steps"))
+            instruction.setValue(stepNumber, forKey: "numOfSteps")
+            instruction.setValue("\(creation)_step\(stepNumber)", forKey: "finishedImage")
+            
+            // Create the instruction steps
+            let stepSet:NSMutableOrderedSet = []
+            for s in 1...stepNumber! {
+                let entity =  NSEntityDescription.entityForName("Step", inManagedObjectContext: managedContext)
+                let step = NSManagedObject(entity: entity!, insertIntoManagedObjectContext:managedContext)
+                
+                step.setValue(s, forKey: "number")
+                let details = NSLocalizedString("step\(s)", tableName: "\(creation)_instructions", comment:"step detail")
+                step.setValue(details, forKey: "details")
+                step.setValue("\(creation)_step\(s)", forKey: "image")
+                stepSet.addObject(step)
+            }
+            instruction.setValue(stepSet, forKey: "steps")
+        }
+        
+        // Commit the changes
+        do {
+            try managedContext.save()
+        } catch {
+            // If an error occurs
+            let nserror = error as NSError
+            NSLog("Unresolved error \(nserror), \(nserror.userInfo)")
+            abort()
+        }
     }
 }
