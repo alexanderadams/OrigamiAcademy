@@ -23,6 +23,6 @@ class StepViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         stepNumber.text = "Step \(stepIndex + 1)"
         instructionsLabel.text = instructions
+        image.image = UIImage(named:imageName)
     }
-    
 }

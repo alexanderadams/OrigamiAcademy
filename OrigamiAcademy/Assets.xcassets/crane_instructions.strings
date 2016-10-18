@@ -6,6 +6,7 @@
   Copyright © 2016 adams. All rights reserved.
 */
 
+"stepNumber" = "24";
 "step1" = "Start with a square piece of paper.";
 "step2" = "Fold the paper in half along the diagonal.";
 "step3" = "Fold it in half again by bringing the corners together.";

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class ViewController: UIViewController {
     
@@ -18,6 +19,9 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        if !instructionsInstalled() {
+            instructionsInstaller()
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -38,5 +42,47 @@ class ViewController: UIViewController {
         }
     }
 
-
+    func instructionsInstalled() -> Bool {
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        let managedContext = appDelegate.managedObjectContext
+        
+        let fetchRequest = NSFetchRequest(entityName:"Instruction")
+        var instructionsList:[NSManagedObject]? = nil
+        
+        do {
+            try instructionsList = managedContext.executeFetchRequest(fetchRequest) as? [NSManagedObject]
+        } catch {
+            // If an error occurs
+            let nserror = error as NSError
+            NSLog("Unresolved error \(nserror), \(nserror.userInfo)")
+            abort()
+        }
+        let instructionNumber = Int(NSLocalizedString("instructionNumber", tableName: "instruction_list", comment:"number of instructions"))
+        
+        if instructionsList?.count < instructionNumber {
+            return false
+        }
+        else {
+            for i in 1...instructionNumber! {
+                let creation = NSLocalizedString("instruction\(i)", tableName: "instruction_list", comment:"instruction at index")
+                if !exists(instructionsList!, creation: creation) {
+                    return false
+                }
+            }
+        }
+        return true
+    }
+    
+    func exists(list:[NSManagedObject], creation:String) -> Bool {
+        for i in list {
+            if i.valueForKey("creation") as! String == creation {
+                return true
+            }
+        }
+        return false
+    }
+    
+    func instructionsInstaller() {
+        
+    }
 }
