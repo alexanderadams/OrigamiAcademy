@@ -11,6 +11,7 @@
 		1102F0501DB69E140094CFA0 /* frog_instructions.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1102F04F1DB69E140094CFA0 /* frog_instructions.strings */; };
 		1102F0521DB6F43D0094CFA0 /* lilly_instructions.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1102F0511DB6F43D0094CFA0 /* lilly_instructions.strings */; };
 		1118BFA41DB5B16C00C95EF3 /* instruction_list.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1118BFA31DB5B16C00C95EF3 /* instruction_list.strings */; };
+		0EB55F7C1DB5A771003E0075 /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB55F7B1DB5A771003E0075 /* SettingsController.swift */; };
 		1136FAE41DA42B4600B86782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1136FAE31DA42B4600B86782 /* AppDelegate.swift */; };
 		1136FAE61DA42B4600B86782 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1136FAE51DA42B4600B86782 /* ViewController.swift */; };
 		1136FAE91DA42B4600B86782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1136FAE71DA42B4600B86782 /* Main.storyboard */; };
@@ -49,6 +50,7 @@
 		1102F04F1DB69E140094CFA0 /* frog_instructions.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = frog_instructions.strings; sourceTree = "<group>"; };
 		1102F0511DB6F43D0094CFA0 /* lilly_instructions.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = lilly_instructions.strings; sourceTree = "<group>"; };
 		1118BFA31DB5B16C00C95EF3 /* instruction_list.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = instruction_list.strings; sourceTree = "<group>"; };
+		0EB55F7B1DB5A771003E0075 /* SettingsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsController.swift; sourceTree = "<group>"; };
 		1136FAE01DA42B4600B86782 /* OrigamiAcademy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OrigamiAcademy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1136FAE31DA42B4600B86782 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1136FAE51DA42B4600B86782 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -136,6 +138,7 @@
 				0E4087AB1DB4107C0066ED52 /* AuthenticationController.swift */,
 				1102F04F1DB69E140094CFA0 /* frog_instructions.strings */,
 				1102F0511DB6F43D0094CFA0 /* lilly_instructions.strings */,
+				0EB55F7B1DB5A771003E0075 /* SettingsController.swift */,
 			);
 			path = OrigamiAcademy;
 			sourceTree = "<group>";
@@ -299,6 +302,7 @@
 				1136FAEC1DA42B4600B86782 /* OrigamiAcademy.xcdatamodeld in Sources */,
 				0E4087AC1DB4107C0066ED52 /* AuthenticationController.swift in Sources */,
 				1136FAE61DA42B4600B86782 /* ViewController.swift in Sources */,
+				0EB55F7C1DB5A771003E0075 /* SettingsController.swift in Sources */,
 				11A46DF21DB41C8000F40BA7 /* StepViewController.swift in Sources */,
 				1136FAE41DA42B4600B86782 /* AppDelegate.swift in Sources */,
 				11A46DF01DB4177800F40BA7 /* InstructionViewController.swift in Sources */,

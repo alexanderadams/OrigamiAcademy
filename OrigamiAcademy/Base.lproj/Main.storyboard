@@ -49,12 +49,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="994" y="429"/>
+            <point key="canvasLocation" x="1234" y="320"/>
         </scene>
         <!--Settings-->
         <scene sceneID="qEB-R4-rB7">
             <objects>
-                <viewController id="1F7-BX-Ybr" sceneMemberID="viewController">
+                <viewController id="1F7-BX-Ybr" customClass="settingsController" customModule="OrigamiAcademy" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="i84-aS-QyM"/>
                         <viewControllerLayoutGuide type="bottom" id="TU3-EE-HlG"/>
@@ -66,6 +66,9 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tgP-8u-wnr">
                                 <rect key="frame" x="155" y="591" width="105" height="30"/>
                                 <state key="normal" title="Delete Account"/>
+                                <connections>
+                                    <action selector="deleteAccountButtonClicked:" destination="1F7-BX-Ybr" eventType="touchUpInside" id="Swn-xL-kKP"/>
+                                </connections>
                             </button>
                             <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EAJ-1T-fsQ">
                                 <rect key="frame" x="0.0" y="329" width="414" height="216"/>
@@ -96,10 +99,13 @@
                     </view>
                     <navigationItem key="navigationItem" title="Settings" id="u4i-OW-oQi"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="settingsToMainMenuSegue" id="al0-jc-1Jk"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fYK-Qq-wUy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1646" y="2323"/>
+            <point key="canvasLocation" x="489" y="1181"/>
         </scene>
         <!--User Creation Menu-->
         <scene sceneID="ZQl-az-CLD">
@@ -148,7 +154,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cpq-6W-fcQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2392" y="2151"/>
+            <point key="canvasLocation" x="830" y="1711"/>
         </scene>
         <!--Manage Uploads-->
         <scene sceneID="97i-NR-EtW">
@@ -217,7 +223,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qe7-3l-ihf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2392" y="3042"/>
+            <point key="canvasLocation" x="1908" y="3078"/>
         </scene>
         <!--Instruction Creation Interface-->
         <scene sceneID="nY4-c4-6Yy">
@@ -301,7 +307,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="U1X-lN-7Ip" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2928" y="2151"/>
+            <point key="canvasLocation" x="2948" y="2171"/>
         </scene>
         <!--Step Editor-->
         <scene sceneID="cOs-rS-NAj">
@@ -439,7 +445,7 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="2378" y="230"/>
+            <point key="canvasLocation" x="2370" y="230"/>
         </scene>
         <!--Instruction-->
         <scene sceneID="EGw-ug-9m9">
@@ -493,7 +499,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aHg-qe-yFS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2928" y="230"/>
+            <point key="canvasLocation" x="3048" y="230"/>
         </scene>
         <!--Instruction View-->
         <scene sceneID="NFW-1l-lXh">
@@ -507,7 +513,7 @@
                 </pageViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="E6B-nh-HR8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3456" y="-158"/>
+            <point key="canvasLocation" x="4200" y="-122"/>
         </scene>
         <!--Instructions-->
         <scene sceneID="jRt-pm-Khy">
@@ -552,7 +558,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gqf-wJ-jFK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4073" y="-158"/>
+            <point key="canvasLocation" x="4833" y="-174"/>
         </scene>
         <!--Rating-->
         <scene sceneID="P1p-Va-dcP">
@@ -598,7 +604,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wk3-IC-JmR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3456" y="646"/>
+            <point key="canvasLocation" x="4120" y="822"/>
         </scene>
         <!--Main Menu-->
         <scene sceneID="rpx-bO-exP">
@@ -858,7 +864,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f7f-EM-ECY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1674" y="80"/>
+            <point key="canvasLocation" x="1842" y="405"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="9ax-sn-NVT">
@@ -877,7 +883,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0VR-Jl-Q9P" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="467" y="429"/>
+            <point key="canvasLocation" x="1415" y="-603"/>
         </scene>
     </scenes>
     <resources>
@@ -886,9 +892,10 @@
         <image name="ijSS5.png" width="600" height="113"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="fdR-Hv-0by"/>
-        <segue reference="ZAc-9w-QAU"/>
-        <segue reference="mMR-1J-DCn"/>
+        <segue reference="HyM-Pq-tA8"/>
+        <segue reference="al0-jc-1Jk"/>
         <segue reference="DH9-Jc-XNW"/>
+        <segue reference="ZAc-9w-QAU"/>
+        <segue reference="fvq-Rt-6Od"/>
     </inferredMetricsTieBreakers>
 </document>
