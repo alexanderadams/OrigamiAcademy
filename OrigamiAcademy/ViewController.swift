@@ -18,6 +18,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        //clearCoreData()
         if !instructionsInstalled() {
             instructionsInstaller()
         }
@@ -96,6 +97,10 @@ class ViewController: UIViewController {
             instruction.setValue(creation, forKey: "creation")
             let stepNumber = Int(NSLocalizedString("stepNumber", tableName: "\(creation)_instructions", comment:"number of steps"))
             instruction.setValue(stepNumber, forKey: "numOfSteps")
+            let author = NSLocalizedString("author", tableName: "\(creation)_instructions", comment: "author name")
+            instruction.setValue(author, forKey: "author")
+            let summary = NSLocalizedString("description", tableName: "\(creation)_instructions", comment: "creation description")
+            instruction.setValue(summary, forKey: "summary")
             instruction.setValue("\(creation)_step\(stepNumber)", forKey: "finishedImage")
             
             // Create the instruction steps
@@ -116,6 +121,53 @@ class ViewController: UIViewController {
         // Commit the changes
         do {
             try managedContext.save()
+        } catch {
+            // If an error occurs
+            let nserror = error as NSError
+            NSLog("Unresolved error \(nserror), \(nserror.userInfo)")
+            abort()
+        }
+    }
+    
+    func clearCoreData() {
+        
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        let managedContext = appDelegate.managedObjectContext
+        
+        var fetchRequest = NSFetchRequest(entityName: "Instruction")
+        var fetchedResults:[NSManagedObject]
+        
+        do {
+            try fetchedResults = managedContext.executeFetchRequest(fetchRequest) as! [NSManagedObject]
+            
+            if fetchedResults.count > 0 {
+                
+                for result:AnyObject in fetchedResults {
+                    managedContext.deleteObject(result as! NSManagedObject)
+                }
+            }
+            try managedContext.save()
+            
+        } catch {
+            // If an error occurs
+            let nserror = error as NSError
+            NSLog("Unresolved error \(nserror), \(nserror.userInfo)")
+            abort()
+        }
+        
+        fetchRequest = NSFetchRequest(entityName: "Step")
+        
+        do {
+            try fetchedResults = managedContext.executeFetchRequest(fetchRequest) as! [NSManagedObject]
+            
+            if fetchedResults.count > 0 {
+                
+                for result:AnyObject in fetchedResults {
+                    managedContext.deleteObject(result as! NSManagedObject)
+                }
+            }
+            try managedContext.save()
+            
         } catch {
             // If an error occurs
             let nserror = error as NSError
