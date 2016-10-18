@@ -1,0 +1,23 @@
+/* 
+  frog_instructions.strings
+  OrigamiAcademy
+
+  Created by Alexander Adams on 10/18/16.
+  Copyright © 2016 adams. All rights reserved.
+*/
+
+"stepNumber" = "12";
+"author" = "Origami Academy";
+"description" = "A jumping frog in 12 steps. Uses a rectangular piece of paper. Press your finger on the back of the frog to make it hop around.";
+"step1" = "Start with a rectangular piece of paper.";
+"step2" = "Fold the paper in half lengthwise.";
+"step3" = "Unfold the paper.";
+"step4" = "Fold the top corner across the page diagonally.";
+"step5" = "Unfold and repeat with the other corner.";
+"step6" = "Fold the top of the paper away from you. The crease should be where the diagonal creases meet.";
+"step7" = "Unfold the paper. Then take each side, where the new crease was made, and bring them together.";
+"step8" = "Fold each corner towards the top.";
+"step9" = "Fold each side towards the center.";
+"step10" = "Fold the bottom upwards so the bottom and top corners meet.";
+"step11" = "Take the top flap, and fold it downwards in half.";
+"step12" = "Flip your creation over and press on its back to make it hop.";

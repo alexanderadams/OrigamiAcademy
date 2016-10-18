@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0E4087AC1DB4107C0066ED52 /* AuthenticationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E4087AB1DB4107C0066ED52 /* AuthenticationController.swift */; };
+		1102F0501DB69E140094CFA0 /* frog_instructions.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1102F04F1DB69E140094CFA0 /* frog_instructions.strings */; };
 		1118BFA41DB5B16C00C95EF3 /* instruction_list.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1118BFA31DB5B16C00C95EF3 /* instruction_list.strings */; };
 		1136FAE41DA42B4600B86782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1136FAE31DA42B4600B86782 /* AppDelegate.swift */; };
 		1136FAE61DA42B4600B86782 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1136FAE51DA42B4600B86782 /* ViewController.swift */; };
@@ -44,6 +45,7 @@
 
 /* Begin PBXFileReference section */
 		0E4087AB1DB4107C0066ED52 /* AuthenticationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticationController.swift; sourceTree = "<group>"; };
+		1102F04F1DB69E140094CFA0 /* frog_instructions.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = frog_instructions.strings; sourceTree = "<group>"; };
 		1118BFA31DB5B16C00C95EF3 /* instruction_list.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = instruction_list.strings; sourceTree = "<group>"; };
 		1136FAE01DA42B4600B86782 /* OrigamiAcademy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OrigamiAcademy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1136FAE31DA42B4600B86782 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -130,6 +132,7 @@
 				11A46DEF1DB4177800F40BA7 /* InstructionViewController.swift */,
 				11A46DF11DB41C8000F40BA7 /* StepViewController.swift */,
 				0E4087AB1DB4107C0066ED52 /* AuthenticationController.swift */,
+				1102F04F1DB69E140094CFA0 /* frog_instructions.strings */,
 			);
 			path = OrigamiAcademy;
 			sourceTree = "<group>";
@@ -264,6 +267,7 @@
 				1136FB191DA42B5A00B86782 /* IMG_0761.JPG in Resources */,
 				1136FAE91DA42B4600B86782 /* Main.storyboard in Resources */,
 				11A46DEE1DB4129A00F40BA7 /* crane_instructions.strings in Resources */,
+				1102F0501DB69E140094CFA0 /* frog_instructions.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
