@@ -8,8 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		0E4087AC1DB4107C0066ED52 /* AuthenticationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E4087AB1DB4107C0066ED52 /* AuthenticationController.swift */; };
-		1118BF701DB5A7C100C95EF3 /* instruction_list.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1118BF6F1DB5A7C100C95EF3 /* instruction_list.strings */; };
 		1118BF721DB5B01A00C95EF3 /* crane_images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1118BF711DB5B01A00C95EF3 /* crane_images.xcassets */; };
+		1118BFA41DB5B16C00C95EF3 /* instruction_list.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1118BFA31DB5B16C00C95EF3 /* instruction_list.strings */; };
 		1136FAE41DA42B4600B86782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1136FAE31DA42B4600B86782 /* AppDelegate.swift */; };
 		1136FAE61DA42B4600B86782 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1136FAE51DA42B4600B86782 /* ViewController.swift */; };
 		1136FAE91DA42B4600B86782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1136FAE71DA42B4600B86782 /* Main.storyboard */; };
@@ -45,8 +45,8 @@
 
 /* Begin PBXFileReference section */
 		0E4087AB1DB4107C0066ED52 /* AuthenticationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticationController.swift; sourceTree = "<group>"; };
-		1118BF6F1DB5A7C100C95EF3 /* instruction_list.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = instruction_list.strings; sourceTree = "<group>"; };
 		1118BF711DB5B01A00C95EF3 /* crane_images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = crane_images.xcassets; sourceTree = "<group>"; };
+		1118BFA31DB5B16C00C95EF3 /* instruction_list.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = instruction_list.strings; path = Assets.xcassets/instruction_list.strings; sourceTree = "<group>"; };
 		1136FAE01DA42B4600B86782 /* OrigamiAcademy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OrigamiAcademy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1136FAE31DA42B4600B86782 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1136FAE51DA42B4600B86782 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -121,6 +121,7 @@
 				1136FAE51DA42B4600B86782 /* ViewController.swift */,
 				1136FAE71DA42B4600B86782 /* Main.storyboard */,
 				1136FAED1DA42B4600B86782 /* Assets.xcassets */,
+				1118BFA31DB5B16C00C95EF3 /* instruction_list.strings */,
 				1136FAEF1DA42B4600B86782 /* LaunchScreen.storyboard */,
 				1136FAF21DA42B4600B86782 /* Info.plist */,
 				1136FAEA1DA42B4600B86782 /* OrigamiAcademy.xcdatamodeld */,
@@ -131,7 +132,6 @@
 				11A46DEF1DB4177800F40BA7 /* InstructionViewController.swift */,
 				11A46DF11DB41C8000F40BA7 /* StepViewController.swift */,
 				0E4087AB1DB4107C0066ED52 /* AuthenticationController.swift */,
-				1118BF6F1DB5A7C100C95EF3 /* instruction_list.strings */,
 				1118BF711DB5B01A00C95EF3 /* crane_images.xcassets */,
 			);
 			path = OrigamiAcademy;
@@ -262,7 +262,7 @@
 				1136FB1A1DA42B5A00B86782 /* IMG_0762.JPG in Resources */,
 				1118BF721DB5B01A00C95EF3 /* crane_images.xcassets in Resources */,
 				1136FAF11DA42B4600B86782 /* LaunchScreen.storyboard in Resources */,
-				1118BF701DB5A7C100C95EF3 /* instruction_list.strings in Resources */,
+				1118BFA41DB5B16C00C95EF3 /* instruction_list.strings in Resources */,
 				1136FAEE1DA42B4600B86782 /* Assets.xcassets in Resources */,
 				1136FB181DA42B5A00B86782 /* ijSS5.png in Resources */,
 				1136FB191DA42B5A00B86782 /* IMG_0761.JPG in Resources */,
