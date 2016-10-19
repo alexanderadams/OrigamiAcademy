@@ -37,7 +37,7 @@ class ViewController: UIViewController {
         } else if segue.identifier == newUserSegue {
             let destination = segue.destinationViewController as? AuthenticationController
             destination?.newUser = true
-        } else {
+        } else if segue.identifier == notNowSegue {
             
         }
     }
