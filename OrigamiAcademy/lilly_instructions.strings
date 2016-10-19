@@ -1,0 +1,32 @@
+/* 
+  lilly_instructions.strings
+  OrigamiAcademy
+
+  Created by Alexander Adams on 10/18/16.
+  Copyright © 2016 adams. All rights reserved.
+*/
+
+"stepNumber" = "21";
+"author" = "Origami Academy";
+"description" = "A lilly in 21 steps. Uses a square piece of paper.";
+"step1" = "Start with a square piece of paper.";
+"step2" = "Fold the paper in half.";
+"step3" = "Fold it in half again.";
+"step4" = "Unfold and flip over.";
+"step5" = "Fold diagonally.";
+"step6" = "Fold again diagonally.";
+"step7" = "Unfold the paper.";
+"step8" = "Grab both sides at the creases and bring them together towards the center.";
+"step9" = "Take one flap and fold it towards the center.";
+"step10" = "Unfold and then open the flap and bring the corner straight down.";
+"step11" = "Repeat steps 9 and 10 for the three other flaps.";
+"step12" = "Take both corners on the top layer and fold them towards the center.";
+"step13" = "Unfold, then fold the entire creation in half.";
+"step14" = "Unfold the paper.";
+"step15" = "Take the bottom corner of the top layer and bring it to the top corner.";
+"step16" = "Repeat steps 12 through 15 for each of three other sides.";
+"step17" = "Take the top corner and fold it down.";
+"step18" = "Repeat step 17 for the three other sides.";
+"step19" = "Take both corners of the front side and fold them towards the center.";
+"step20" = "Repeat step 18 for the three other sides.";
+"step21" = "Fold each of the petals at the top outwards to finish the lilly.";
