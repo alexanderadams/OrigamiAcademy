@@ -87,6 +87,9 @@
                             </label>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6ec-x7-Lfm">
                                 <rect key="frame" x="240" y="194" width="51" height="31"/>
+                                <connections>
+                                    <action selector="setSoundChecker:" destination="1F7-BX-Ybr" eventType="valueChanged" id="U0s-uw-VDd"/>
+                                </connections>
                             </switch>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Sound" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EG8-2O-ILb">
                                 <rect key="frame" x="131" y="199" width="50" height="21"/>

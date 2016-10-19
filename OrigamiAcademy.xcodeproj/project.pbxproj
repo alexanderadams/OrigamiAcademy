@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0E2BE2D01DB6E37D00E483FA /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E2BE2CF1DB6E37D00E483FA /* AVFoundation.framework */; };
+		0E2BE2D21DB6E6E100E483FA /* SoundController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E2BE2D11DB6E6E100E483FA /* SoundController.swift */; };
+		0E2BE2D61DB6ECD300E483FA /* beep.wav in Resources */ = {isa = PBXBuildFile; fileRef = 0E2BE2D51DB6ECD300E483FA /* beep.wav */; };
 		0E4087AC1DB4107C0066ED52 /* AuthenticationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E4087AB1DB4107C0066ED52 /* AuthenticationController.swift */; };
 		1102F0501DB69E140094CFA0 /* frog_instructions.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1102F04F1DB69E140094CFA0 /* frog_instructions.strings */; };
 		1102F0521DB6F43D0094CFA0 /* lilly_instructions.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1102F0511DB6F43D0094CFA0 /* lilly_instructions.strings */; };
@@ -46,6 +49,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0E2BE2CF1DB6E37D00E483FA /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		0E2BE2D11DB6E6E100E483FA /* SoundController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoundController.swift; sourceTree = "<group>"; };
+		0E2BE2D51DB6ECD300E483FA /* beep.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = beep.wav; path = ../../../Downloads/beep.wav; sourceTree = "<group>"; };
 		0E4087AB1DB4107C0066ED52 /* AuthenticationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticationController.swift; sourceTree = "<group>"; };
 		1102F04F1DB69E140094CFA0 /* frog_instructions.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = frog_instructions.strings; sourceTree = "<group>"; };
 		1102F0511DB6F43D0094CFA0 /* lilly_instructions.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = lilly_instructions.strings; sourceTree = "<group>"; };
@@ -78,6 +84,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0E2BE2D01DB6E37D00E483FA /* AVFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -101,6 +108,7 @@
 		1136FAD71DA42B4600B86782 = {
 			isa = PBXGroup;
 			children = (
+				0E2BE2CF1DB6E37D00E483FA /* AVFoundation.framework */,
 				1136FAE21DA42B4600B86782 /* OrigamiAcademy */,
 				1136FAFA1DA42B4700B86782 /* OrigamiAcademyTests */,
 				1136FB051DA42B4700B86782 /* OrigamiAcademyUITests */,
@@ -121,6 +129,7 @@
 		1136FAE21DA42B4600B86782 /* OrigamiAcademy */ = {
 			isa = PBXGroup;
 			children = (
+				0E2BE2D51DB6ECD300E483FA /* beep.wav */,
 				1136FAE31DA42B4600B86782 /* AppDelegate.swift */,
 				1136FAE51DA42B4600B86782 /* ViewController.swift */,
 				1136FAE71DA42B4600B86782 /* Main.storyboard */,
@@ -139,6 +148,7 @@
 				1102F04F1DB69E140094CFA0 /* frog_instructions.strings */,
 				1102F0511DB6F43D0094CFA0 /* lilly_instructions.strings */,
 				0EB55F7B1DB5A771003E0075 /* SettingsController.swift */,
+				0E2BE2D11DB6E6E100E483FA /* SoundController.swift */,
 			);
 			path = OrigamiAcademy;
 			sourceTree = "<group>";
@@ -265,6 +275,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0E2BE2D61DB6ECD300E483FA /* beep.wav in Resources */,
 				1136FB1A1DA42B5A00B86782 /* IMG_0762.JPG in Resources */,
 				1136FAF11DA42B4600B86782 /* LaunchScreen.storyboard in Resources */,
 				1118BFA41DB5B16C00C95EF3 /* instruction_list.strings in Resources */,
@@ -304,6 +315,7 @@
 				1136FAE61DA42B4600B86782 /* ViewController.swift in Sources */,
 				0EB55F7C1DB5A771003E0075 /* SettingsController.swift in Sources */,
 				11A46DF21DB41C8000F40BA7 /* StepViewController.swift in Sources */,
+				0E2BE2D21DB6E6E100E483FA /* SoundController.swift in Sources */,
 				1136FAE41DA42B4600B86782 /* AppDelegate.swift in Sources */,
 				11A46DF01DB4177800F40BA7 /* InstructionViewController.swift in Sources */,
 			);
