@@ -30,14 +30,14 @@ class ViewController: UIViewController {
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-       
+        ms.playSound()
         if segue.identifier == loginSegue {
             let destination = segue.destinationViewController as? AuthenticationController
             destination?.newUser = false
         } else if segue.identifier == newUserSegue {
             let destination = segue.destinationViewController as? AuthenticationController
             destination?.newUser = true
-        } else {
+        } else if segue.identifier == notNowSegue {
             
         }
     }

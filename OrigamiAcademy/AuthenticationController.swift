@@ -46,6 +46,7 @@ class AuthenticationController: UIViewController {
     }
     
     @IBAction func loginRegisterButtonClicked(sender: AnyObject) {
+        ms.playSound()
         let userName:String = usernameTextField.text!
         let password:String = passwordTextField.text!
         if newUser! {
@@ -59,6 +60,7 @@ class AuthenticationController: UIViewController {
         
             do {
                 try managedContext.save()
+                self.performSegueWithIdentifier("loginRegisterSegue", sender: self)
             } catch {
                 let nserror = error as NSError
                 NSLog("Unresolved error \(nserror), \(nserror.userInfo)")

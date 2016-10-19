@@ -60,7 +60,12 @@ class settingsController : UIViewController {
         return(fetchedResults)!
         
     }
+    
+    
 
+    @IBAction func setSoundChecker(sender: AnyObject) {
+        ms.setSoundBool()
+    }
    
     
 }
