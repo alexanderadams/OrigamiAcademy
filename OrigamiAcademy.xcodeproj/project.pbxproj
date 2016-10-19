@@ -11,15 +11,16 @@
 		0E2BE2D21DB6E6E100E483FA /* SoundController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E2BE2D11DB6E6E100E483FA /* SoundController.swift */; };
 		0E2BE2D61DB6ECD300E483FA /* beep.wav in Resources */ = {isa = PBXBuildFile; fileRef = 0E2BE2D51DB6ECD300E483FA /* beep.wav */; };
 		0E4087AC1DB4107C0066ED52 /* AuthenticationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E4087AB1DB4107C0066ED52 /* AuthenticationController.swift */; };
+		0E5143301DB70493004752AE /* MainMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E51432F1DB70493004752AE /* MainMenuController.swift */; };
+		0EAB440A1DB70182003CDE56 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0EAB44091DB70182003CDE56 /* Assets.xcassets */; };
+		0EB55F7C1DB5A771003E0075 /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB55F7B1DB5A771003E0075 /* SettingsController.swift */; };
 		1102F0501DB69E140094CFA0 /* frog_instructions.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1102F04F1DB69E140094CFA0 /* frog_instructions.strings */; };
 		1102F0521DB6F43D0094CFA0 /* lilly_instructions.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1102F0511DB6F43D0094CFA0 /* lilly_instructions.strings */; };
 		1118BFA41DB5B16C00C95EF3 /* instruction_list.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1118BFA31DB5B16C00C95EF3 /* instruction_list.strings */; };
-		0EB55F7C1DB5A771003E0075 /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB55F7B1DB5A771003E0075 /* SettingsController.swift */; };
 		1136FAE41DA42B4600B86782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1136FAE31DA42B4600B86782 /* AppDelegate.swift */; };
 		1136FAE61DA42B4600B86782 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1136FAE51DA42B4600B86782 /* ViewController.swift */; };
 		1136FAE91DA42B4600B86782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1136FAE71DA42B4600B86782 /* Main.storyboard */; };
 		1136FAEC1DA42B4600B86782 /* OrigamiAcademy.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1136FAEA1DA42B4600B86782 /* OrigamiAcademy.xcdatamodeld */; };
-		1136FAEE1DA42B4600B86782 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1136FAED1DA42B4600B86782 /* Assets.xcassets */; };
 		1136FAF11DA42B4600B86782 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1136FAEF1DA42B4600B86782 /* LaunchScreen.storyboard */; };
 		1136FAFC1DA42B4700B86782 /* OrigamiAcademyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1136FAFB1DA42B4700B86782 /* OrigamiAcademyTests.swift */; };
 		1136FB071DA42B4700B86782 /* OrigamiAcademyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1136FB061DA42B4700B86782 /* OrigamiAcademyUITests.swift */; };
@@ -53,16 +54,17 @@
 		0E2BE2D11DB6E6E100E483FA /* SoundController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoundController.swift; sourceTree = "<group>"; };
 		0E2BE2D51DB6ECD300E483FA /* beep.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = beep.wav; path = ../../../Downloads/beep.wav; sourceTree = "<group>"; };
 		0E4087AB1DB4107C0066ED52 /* AuthenticationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticationController.swift; sourceTree = "<group>"; };
+		0E51432F1DB70493004752AE /* MainMenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMenuController.swift; sourceTree = "<group>"; };
+		0EAB44091DB70182003CDE56 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		0EB55F7B1DB5A771003E0075 /* SettingsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsController.swift; sourceTree = "<group>"; };
 		1102F04F1DB69E140094CFA0 /* frog_instructions.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = frog_instructions.strings; sourceTree = "<group>"; };
 		1102F0511DB6F43D0094CFA0 /* lilly_instructions.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = lilly_instructions.strings; sourceTree = "<group>"; };
 		1118BFA31DB5B16C00C95EF3 /* instruction_list.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = instruction_list.strings; sourceTree = "<group>"; };
-		0EB55F7B1DB5A771003E0075 /* SettingsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsController.swift; sourceTree = "<group>"; };
 		1136FAE01DA42B4600B86782 /* OrigamiAcademy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OrigamiAcademy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1136FAE31DA42B4600B86782 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1136FAE51DA42B4600B86782 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		1136FAE81DA42B4600B86782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1136FAEB1DA42B4600B86782 /* OrigamiAcademy.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = OrigamiAcademy.xcdatamodel; sourceTree = "<group>"; };
-		1136FAED1DA42B4600B86782 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1136FAF01DA42B4600B86782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1136FAF21DA42B4600B86782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1136FAF71DA42B4700B86782 /* OrigamiAcademyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OrigamiAcademyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -129,11 +131,11 @@
 		1136FAE21DA42B4600B86782 /* OrigamiAcademy */ = {
 			isa = PBXGroup;
 			children = (
+				0EAB44091DB70182003CDE56 /* Assets.xcassets */,
 				0E2BE2D51DB6ECD300E483FA /* beep.wav */,
 				1136FAE31DA42B4600B86782 /* AppDelegate.swift */,
 				1136FAE51DA42B4600B86782 /* ViewController.swift */,
 				1136FAE71DA42B4600B86782 /* Main.storyboard */,
-				1136FAED1DA42B4600B86782 /* Assets.xcassets */,
 				1118BFA31DB5B16C00C95EF3 /* instruction_list.strings */,
 				1136FAEF1DA42B4600B86782 /* LaunchScreen.storyboard */,
 				1136FAF21DA42B4600B86782 /* Info.plist */,
@@ -149,6 +151,7 @@
 				1102F0511DB6F43D0094CFA0 /* lilly_instructions.strings */,
 				0EB55F7B1DB5A771003E0075 /* SettingsController.swift */,
 				0E2BE2D11DB6E6E100E483FA /* SoundController.swift */,
+				0E51432F1DB70493004752AE /* MainMenuController.swift */,
 			);
 			path = OrigamiAcademy;
 			sourceTree = "<group>";
@@ -277,9 +280,9 @@
 			files = (
 				0E2BE2D61DB6ECD300E483FA /* beep.wav in Resources */,
 				1136FB1A1DA42B5A00B86782 /* IMG_0762.JPG in Resources */,
+				0EAB440A1DB70182003CDE56 /* Assets.xcassets in Resources */,
 				1136FAF11DA42B4600B86782 /* LaunchScreen.storyboard in Resources */,
 				1118BFA41DB5B16C00C95EF3 /* instruction_list.strings in Resources */,
-				1136FAEE1DA42B4600B86782 /* Assets.xcassets in Resources */,
 				1102F0521DB6F43D0094CFA0 /* lilly_instructions.strings in Resources */,
 				1136FB181DA42B5A00B86782 /* ijSS5.png in Resources */,
 				1136FB191DA42B5A00B86782 /* IMG_0761.JPG in Resources */,
@@ -318,6 +321,7 @@
 				0E2BE2D21DB6E6E100E483FA /* SoundController.swift in Sources */,
 				1136FAE41DA42B4600B86782 /* AppDelegate.swift in Sources */,
 				11A46DF01DB4177800F40BA7 /* InstructionViewController.swift in Sources */,
+				0E5143301DB70493004752AE /* MainMenuController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

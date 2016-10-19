@@ -49,7 +49,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1234" y="320"/>
+            <point key="canvasLocation" x="1206" y="316"/>
         </scene>
         <!--Settings-->
         <scene sceneID="qEB-R4-rB7">
@@ -108,7 +108,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fYK-Qq-wUy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="489" y="1181"/>
+            <point key="canvasLocation" x="1758" y="1639"/>
         </scene>
         <!--User Creation Menu-->
         <scene sceneID="ZQl-az-CLD">
@@ -157,7 +157,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cpq-6W-fcQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="830" y="1711"/>
+            <point key="canvasLocation" x="2278" y="1639"/>
         </scene>
         <!--Manage Uploads-->
         <scene sceneID="97i-NR-EtW">
@@ -226,7 +226,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qe7-3l-ihf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1908" y="3078"/>
+            <point key="canvasLocation" x="2278" y="2602"/>
         </scene>
         <!--Instruction Creation Interface-->
         <scene sceneID="nY4-c4-6Yy">
@@ -310,7 +310,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="U1X-lN-7Ip" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2948" y="2171"/>
+            <point key="canvasLocation" x="2880" y="2151"/>
         </scene>
         <!--Step Editor-->
         <scene sceneID="cOs-rS-NAj">
@@ -448,7 +448,7 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="2370" y="230"/>
+            <point key="canvasLocation" x="2726" y="282"/>
         </scene>
         <!--Instruction-->
         <scene sceneID="EGw-ug-9m9">
@@ -487,7 +487,7 @@
                                     <segue destination="hF6-d8-n0T" kind="show" id="d5i-dm-Dma"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PmG-k6-nrE">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PmG-k6-nrE">
                                 <rect key="frame" x="144" y="569" width="127" height="30"/>
                                 <state key="normal" title="Rate This Creation"/>
                                 <connections>
@@ -502,7 +502,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aHg-qe-yFS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3048" y="230"/>
+            <point key="canvasLocation" x="3336" y="274"/>
         </scene>
         <!--Instruction View-->
         <scene sceneID="NFW-1l-lXh">
@@ -607,12 +607,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wk3-IC-JmR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4120" y="822"/>
+            <point key="canvasLocation" x="4833" y="654"/>
         </scene>
         <!--Main Menu-->
         <scene sceneID="rpx-bO-exP">
             <objects>
-                <viewController id="bBt-P7-AXr" sceneMemberID="viewController">
+                <viewController id="bBt-P7-AXr" customClass="MainMenuController" customModule="OrigamiAcademy" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="azO-0w-TfD"/>
                         <viewControllerLayoutGuide type="bottom" id="At4-wL-eET"/>
@@ -635,7 +635,7 @@
                                     <segue destination="DQy-gl-ITf" kind="show" id="R5K-Nm-BUX"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BVo-vQ-kwa">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BVo-vQ-kwa">
                                 <rect key="frame" x="131" y="410" width="153" height="30"/>
                                 <state key="normal" title="Download Instructions"/>
                                 <connections>
@@ -645,7 +645,7 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OdO-gI-dfE">
                                 <rect key="frame" x="87" y="96" width="240" height="128"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mjM-CI-taL">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mjM-CI-taL">
                                 <rect key="frame" x="107" y="522" width="201" height="30"/>
                                 <state key="normal" title="Create Your Own Instructions"/>
                                 <connections>
@@ -660,6 +660,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HVc-PV-E99" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="2081" y="681"/>
         </scene>
         <!--Download User Instructions-->
         <scene sceneID="lb8-OE-c3E">
@@ -724,7 +725,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tkf-SQ-ua1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2392" y="1116"/>
+            <point key="canvasLocation" x="3028" y="1064"/>
         </scene>
         <!--Instruction Information-->
         <scene sceneID="1gR-CR-seU">
@@ -797,7 +798,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xFn-Di-KTC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2928" y="1116"/>
+            <point key="canvasLocation" x="4068" y="1080"/>
         </scene>
         <!--Login-->
         <scene sceneID="28E-gj-5f5">
@@ -867,7 +868,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f7f-EM-ECY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1842" y="405"/>
+            <point key="canvasLocation" x="2074" y="-535"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="9ax-sn-NVT">
@@ -886,7 +887,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0VR-Jl-Q9P" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1415" y="-603"/>
+            <point key="canvasLocation" x="-453" y="245"/>
         </scene>
     </scenes>
     <resources>
@@ -895,10 +896,10 @@
         <image name="ijSS5.png" width="600" height="113"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="ZAc-9w-QAU"/>
         <segue reference="mMR-1J-DCn"/>
         <segue reference="DH9-Jc-XNW"/>
         <segue reference="al0-jc-1Jk"/>
-        <segue reference="fvq-Rt-6Od"/>
+        <segue reference="ZAc-9w-QAU"/>
+        <segue reference="fdR-Hv-0by"/>
     </inferredMetricsTieBreakers>
 </document>
