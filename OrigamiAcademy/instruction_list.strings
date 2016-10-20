@@ -7,6 +7,6 @@
 */
 
 "instructionNumber" = "3";
-"instruction1" = "crane";
-"instruction2" = "frog";
-"instruction3" = "lilly";
+"instruction1" = "Crane";
+"instruction2" = "Frog";
+"instruction3" = "Lilly";

@@ -95,13 +95,13 @@ class ViewController: UIViewController {
             // Set the attribute values
             let creation = NSLocalizedString("instruction\(i)", tableName: "instruction_list", comment:"creation name")
             instruction.setValue(creation, forKey: "creation")
-            let stepNumber = Int(NSLocalizedString("stepNumber", tableName: "\(creation)_instructions", comment:"number of steps"))
+            let stepNumber = Int(NSLocalizedString("stepNumber", tableName: "\(creation.lowercaseString)_instructions", comment:"number of steps"))
             instruction.setValue(stepNumber, forKey: "numOfSteps")
-            let author = NSLocalizedString("author", tableName: "\(creation)_instructions", comment: "author name")
+            let author = NSLocalizedString("author", tableName: "\(creation.lowercaseString)_instructions", comment: "author name")
             instruction.setValue(author, forKey: "author")
-            let summary = NSLocalizedString("description", tableName: "\(creation)_instructions", comment: "creation description")
+            let summary = NSLocalizedString("description", tableName: "\(creation.lowercaseString)_instructions", comment: "creation description")
             instruction.setValue(summary, forKey: "summary")
-            instruction.setValue("\(creation)_step\(stepNumber)", forKey: "finishedImage")
+            instruction.setValue("\(creation.lowercaseString)_step\(stepNumber)", forKey: "finishedImage")
             
             // Create the instruction steps
             let stepSet:NSMutableOrderedSet = []
@@ -110,9 +110,9 @@ class ViewController: UIViewController {
                 let step = NSManagedObject(entity: entity!, insertIntoManagedObjectContext:managedContext)
                 
                 step.setValue(s, forKey: "number")
-                let details = NSLocalizedString("step\(s)", tableName: "\(creation)_instructions", comment:"step detail")
+                let details = NSLocalizedString("step\(s)", tableName: "\(creation.lowercaseString)_instructions", comment:"step detail")
                 step.setValue(details, forKey: "details")
-                step.setValue("\(creation)_step\(s)", forKey: "image")
+                step.setValue("\(creation.lowercaseString)_step\(s)", forKey: "image")
                 step.setValue(instruction, forKey: "instruction")
                 stepSet.addObject(step)
             }
