@@ -13,6 +13,8 @@ class InstructionViewController: UIPageViewController, UIPageViewControllerDataS
     
     private var pageViewController: UIPageViewController!
     
+    @IBOutlet weak var navInstructionView: UINavigationItem!
+    
     var instructionSet: String = ""
     var numOfSteps: Int = 0
     var instructions: [String] = []
@@ -21,6 +23,7 @@ class InstructionViewController: UIPageViewController, UIPageViewControllerDataS
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        navInstructionView.title = "\(instructionSet) Instructions"
         getInstructionSet()
         setViewControllers([getStepController(0)!], direction: .Forward, animated: false, completion: nil)
         dataSource = self
@@ -52,6 +55,7 @@ class InstructionViewController: UIPageViewController, UIPageViewControllerDataS
             stepController.stepIndex = stepIndex
             stepController.imageName = String(images[stepIndex])
             stepController.instructions = String(instructions[stepIndex])
+            stepController.creation = instructionSet
             return stepController
         }
         return nil

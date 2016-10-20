@@ -60,7 +60,6 @@ class OrigamiListViewController: UIViewController, UITableViewDataSource, UITabl
             NSLog("Unresolved error \(nserror), \(nserror.userInfo)")
             abort()
         }
-        
         return instructionsList!
     }
     

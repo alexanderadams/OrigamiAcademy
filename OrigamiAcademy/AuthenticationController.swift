@@ -37,10 +37,6 @@ class AuthenticationController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        
-    }
-    
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         self.view.endEditing(true)
     }
@@ -75,11 +71,10 @@ class AuthenticationController: UIViewController {
                 self.performSegueWithIdentifier("loginRegisterSegue", sender: self)
             } else {
                 errorLabel.hidden = false
-                
             }
         }
-        
     }
+    
     func fetchUser(userName:String, password:String) -> NSManagedObject? {
         let fetchedResults = retrieveUsers()
         var tempUserName:String? = nil
@@ -111,8 +106,6 @@ class AuthenticationController: UIViewController {
             NSLog("Unresolved error \(nserror), \(nserror.userInfo)")
             abort()
         }
-        
         return(fetchedResults)!
-        
     }
 }

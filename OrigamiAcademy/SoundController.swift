@@ -9,7 +9,6 @@
 import Foundation
 import AVFoundation
 
-
 class MakeSound {
     var makeSound:Bool
     var audioPlayer:AVAudioPlayer?
@@ -22,7 +21,8 @@ class MakeSound {
             audioPlayer = try AVAudioPlayer(contentsOfURL: soundHandler)
         } catch let error as NSError {
             print(error.description)
-        }}
+        }
+    }
     
     func playSound() {
         if makeSound {
@@ -34,7 +34,6 @@ class MakeSound {
     func setSoundBool() {
         makeSound = !makeSound
     }
-    
 }
 
 var ms = MakeSound()

@@ -14,6 +14,7 @@ class InstructionDetailViewController: UIViewController {
     @IBOutlet weak var creationNameLabel: UILabel!
     @IBOutlet weak var authorLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
+    @IBOutlet weak var navTitle: UINavigationItem!
     
     var creation:String = String()
     var author:String = String()
@@ -24,6 +25,7 @@ class InstructionDetailViewController: UIViewController {
         creationNameLabel.text = "\(creation)"
         authorLabel.text = "\(author)"
         descriptionLabel.text = "\(summary)"
+        navTitle.title = "\(creation)"
         
         creationNameLabel.textAlignment = NSTextAlignment.Center
         authorLabel.textAlignment = NSTextAlignment.Center

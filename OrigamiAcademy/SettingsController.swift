@@ -23,8 +23,6 @@ class settingsController : UIViewController {
         managedContext.deleteObject(user!)
         defaults.removeObjectForKey("loggedInUser")
         self.performSegueWithIdentifier("settingsToMainMenuSegue", sender: self)
-        
-        
     }
     
     func fetchUser(userName:String) -> NSManagedObject? {
@@ -38,7 +36,6 @@ class settingsController : UIViewController {
                 return user
             }
         }
-        
         return nil
     }
     
@@ -56,16 +53,10 @@ class settingsController : UIViewController {
             NSLog("Unresolved error \(nserror), \(nserror.userInfo)")
             abort()
         }
-        
         return(fetchedResults)!
-        
     }
-    
-    
 
     @IBAction func setSoundChecker(sender: AnyObject) {
         ms.setSoundBool()
     }
-   
-    
 }
