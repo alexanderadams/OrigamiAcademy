@@ -93,7 +93,7 @@ class InstructionViewController: UIViewController, UIPageViewControllerDataSourc
             }
         }
         numOfSteps = instruction.valueForKey("numOfSteps") as! Int
-        let steps = instruction.mutableSetValueForKey("steps")
+        let steps = instruction.valueForKeyPath("steps") as! NSMutableSet
         
         let sortdescriptor = NSSortDescriptor(key: "number", ascending: true)
         let stepsSorted = steps.sortedArrayUsingDescriptors([sortdescriptor])

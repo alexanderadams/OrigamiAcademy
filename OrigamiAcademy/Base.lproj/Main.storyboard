@@ -451,7 +451,7 @@
             </objects>
             <point key="canvasLocation" x="2726" y="282"/>
         </scene>
-        <!--Instruction-->
+        <!--Title-->
         <scene sceneID="EGw-ug-9m9">
             <objects>
                 <viewController id="Nna-9J-Hxr" customClass="InstructionDetailViewController" customModule="OrigamiAcademy" customModuleProvider="target" sceneMemberID="viewController">
@@ -475,13 +475,12 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dOH-Q3-itG">
-                                <rect key="frame" x="148" y="411" width="118" height="30"/>
-                                <state key="normal" title="View Instructions"/>
-                                <connections>
-                                    <segue destination="hF6-d8-n0T" kind="show" id="d5i-dm-Dma"/>
-                                </connections>
-                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Description" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ITv-Th-YZk">
+                                <rect key="frame" x="79" y="223" width="242" height="155"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PmG-k6-nrE">
                                 <rect key="frame" x="144" y="569" width="127" height="30"/>
                                 <state key="normal" title="Rate This Creation"/>
@@ -489,16 +488,17 @@
                                     <segue destination="f9O-Dp-7PM" kind="show" id="E7Z-Sh-sTx"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Description" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ITv-Th-YZk">
-                                <rect key="frame" x="79" y="223" width="242" height="155"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dOH-Q3-itG">
+                                <rect key="frame" x="148" y="409" width="118" height="30"/>
+                                <state key="normal" title="View Instructions"/>
+                                <connections>
+                                    <segue destination="hF6-d8-n0T" kind="show" id="d5i-dm-Dma"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Instruction" id="7ak-e0-Y23"/>
+                    <navigationItem key="navigationItem" title="Title" id="3Kr-Bx-0yT"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
                     <connections>
                         <outlet property="authorLabel" destination="i6H-a3-5Q9" id="tpW-1C-kBR"/>

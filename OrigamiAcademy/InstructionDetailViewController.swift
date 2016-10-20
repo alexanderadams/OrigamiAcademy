@@ -33,5 +33,12 @@ class InstructionDetailViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        ms.playSound()
+        if let destination = segue.destinationViewController as? InstructionViewController {
+            destination.instructionSet = creation
+        }
+    }
 
 }
