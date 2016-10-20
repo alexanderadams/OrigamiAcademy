@@ -31,6 +31,7 @@
 		11A46DF21DB41C8000F40BA7 /* StepViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A46DF11DB41C8000F40BA7 /* StepViewController.swift */; };
 		82B622CF1DB83C150044B654 /* OrigamiListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82B622CE1DB83C150044B654 /* OrigamiListViewController.swift */; };
 		82B622D51DB8434A0044B654 /* beep.wav in Resources */ = {isa = PBXBuildFile; fileRef = 82B622D41DB8434A0044B654 /* beep.wav */; };
+		82B622D71DB846250044B654 /* InstructionDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82B622D61DB846250044B654 /* InstructionDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +82,7 @@
 		11A46DF11DB41C8000F40BA7 /* StepViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StepViewController.swift; sourceTree = "<group>"; };
 		82B622CE1DB83C150044B654 /* OrigamiListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OrigamiListViewController.swift; path = ../OrigamiListViewController.swift; sourceTree = "<group>"; };
 		82B622D41DB8434A0044B654 /* beep.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = beep.wav; sourceTree = "<group>"; };
+		82B622D61DB846250044B654 /* InstructionDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstructionDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +141,7 @@
 				1136FAE31DA42B4600B86782 /* AppDelegate.swift */,
 				1136FAE51DA42B4600B86782 /* ViewController.swift */,
 				1136FAE71DA42B4600B86782 /* Main.storyboard */,
+				82B622D61DB846250044B654 /* InstructionDetailViewController.swift */,
 				1118BFA31DB5B16C00C95EF3 /* instruction_list.strings */,
 				1136FAEF1DA42B4600B86782 /* LaunchScreen.storyboard */,
 				1136FAF21DA42B4600B86782 /* Info.plist */,
@@ -318,6 +321,7 @@
 			files = (
 				1136FAEC1DA42B4600B86782 /* OrigamiAcademy.xcdatamodeld in Sources */,
 				0E4087AC1DB4107C0066ED52 /* AuthenticationController.swift in Sources */,
+				82B622D71DB846250044B654 /* InstructionDetailViewController.swift in Sources */,
 				1136FAE61DA42B4600B86782 /* ViewController.swift in Sources */,
 				0EB55F7C1DB5A771003E0075 /* SettingsController.swift in Sources */,
 				11A46DF21DB41C8000F40BA7 /* StepViewController.swift in Sources */,

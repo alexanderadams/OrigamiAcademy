@@ -63,5 +63,16 @@ class OrigamiListViewController: UIViewController, UITableViewDataSource, UITabl
         
         return instructionsList!
     }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        ms.playSound()
+        if let destination = segue.destinationViewController as? InstructionDetailViewController,
+            dataIndex = tableView.indexPathForSelectedRow?.row {
+            let instruction = instructions[dataIndex]
+            destination.creation = "\(instruction.valueForKey("creation")!)"
+            destination.author = "\(instruction.valueForKey("author")!)"
+            destination.summary = "\(instruction.valueForKey("summary")!)"
+        }
+    }
 
 }
