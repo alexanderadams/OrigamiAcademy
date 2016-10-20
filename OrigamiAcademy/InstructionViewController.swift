@@ -9,9 +9,9 @@
 import UIKit
 import CoreData
 
-class InstructionViewController: UIViewController, UIPageViewControllerDataSource {
+class InstructionViewController: UIPageViewController, UIPageViewControllerDataSource {
     
-    private var pageViewController: UIPageViewController?
+    private var pageViewController: UIPageViewController!
     
     var instructionSet: String = ""
     var numOfSteps: Int = 0
@@ -22,32 +22,15 @@ class InstructionViewController: UIViewController, UIPageViewControllerDataSourc
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         getInstructionSet()
-        createPageViewController()
+        setViewControllers([getStepController(0)!], direction: .Forward, animated: false, completion: nil)
+        dataSource = self
     }
-
-    private func createPageViewController() {
-        
-        let pageController = self.storyboard!.instantiateViewControllerWithIdentifier("InstructionView") as! UIPageViewController
-        pageController.dataSource = self
-        
-        if numOfSteps > 0 {
-            let firstController = getStepController(0)
-            let startingViewControllers = [firstController]
-            pageController.setViewControllers(startingViewControllers, direction: UIPageViewControllerNavigationDirection.Forward, animated: false, completion: nil)
-        }
-        
-        pageViewController = pageController
-        addChildViewController(pageViewController!)
-        self.view.addSubview(pageViewController!.view)
-        pageViewController!.didMoveToParentViewController(self)
-    }
-    
     
     func pageViewController(pageViewController: UIPageViewController, viewControllerBeforeViewController viewController: UIViewController) -> UIViewController? {
         let stepController = viewController as! StepViewController
         
         if (stepController.stepIndex > 0) {
-            return getStepController(stepController.stepIndex - 1)
+            return self.getStepController(stepController.stepIndex - 1)
         }
         
         return nil
@@ -57,25 +40,28 @@ class InstructionViewController: UIViewController, UIPageViewControllerDataSourc
         let stepController = viewController as! StepViewController
         
         if (stepController.stepIndex < numOfSteps) {
-            return getStepController(stepController.stepIndex + 1)
+            return self.getStepController(stepController.stepIndex + 1)
         }
         
         return nil
     }
     
-    func getStepController(stepIndex: Int) -> StepViewController{
-        let stepController = self.storyboard!.instantiateViewControllerWithIdentifier("StepView") as! StepViewController
-        stepController.stepIndex = stepIndex
-        stepController.imageName = images[stepIndex]
-        stepController.instructions = instructions[stepIndex]
-        return stepController
+    func getStepController(stepIndex: Int) -> UIViewController? {
+        if stepIndex < numOfSteps {
+            let stepController = self.storyboard!.instantiateViewControllerWithIdentifier("StepView") as! StepViewController
+            stepController.stepIndex = stepIndex
+            stepController.imageName = String(images[stepIndex])
+            stepController.instructions = String(instructions[stepIndex])
+            return stepController
+        }
+        return nil
     }
     
     func getInstructionSet() {
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         let managedContext = appDelegate.managedObjectContext
         
-        let fetchRequest = NSFetchRequest(entityName:"Instruction")
+        var fetchRequest = NSFetchRequest(entityName:"Instruction")
         var instructionsList:[NSManagedObject]? = nil
         
         do {
@@ -93,15 +79,23 @@ class InstructionViewController: UIViewController, UIPageViewControllerDataSourc
             }
         }
         numOfSteps = instruction.valueForKey("numOfSteps") as! Int
-        let steps = instruction.mutableSetValueForKey("steps")
         
-        let sortdescriptor = NSSortDescriptor(key: "number", ascending: true)
-        let stepsSorted = steps.sortedArrayUsingDescriptors([sortdescriptor])
+        fetchRequest = NSFetchRequest(entityName:"Step")
         
-        for step in stepsSorted {
+        let steps = instruction.valueForKey("steps") as! NSOrderedSet
+        
+        for step in steps {
             instructions.append(step.valueForKey("details") as! String)
             images.append(step.valueForKey("image") as! String)
         }
+    }
+    
+    func presentationCountForPageViewController(pageViewController: UIPageViewController) -> Int {
+        return numOfSteps
+    }
+    
+    func presentationIndexForPageViewController(pageViewController: UIPageViewController) -> Int {
+        return 0
     }
 }
         

@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		0E2BE2D01DB6E37D00E483FA /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E2BE2CF1DB6E37D00E483FA /* AVFoundation.framework */; };
 		0E2BE2D21DB6E6E100E483FA /* SoundController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E2BE2D11DB6E6E100E483FA /* SoundController.swift */; };
-		0E2BE2D61DB6ECD300E483FA /* beep.wav in Resources */ = {isa = PBXBuildFile; fileRef = 0E2BE2D51DB6ECD300E483FA /* beep.wav */; };
 		0E4087AC1DB4107C0066ED52 /* AuthenticationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E4087AB1DB4107C0066ED52 /* AuthenticationController.swift */; };
 		0E5143301DB70493004752AE /* MainMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E51432F1DB70493004752AE /* MainMenuController.swift */; };
 		0EAB440A1DB70182003CDE56 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0EAB44091DB70182003CDE56 /* Assets.xcassets */; };
@@ -30,6 +29,9 @@
 		11A46DEE1DB4129A00F40BA7 /* crane_instructions.strings in Resources */ = {isa = PBXBuildFile; fileRef = 11A46DED1DB4129A00F40BA7 /* crane_instructions.strings */; };
 		11A46DF01DB4177800F40BA7 /* InstructionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A46DEF1DB4177800F40BA7 /* InstructionViewController.swift */; };
 		11A46DF21DB41C8000F40BA7 /* StepViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A46DF11DB41C8000F40BA7 /* StepViewController.swift */; };
+		82B622CF1DB83C150044B654 /* OrigamiListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82B622CE1DB83C150044B654 /* OrigamiListViewController.swift */; };
+		82B622D51DB8434A0044B654 /* beep.wav in Resources */ = {isa = PBXBuildFile; fileRef = 82B622D41DB8434A0044B654 /* beep.wav */; };
+		82B622D71DB846250044B654 /* InstructionDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82B622D61DB846250044B654 /* InstructionDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,7 +54,6 @@
 /* Begin PBXFileReference section */
 		0E2BE2CF1DB6E37D00E483FA /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		0E2BE2D11DB6E6E100E483FA /* SoundController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoundController.swift; sourceTree = "<group>"; };
-		0E2BE2D51DB6ECD300E483FA /* beep.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = beep.wav; path = ../../../Downloads/beep.wav; sourceTree = "<group>"; };
 		0E4087AB1DB4107C0066ED52 /* AuthenticationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticationController.swift; sourceTree = "<group>"; };
 		0E51432F1DB70493004752AE /* MainMenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMenuController.swift; sourceTree = "<group>"; };
 		0EAB44091DB70182003CDE56 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -79,6 +80,9 @@
 		11A46DED1DB4129A00F40BA7 /* crane_instructions.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = crane_instructions.strings; sourceTree = "<group>"; };
 		11A46DEF1DB4177800F40BA7 /* InstructionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstructionViewController.swift; sourceTree = "<group>"; };
 		11A46DF11DB41C8000F40BA7 /* StepViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StepViewController.swift; sourceTree = "<group>"; };
+		82B622CE1DB83C150044B654 /* OrigamiListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OrigamiListViewController.swift; path = ../OrigamiListViewController.swift; sourceTree = "<group>"; };
+		82B622D41DB8434A0044B654 /* beep.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = beep.wav; sourceTree = "<group>"; };
+		82B622D61DB846250044B654 /* InstructionDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstructionDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,11 +135,13 @@
 		1136FAE21DA42B4600B86782 /* OrigamiAcademy */ = {
 			isa = PBXGroup;
 			children = (
+				82B622D41DB8434A0044B654 /* beep.wav */,
+				82B622CE1DB83C150044B654 /* OrigamiListViewController.swift */,
 				0EAB44091DB70182003CDE56 /* Assets.xcassets */,
-				0E2BE2D51DB6ECD300E483FA /* beep.wav */,
 				1136FAE31DA42B4600B86782 /* AppDelegate.swift */,
 				1136FAE51DA42B4600B86782 /* ViewController.swift */,
 				1136FAE71DA42B4600B86782 /* Main.storyboard */,
+				82B622D61DB846250044B654 /* InstructionDetailViewController.swift */,
 				1118BFA31DB5B16C00C95EF3 /* instruction_list.strings */,
 				1136FAEF1DA42B4600B86782 /* LaunchScreen.storyboard */,
 				1136FAF21DA42B4600B86782 /* Info.plist */,
@@ -278,7 +284,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0E2BE2D61DB6ECD300E483FA /* beep.wav in Resources */,
 				1136FB1A1DA42B5A00B86782 /* IMG_0762.JPG in Resources */,
 				0EAB440A1DB70182003CDE56 /* Assets.xcassets in Resources */,
 				1136FAF11DA42B4600B86782 /* LaunchScreen.storyboard in Resources */,
@@ -289,6 +294,7 @@
 				1136FAE91DA42B4600B86782 /* Main.storyboard in Resources */,
 				11A46DEE1DB4129A00F40BA7 /* crane_instructions.strings in Resources */,
 				1102F0501DB69E140094CFA0 /* frog_instructions.strings in Resources */,
+				82B622D51DB8434A0044B654 /* beep.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -315,9 +321,11 @@
 			files = (
 				1136FAEC1DA42B4600B86782 /* OrigamiAcademy.xcdatamodeld in Sources */,
 				0E4087AC1DB4107C0066ED52 /* AuthenticationController.swift in Sources */,
+				82B622D71DB846250044B654 /* InstructionDetailViewController.swift in Sources */,
 				1136FAE61DA42B4600B86782 /* ViewController.swift in Sources */,
 				0EB55F7C1DB5A771003E0075 /* SettingsController.swift in Sources */,
 				11A46DF21DB41C8000F40BA7 /* StepViewController.swift in Sources */,
+				82B622CF1DB83C150044B654 /* OrigamiListViewController.swift in Sources */,
 				0E2BE2D21DB6E6E100E483FA /* SoundController.swift in Sources */,
 				1136FAE41DA42B4600B86782 /* AppDelegate.swift in Sources */,
 				11A46DF01DB4177800F40BA7 /* InstructionViewController.swift in Sources */,

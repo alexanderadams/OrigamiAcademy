@@ -14,8 +14,9 @@ class StepViewController: UIViewController {
     var imageName: String = ""
     var instructions: String = ""
     
+    @IBOutlet weak var stepImage: UIImageView!
+    
     @IBOutlet weak var stepNumber: UILabel!
-    @IBOutlet weak var image: UIImageView!
     @IBOutlet weak var instructionsLabel: UILabel!
     
     override func viewDidLoad() {
@@ -23,6 +24,6 @@ class StepViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         stepNumber.text = "Step \(stepIndex + 1)"
         instructionsLabel.text = instructions
-        image.image = UIImage(named:imageName)
+        stepImage.image = UIImage(named:imageName)
     }
 }
