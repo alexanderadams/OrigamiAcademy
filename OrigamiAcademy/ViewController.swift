@@ -113,9 +113,11 @@ class ViewController: UIViewController {
                 let details = NSLocalizedString("step\(s)", tableName: "\(creation)_instructions", comment:"step detail")
                 step.setValue(details, forKey: "details")
                 step.setValue("\(creation)_step\(s)", forKey: "image")
+                step.setValue(instruction, forKey: "instruction")
                 stepSet.addObject(step)
             }
-            instruction.setValue(stepSet, forKey: "steps")
+            let finalSet:NSOrderedSet = stepSet
+            instruction.setValue(finalSet, forKey: "steps")
         }
         
         // Commit the changes

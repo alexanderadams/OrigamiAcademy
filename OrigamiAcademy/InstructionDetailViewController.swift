@@ -23,7 +23,7 @@ class InstructionDetailViewController: UIViewController {
         super.viewDidLoad()
         creationNameLabel.text = "\(creation)"
         authorLabel.text = "\(author)"
-        descriptionLabel.text = "\(summary))"
+        descriptionLabel.text = "\(summary)"
         
         creationNameLabel.textAlignment = NSTextAlignment.Center
         authorLabel.textAlignment = NSTextAlignment.Center
