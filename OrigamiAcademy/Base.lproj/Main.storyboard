@@ -113,7 +113,7 @@
         <!--User Creation Menu-->
         <scene sceneID="ZQl-az-CLD">
             <objects>
-                <viewController id="iyF-hl-LPk" sceneMemberID="viewController">
+                <viewController id="iyF-hl-LPk" customClass="UserCreationMenuController" customModule="OrigamiAcademy" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="pTH-ky-0Mv"/>
                         <viewControllerLayoutGuide type="bottom" id="y26-vr-Exb"/>
@@ -133,14 +133,14 @@
                                 <rect key="frame" x="159" y="353" width="96" height="30"/>
                                 <state key="normal" title="Edit Creations"/>
                                 <connections>
-                                    <segue destination="nHQ-DC-iVv" kind="show" id="6yM-40-8lg"/>
+                                    <segue destination="nHQ-DC-iVv" kind="show" identifier="EditCreationSegue" id="6yM-40-8lg"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kcx-gg-FU8">
                                 <rect key="frame" x="149" y="484" width="116" height="30"/>
                                 <state key="normal" title="Manage Uploads"/>
                                 <connections>
-                                    <segue destination="nHQ-DC-iVv" kind="show" id="ZAc-9w-QAU"/>
+                                    <segue destination="nHQ-DC-iVv" kind="show" identifier="ManageUploadsSegue" id="ZAc-9w-QAU"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Personal Creations" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Zu-n4-j4k">
@@ -162,7 +162,7 @@
         <!--Manage Uploads-->
         <scene sceneID="97i-NR-EtW">
             <objects>
-                <viewController id="nHQ-DC-iVv" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="UploadManager" id="nHQ-DC-iVv" customClass="UploadManagerController" customModule="OrigamiAcademy" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ekY-Gn-fGM"/>
                         <viewControllerLayoutGuide type="bottom" id="8P4-sM-jWC"/>
@@ -231,7 +231,7 @@
         <!--Instruction Creation Interface-->
         <scene sceneID="nY4-c4-6Yy">
             <objects>
-                <viewController id="u86-0l-fmK" sceneMemberID="viewController">
+                <viewController id="u86-0l-fmK" customClass="InstructionCreatorController" customModule="OrigamiAcademy" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="tZR-o0-9lf"/>
                         <viewControllerLayoutGuide type="bottom" id="1p5-73-PNo"/>
@@ -241,30 +241,24 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GNO-Uh-49F">
-                                <rect key="frame" x="159" y="145" width="235" height="30"/>
+                                <rect key="frame" x="145" y="145" width="249" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Creation Name:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n9g-RW-946">
-                                <rect key="frame" x="20" y="149" width="119" height="21"/>
+                                <rect key="frame" x="10" y="149" width="119" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="User Creation" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cIU-KP-Wfn">
-                                <rect key="frame" x="154" y="92" width="106" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Description:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MqK-mN-lSp">
-                                <rect key="frame" x="46" y="219" width="93" height="21"/>
+                                <rect key="frame" x="154" y="47" width="106" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MxF-5X-QHV">
-                                <rect key="frame" x="159" y="215" width="235" height="30"/>
+                                <rect key="frame" x="145" y="215" width="249" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -295,13 +289,19 @@
                                 </prototypes>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QvY-QK-1uC">
-                                <rect key="frame" x="175" y="373" width="64" height="30"/>
+                                <rect key="frame" x="139" y="373" width="137" height="30"/>
                                 <state key="normal" title="Add Step"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OaR-Ky-CrI">
-                                <rect key="frame" x="162" y="411" width="91" height="30"/>
-                                <state key="normal" title="Remove Step"/>
+                                <rect key="frame" x="102" y="411" width="210" height="30"/>
+                                <state key="normal" title="Remove Last Step"/>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Description:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MqK-mN-lSp">
+                                <rect key="frame" x="36" y="219" width="93" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -315,7 +315,7 @@
         <!--Step Editor-->
         <scene sceneID="cOs-rS-NAj">
             <objects>
-                <viewController id="T7f-hu-fpg" sceneMemberID="viewController">
+                <viewController id="T7f-hu-fpg" customClass="StepEditorController" customModule="OrigamiAcademy" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="epP-fx-Q64"/>
                         <viewControllerLayoutGuide type="bottom" id="O4e-K2-mJv"/>
@@ -325,34 +325,28 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Step Editor" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cwG-oa-OqV">
-                                <rect key="frame" x="165" y="95" width="85" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Step Number" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IRc-DU-WbL">
-                                <rect key="frame" x="156" y="140" width="102" height="21"/>
+                                <rect key="frame" x="165" y="45" width="85" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Instruction:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kDL-yo-TRW">
-                                <rect key="frame" x="20" y="208" width="87" height="21"/>
+                                <rect key="frame" x="20" y="179" width="87" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Aay-HE-Ocd">
-                                <rect key="frame" x="124" y="204" width="270" height="30"/>
+                                <rect key="frame" x="124" y="175" width="270" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Las-EL-Xwg">
-                                <rect key="frame" x="160" y="269" width="95" height="30"/>
+                                <rect key="frame" x="160" y="304" width="95" height="30"/>
                                 <state key="normal" title="Upload Image"/>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Image Preview" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CpJ-rH-Elg">
-                                <rect key="frame" x="151" y="342" width="112" height="21"/>
+                                <rect key="frame" x="151" y="349" width="112" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -360,6 +354,12 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="IMG_0761.JPG" translatesAutoresizingMaskIntoConstraints="NO" id="Y6W-Pu-u5J">
                                 <rect key="frame" x="0.0" y="391" width="414" height="345"/>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Step Number" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IRc-DU-WbL">
+                                <rect key="frame" x="156" y="94" width="102" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -648,7 +648,7 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OdO-gI-dfE">
                                 <rect key="frame" x="87" y="96" width="240" height="128"/>
                             </imageView>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mjM-CI-taL">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mjM-CI-taL">
                                 <rect key="frame" x="107" y="522" width="201" height="30"/>
                                 <state key="normal" title="Create Your Own Instructions"/>
                                 <connections>
