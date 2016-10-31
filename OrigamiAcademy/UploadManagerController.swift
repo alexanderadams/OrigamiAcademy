@@ -19,6 +19,15 @@ class UploadManagerController : UIViewController {
         super.viewDidLoad()
         // get instruction objects
         // fill in cells with instruction information
+        if editor {
+            // set cell button text to "Edit"
+        }
+        else {
+            // set cell button to "Upload (Not Yet Implemented)"
+            
+            // FINAL RELEASE STUFF
+            // set cell button text to "Upload" or "Remove"
+        }
     }
     
     @IBAction func cellButton(sender: AnyObject) {
