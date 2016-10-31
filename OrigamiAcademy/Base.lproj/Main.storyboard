@@ -136,7 +136,7 @@
                                     <segue destination="nHQ-DC-iVv" kind="show" identifier="EditCreationSegue" id="6yM-40-8lg"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kcx-gg-FU8">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kcx-gg-FU8">
                                 <rect key="frame" x="149" y="484" width="116" height="30"/>
                                 <state key="normal" title="Manage Uploads"/>
                                 <connections>
@@ -196,6 +196,9 @@
                                                 <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DgC-Ec-HSY">
                                                     <rect key="frame" x="153" y="7" width="109" height="30"/>
                                                     <state key="normal" title="Upload/Remove"/>
+                                                    <connections>
+                                                        <action selector="cellButton:" destination="nHQ-DC-iVv" eventType="touchUpInside" id="dE4-Vb-FN3"/>
+                                                    </connections>
                                                 </button>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Rating" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="H1f-SH-68o">
                                                     <rect key="frame" x="352" y="12" width="47" height="20"/>
@@ -223,6 +226,9 @@
                     </view>
                     <navigationItem key="navigationItem" title="Manage Uploads" id="oHL-cj-Sh0"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
+                    <connections>
+                        <outlet property="instructionTable" destination="B0X-se-aQE" id="BFa-Qu-z0j"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qe7-3l-ihf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -291,10 +297,16 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QvY-QK-1uC">
                                 <rect key="frame" x="139" y="373" width="137" height="30"/>
                                 <state key="normal" title="Add Step"/>
+                                <connections>
+                                    <action selector="addStep:" destination="u86-0l-fmK" eventType="touchUpInside" id="4dE-ni-MJm"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OaR-Ky-CrI">
                                 <rect key="frame" x="102" y="411" width="210" height="30"/>
                                 <state key="normal" title="Remove Last Step"/>
+                                <connections>
+                                    <action selector="removeLastStep:" destination="u86-0l-fmK" eventType="touchUpInside" id="iFs-av-N2e"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Description:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MqK-mN-lSp">
                                 <rect key="frame" x="36" y="219" width="93" height="21"/>
@@ -302,11 +314,23 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="afN-KV-m5R">
+                                <rect key="frame" x="190" y="279" width="34" height="30"/>
+                                <state key="normal" title="Save"/>
+                                <connections>
+                                    <action selector="saveCreation:" destination="u86-0l-fmK" eventType="touchUpInside" id="Zat-ra-iBZ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Instruction Creation Interface" id="Zwj-Fe-1CA"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
+                    <connections>
+                        <outlet property="creationNameText" destination="GNO-Uh-49F" id="DEV-2r-IIr"/>
+                        <outlet property="descriptionText" destination="MxF-5X-QHV" id="9Xc-6B-fl0"/>
+                        <outlet property="stepTable" destination="60Q-Ry-xIC" id="LSU-f1-4yo"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="U1X-lN-7Ip" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -344,6 +368,9 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Las-EL-Xwg">
                                 <rect key="frame" x="160" y="304" width="95" height="30"/>
                                 <state key="normal" title="Upload Image"/>
+                                <connections>
+                                    <action selector="uploadImage:" destination="T7f-hu-fpg" eventType="touchUpInside" id="dxp-sB-mUY"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Image Preview" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CpJ-rH-Elg">
                                 <rect key="frame" x="151" y="349" width="112" height="21"/>
@@ -360,6 +387,13 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DJI-bU-xhz">
+                                <rect key="frame" x="190" y="240" width="34" height="30"/>
+                                <state key="normal" title="Save"/>
+                                <connections>
+                                    <action selector="saveStep:" destination="T7f-hu-fpg" eventType="touchUpInside" id="Rqu-Vh-Uay"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -899,10 +933,10 @@
         <image name="ijSS5.png" width="600" height="113"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="fdR-Hv-0by"/>
+        <segue reference="ZAc-9w-QAU"/>
         <segue reference="mMR-1J-DCn"/>
         <segue reference="DH9-Jc-XNW"/>
         <segue reference="al0-jc-1Jk"/>
-        <segue reference="ZAc-9w-QAU"/>
-        <segue reference="fdR-Hv-0by"/>
     </inferredMetricsTieBreakers>
 </document>

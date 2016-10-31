@@ -15,7 +15,7 @@ class UserCreationMenuController : UIViewController {
         
         if let destination = segue.destinationViewController as? UploadManagerController {
             if segue.identifier == "EditCreationSegue" {
-                destination.editor = false
+                destination.editor = true
             }
             if segue.identifier == "ManageUploadsSegue" {
                 destination.editor = false
