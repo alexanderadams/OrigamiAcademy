@@ -12,7 +12,7 @@ import CoreData
 class UploadManagerController : UIViewController {
     
     var editor:Bool = false
-    var instructionList: NSOrderedSet = []
+    var instructionList: NSMutableOrderedSet = []
     @IBOutlet weak var instructionTable: UITableView!
     
     override func viewDidLoad() {

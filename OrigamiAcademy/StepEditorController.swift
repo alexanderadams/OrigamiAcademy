@@ -18,7 +18,9 @@ class StepEditorController : UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // get step object
+        
         // fill in text fields with correct attributes
+        
     }
     
     @IBAction func saveStep(sender: AnyObject) {
