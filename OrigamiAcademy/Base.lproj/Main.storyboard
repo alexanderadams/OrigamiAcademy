@@ -209,9 +209,6 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
-                                        <connections>
-                                            <segue destination="u86-0l-fmK" kind="show" id="fdR-Hv-0by"/>
-                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -399,6 +396,11 @@
                     </view>
                     <navigationItem key="navigationItem" title="Step Editor" id="Ber-Eg-Zzg"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
+                    <connections>
+                        <outlet property="image" destination="Y6W-Pu-u5J" id="BP2-7J-UOM"/>
+                        <outlet property="instructionText" destination="Aay-HE-Ocd" id="GOT-Cq-YRf"/>
+                        <outlet property="stepName" destination="IRc-DU-WbL" id="E4o-A6-BeK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yJ1-Cl-RWo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -939,7 +941,6 @@
         <image name="ijSS5.png" width="600" height="113"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="fvq-Rt-6Od"/>
         <segue reference="mMR-1J-DCn"/>
         <segue reference="DH9-Jc-XNW"/>
         <segue reference="al0-jc-1Jk"/>

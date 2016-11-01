@@ -11,16 +11,20 @@ import CoreData
 
 class StepEditorController : UIViewController {
     
-    var stepName:String = String()
     var stepNumber:Int = 0
     var stepObject:NSObject?
+    
+    @IBOutlet weak var stepName: UILabel!
+    @IBOutlet weak var instructionText: UITextField!
+    @IBOutlet weak var image: UIImageView!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // get step object
         
         // fill in text fields with correct attributes
-        
+        stepName.text = "Step \(stepNumber)"
     }
     
     @IBAction func saveStep(sender: AnyObject) {
