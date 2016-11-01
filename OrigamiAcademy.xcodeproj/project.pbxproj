@@ -34,6 +34,7 @@
 		11A46DEE1DB4129A00F40BA7 /* crane_instructions.strings in Resources */ = {isa = PBXBuildFile; fileRef = 11A46DED1DB4129A00F40BA7 /* crane_instructions.strings */; };
 		11A46DF01DB4177800F40BA7 /* InstructionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A46DEF1DB4177800F40BA7 /* InstructionViewController.swift */; };
 		11A46DF21DB41C8000F40BA7 /* StepViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A46DF11DB41C8000F40BA7 /* StepViewController.swift */; };
+		8299AE861DC96021004F01F2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8299AE851DC96021004F01F2 /* GoogleService-Info.plist */; };
 		82B622CF1DB83C150044B654 /* OrigamiListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82B622CE1DB83C150044B654 /* OrigamiListViewController.swift */; };
 		82B622D51DB8434A0044B654 /* beep.wav in Resources */ = {isa = PBXBuildFile; fileRef = 82B622D41DB8434A0044B654 /* beep.wav */; };
 		82B622D71DB846250044B654 /* InstructionDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82B622D61DB846250044B654 /* InstructionDetailViewController.swift */; };
@@ -97,6 +98,7 @@
 		48EC60E486A9B4537FCB7AFA /* Pods_OrigamiAcademyTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OrigamiAcademyTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		54B8AC80C4F7C83F61A97A2F /* Pods-OrigamiAcademyUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OrigamiAcademyUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-OrigamiAcademyUITests/Pods-OrigamiAcademyUITests.release.xcconfig"; sourceTree = "<group>"; };
 		622F94543002FD2F1F1F0B18 /* Pods-OrigamiAcademy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OrigamiAcademy.release.xcconfig"; path = "Pods/Target Support Files/Pods-OrigamiAcademy/Pods-OrigamiAcademy.release.xcconfig"; sourceTree = "<group>"; };
+		8299AE851DC96021004F01F2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		82B622CE1DB83C150044B654 /* OrigamiListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OrigamiListViewController.swift; path = ../OrigamiListViewController.swift; sourceTree = "<group>"; };
 		82B622D41DB8434A0044B654 /* beep.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = beep.wav; sourceTree = "<group>"; };
 		82B622D61DB846250044B654 /* InstructionDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstructionDetailViewController.swift; sourceTree = "<group>"; };
@@ -178,6 +180,7 @@
 				11A46DEF1DB4177800F40BA7 /* InstructionViewController.swift */,
 				11A46DF11DB41C8000F40BA7 /* StepViewController.swift */,
 				0E4087AB1DB4107C0066ED52 /* AuthenticationController.swift */,
+				8299AE851DC96021004F01F2 /* GoogleService-Info.plist */,
 				1102F04F1DB69E140094CFA0 /* frog_instructions.strings */,
 				1102F0511DB6F43D0094CFA0 /* lilly_instructions.strings */,
 				0EB55F7B1DB5A771003E0075 /* SettingsController.swift */,
@@ -350,6 +353,7 @@
 				1136FAF11DA42B4600B86782 /* LaunchScreen.storyboard in Resources */,
 				1118BFA41DB5B16C00C95EF3 /* instruction_list.strings in Resources */,
 				1102F0521DB6F43D0094CFA0 /* lilly_instructions.strings in Resources */,
+				8299AE861DC96021004F01F2 /* GoogleService-Info.plist in Resources */,
 				1136FB181DA42B5A00B86782 /* ijSS5.png in Resources */,
 				1136FB191DA42B5A00B86782 /* IMG_0761.JPG in Resources */,
 				1136FAE91DA42B4600B86782 /* Main.storyboard in Resources */,
@@ -403,7 +407,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run \'pod install\' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		1FDE4DCF1BEF468025D394F1 /* [CP] Check Pods Manifest.lock */ = {
@@ -418,7 +422,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run \'pod install\' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		25EBCF414A58C40A245368D1 /* [CP] Embed Pods Frameworks */ = {
@@ -463,7 +467,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run \'pod install\' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		7736A3F59C4CEFDCCB05B2E4 /* [CP] Copy Pods Resources */ = {
