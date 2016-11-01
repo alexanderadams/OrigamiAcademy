@@ -26,9 +26,25 @@ class InstructionCreatorController : UIViewController, UITableViewDataSource, UI
         let managedContext = appDelegate.managedObjectContext
         if editInstruction {
             // get instruction object
+            let fetchRequest = NSFetchRequest(entityName:"Instruction")
+            var fetchedResults:[NSManagedObject]? = nil
+            do {
+                try fetchedResults = managedContext.executeFetchRequest(fetchRequest) as? [NSManagedObject]
+            } catch {
+                let nserror = error as NSError
+                NSLog("Unresolved error \(nserror), \(nserror.userInfo)")
+                abort()
+            }
+            instruction = fetchedResults![1]
+            for (_, result) in fetchedResults!.enumerate() {
+                if result.valueForKey("creation") as? String == creationNameText.text {
+                    instruction = result
+                }
+            }
             // fill in text fields with correct attributes
+            descriptionText.text = instruction?.valueForKey("summary") as? String
             // get step objects and store them in array
-            // fill in step cells
+            stepList = instruction!.valueForKey("steps") as! NSMutableOrderedSet
         }
         else {
             // create instrucion object
@@ -64,12 +80,10 @@ class InstructionCreatorController : UIViewController, UITableViewDataSource, UI
     @IBAction func saveCreation(sender: AnyObject) {
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         let managedContext = appDelegate.managedObjectContext
-        
-        // get instruction object
-        // update creation name with the text field
-        // update summary with the text field
-        // update all step object names
-        // attatch all step objects to the instruction object
+
+        instruction?.setValue(creationNameText.text, forKey: "creation")
+        instruction?.setValue(descriptionText.text, forKey: "summary")
+        instruction?.setValue(stepList.count, forKey: "numOfSteps")
         
         do {
             try managedContext.save()
@@ -88,6 +102,7 @@ class InstructionCreatorController : UIViewController, UITableViewDataSource, UI
         let entity =  NSEntityDescription.entityForName("Step", inManagedObjectContext: managedContext)
         let step = NSManagedObject(entity: entity!, insertIntoManagedObjectContext:managedContext)
         step.setValue(stepList.count + 1, forKey: "number")
+        step.setValue(instruction, forKey: "instruction")
         stepList.addObject(step)
         
         // create step cell in table
