@@ -399,6 +399,11 @@
                     </view>
                     <navigationItem key="navigationItem" title="Step Editor" id="Ber-Eg-Zzg"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
+                    <connections>
+                        <outlet property="image" destination="Y6W-Pu-u5J" id="BP2-7J-UOM"/>
+                        <outlet property="instructionText" destination="Aay-HE-Ocd" id="GOT-Cq-YRf"/>
+                        <outlet property="stepName" destination="IRc-DU-WbL" id="E4o-A6-BeK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yJ1-Cl-RWo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
