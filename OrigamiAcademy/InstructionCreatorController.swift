@@ -55,6 +55,8 @@ class InstructionCreatorController : UIViewController, UITableViewDataSource, UI
             entity =  NSEntityDescription.entityForName("Step", inManagedObjectContext: managedContext)
             let step = NSManagedObject(entity: entity!, insertIntoManagedObjectContext:managedContext)
             step.setValue(1, forKey: "number")
+            step.setValue(instruction, forKey: "instruction")
+            step.setValue("no_image", forKey: "image")
             stepList.addObject(step)
         }
     }
@@ -84,6 +86,8 @@ class InstructionCreatorController : UIViewController, UITableViewDataSource, UI
         instruction?.setValue(creationNameText.text, forKey: "creation")
         instruction?.setValue(descriptionText.text, forKey: "summary")
         instruction?.setValue(stepList.count, forKey: "numOfSteps")
+        let lastStep = stepList.lastObject as? NSObject
+        instruction!.setValue(lastStep?.valueForKey("image"), forKey: "finishedImage")
         
         do {
             try managedContext.save()
@@ -103,6 +107,7 @@ class InstructionCreatorController : UIViewController, UITableViewDataSource, UI
         let step = NSManagedObject(entity: entity!, insertIntoManagedObjectContext:managedContext)
         step.setValue(stepList.count + 1, forKey: "number")
         step.setValue(instruction, forKey: "instruction")
+        step.setValue("no_image", forKey: "image")
         stepList.addObject(step)
         
         // create step cell in table
@@ -137,6 +142,7 @@ class InstructionCreatorController : UIViewController, UITableViewDataSource, UI
         {
             let step = stepList[dataIndex]
             destination.stepNumber = step.valueForKey("number") as! Int
+            destination.stepObject = step as? NSObject
         }
     }
 }
