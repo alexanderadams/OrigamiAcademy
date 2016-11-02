@@ -39,18 +39,6 @@ class UploadManagerController : UIViewController, UITableViewDataSource, UITable
         }
     }
     
-    @IBAction func cellButton(sender: AnyObject) {
-        if editor {
-            // segue to instruction editor
-            // pass instruction name
-            // set editInstruction to true
-        }
-        else {
-            // FINAL RELEASE STUFF
-            // upload/remove from uploads
-        }
-    }
-    
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
     }
@@ -65,15 +53,13 @@ class UploadManagerController : UIViewController, UITableViewDataSource, UITable
         let row = indexPath.row
         let instruction = instructionList[row]
         
-        cell.textLabel?.text = String("\(instruction.valueForKey("creation")!)")
-        
-        let button = cell.contentView.viewWithTag(1) as? UIButton
+        cell.textLabel?.text = instruction.valueForKey("creation") as? String
         
         if editor {
-            button?.titleLabel?.text = "Edit"
+            cell.detailTextLabel!.text = "Edit"
         }
         else {
-            button?.titleLabel?.text = "Uploade (Not Yet Implemented)"
+            cell.detailTextLabel!.text = "Upload (Not Yet Implemented)"
             
             // FINAL RELEASE STUFF
             // set cell button text to "Upload" or "Remove"
@@ -82,7 +68,20 @@ class UploadManagerController : UIViewController, UITableViewDataSource, UITable
         return cell
     }
     
+    override func shouldPerformSegueWithIdentifier(identifier: String, sender: AnyObject?) -> Bool {
+        if editor {
+            return true
+        }
+        return false
+    }
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         ms.playSound()
+        if let destination = segue.destinationViewController as? InstructionCreatorController,
+            dataIndex = instructionTable.indexPathForSelectedRow?.row {
+            destination.editInstruction = true
+            let instruction = instructionList[dataIndex] as? NSObject
+            destination.creationName = (instruction!.valueForKey("creation") as? String)!
+        }
     }
 }
