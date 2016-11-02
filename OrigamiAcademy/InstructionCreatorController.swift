@@ -12,6 +12,7 @@ import CoreData
 class InstructionCreatorController : UIViewController, UITableViewDataSource, UITableViewDelegate   {
     
     var editInstruction:Bool = false
+    var creationName:String = String()
     @IBOutlet weak var creationNameText: UITextField!
     @IBOutlet weak var descriptionText: UITextField!
     @IBOutlet weak var stepTable: UITableView!
@@ -37,11 +38,12 @@ class InstructionCreatorController : UIViewController, UITableViewDataSource, UI
             }
             instruction = fetchedResults![1]
             for (_, result) in fetchedResults!.enumerate() {
-                if result.valueForKey("creation") as? String == creationNameText.text {
+                if result.valueForKey("creation") as? String == creationName {
                     instruction = result
                 }
             }
             // fill in text fields with correct attributes
+            creationNameText.text = creationName
             descriptionText.text = instruction?.valueForKey("summary") as? String
             // get step objects and store them in array
             stepList = instruction!.valueForKey("steps") as! NSMutableOrderedSet
