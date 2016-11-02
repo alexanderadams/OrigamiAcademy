@@ -179,7 +179,7 @@
                                 <rect key="frame" x="0.0" y="158" width="414" height="578"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CreationCell" textLabel="ZdZ-V6-lNy" detailTextLabel="H1f-SH-68o" style="IBUITableViewCellStyleValue1" id="Vwn-qG-JMm">
+                                    <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CreationCell" textLabel="ZdZ-V6-lNy" detailTextLabel="H1f-SH-68o" style="IBUITableViewCellStyleValue1" id="Vwn-qG-JMm">
                                         <rect key="frame" x="0.0" y="28" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Vwn-qG-JMm" id="w1J-VX-r0q">
@@ -193,8 +193,9 @@
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DgC-Ec-HSY">
-                                                    <rect key="frame" x="153" y="7" width="109" height="30"/>
+                                                <button opaque="NO" tag="1" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DgC-Ec-HSY">
+                                                    <rect key="frame" x="132" y="7" width="212" height="30"/>
+                                                    <accessibility key="accessibilityConfiguration" identifier="CellButton"/>
                                                     <state key="normal" title="Upload/Remove"/>
                                                     <connections>
                                                         <action selector="cellButton:" destination="nHQ-DC-iVv" eventType="touchUpInside" id="dE4-Vb-FN3"/>

@@ -9,24 +9,33 @@
 import UIKit
 import CoreData
 
-class UploadManagerController : UIViewController {
+class UploadManagerController : UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     var editor:Bool = false
     var instructionList: NSMutableOrderedSet = []
+    
     @IBOutlet weak var instructionTable: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // get instruction objects
-        // fill in cells with instruction information
-        if editor {
-            // set cell button text to "Edit"
+        instructionTable.delegate = self
+        instructionTable.dataSource = self
+        
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        let managedContext = appDelegate.managedObjectContext
+        let fetchRequest = NSFetchRequest(entityName:"Instruction")
+        var managedList:[NSManagedObject]? = nil
+        
+        do {
+            try managedList = managedContext.executeFetchRequest(fetchRequest) as? [NSManagedObject]
+        } catch {
+            let nserror = error as NSError
+            NSLog("Unresolved error \(nserror), \(nserror.userInfo)")
+            abort()
         }
-        else {
-            // set cell button to "Upload (Not Yet Implemented)"
-            
-            // FINAL RELEASE STUFF
-            // set cell button text to "Upload" or "Remove"
+        
+        for instruction in managedList! {
+            instructionList.addObject(instruction)
         }
     }
     
@@ -42,6 +51,36 @@ class UploadManagerController : UIViewController {
         }
     }
     
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return instructionList.count
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("CreationCell", forIndexPath: indexPath)
+        
+        let row = indexPath.row
+        let instruction = instructionList[row]
+        
+        cell.textLabel?.text = String("\(instruction.valueForKey("creation")!)")
+        
+        let button = cell.contentView.viewWithTag(1) as? UIButton
+        
+        if editor {
+            button?.titleLabel?.text = "Edit"
+        }
+        else {
+            button?.titleLabel?.text = "Uploade (Not Yet Implemented)"
+            
+            // FINAL RELEASE STUFF
+            // set cell button text to "Upload" or "Remove"
+        }
+        
+        return cell
+    }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         ms.playSound()

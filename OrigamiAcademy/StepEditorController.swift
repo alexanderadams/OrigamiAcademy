@@ -20,7 +20,6 @@ class StepEditorController : UIViewController, UIImagePickerControllerDelegate, 
     @IBOutlet weak var instructionText: UITextField!
     @IBOutlet weak var image: UIImageView!
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         imagePicker.delegate = self
@@ -60,7 +59,6 @@ class StepEditorController : UIViewController, UIImagePickerControllerDelegate, 
             image.contentMode = .ScaleAspectFit
             image.image = pickedImage
         }
-        
         dismissViewControllerAnimated(true, completion: nil)
     }
     
