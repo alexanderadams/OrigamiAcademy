@@ -9,6 +9,8 @@
 import UIKit
 import CoreData
 
+import Firebase
+
 class ViewController: UIViewController {
     
     let loginSegue:String = "loginSegue"
@@ -23,6 +25,11 @@ class ViewController: UIViewController {
             instructionsInstaller()
         }
         navigationItem.hidesBackButton = true
+
+        let curUser = FIRAuth.auth()?.currentUser
+        if curUser != nil {
+            self.performSegueWithIdentifier("notNowSegue", sender: self)
+        }
     }
 
     override func didReceiveMemoryWarning() {
