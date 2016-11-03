@@ -55,16 +55,10 @@ class AuthenticationController: UIViewController {
             FIRAuth.auth()?.createUserWithEmail(userName, password: password) { (user, error) in
                 if let error = error {
                     NSLog(error.localizedDescription)
+                    self.errorLabel.text = error.localizedDescription
+                    self.errorLabel.hidden = false
                     return
                 }
-
-                let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-                let managedContext = appDelegate.managedObjectContext
-                let entity = NSEntityDescription.entityForName("User", inManagedObjectContext: managedContext)
-                let user = NSManagedObject(entity: entity!, insertIntoManagedObjectContext: managedContext)
-
-                user.setValue(userName, forKey: "userName")
-                user.setValue(password, forKey: "password")
 
                 self.performSegueWithIdentifier("loginRegisterSegue", sender: self)
             }
@@ -72,6 +66,7 @@ class AuthenticationController: UIViewController {
             FIRAuth.auth()?.signInWithEmail(userName, password: password) { (user, error) in
                 if let error = error {
                     NSLog(error.localizedDescription)
+                    self.errorLabel.text = error.localizedDescription
                     self.errorLabel.hidden = false
                     return
                 }
