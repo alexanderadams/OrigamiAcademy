@@ -35,6 +35,7 @@
 		11A46DF01DB4177800F40BA7 /* InstructionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A46DEF1DB4177800F40BA7 /* InstructionViewController.swift */; };
 		11A46DF21DB41C8000F40BA7 /* StepViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A46DF11DB41C8000F40BA7 /* StepViewController.swift */; };
 		11DBC3151DC9715E009E852A /* no_image.png in Resources */ = {isa = PBXBuildFile; fileRef = 11DBC3141DC9715E009E852A /* no_image.png */; };
+		11EE37231DCBD2EE00F76850 /* butterfly_instructions.strings in Resources */ = {isa = PBXBuildFile; fileRef = 11EE37221DCBD2EE00F76850 /* butterfly_instructions.strings */; };
 		8299AE861DC96021004F01F2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8299AE851DC96021004F01F2 /* GoogleService-Info.plist */; };
 		82B622CF1DB83C150044B654 /* OrigamiListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82B622CE1DB83C150044B654 /* OrigamiListViewController.swift */; };
 		82B622D51DB8434A0044B654 /* beep.wav in Resources */ = {isa = PBXBuildFile; fileRef = 82B622D41DB8434A0044B654 /* beep.wav */; };
@@ -94,6 +95,7 @@
 		11A46DEF1DB4177800F40BA7 /* InstructionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstructionViewController.swift; sourceTree = "<group>"; };
 		11A46DF11DB41C8000F40BA7 /* StepViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StepViewController.swift; sourceTree = "<group>"; };
 		11DBC3141DC9715E009E852A /* no_image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = no_image.png; sourceTree = "<group>"; };
+		11EE37221DCBD2EE00F76850 /* butterfly_instructions.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = butterfly_instructions.strings; sourceTree = "<group>"; };
 		197EA3E39EA8AA119A619117 /* Pods-OrigamiAcademyTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OrigamiAcademyTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-OrigamiAcademyTests/Pods-OrigamiAcademyTests.release.xcconfig"; sourceTree = "<group>"; };
 		3A5D3B4C94D04C2D173D7226 /* Pods-OrigamiAcademyTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OrigamiAcademyTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OrigamiAcademyTests/Pods-OrigamiAcademyTests.debug.xcconfig"; sourceTree = "<group>"; };
 		45A12C13F6DA81F7385CA169 /* Pods-OrigamiAcademy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OrigamiAcademy.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OrigamiAcademy/Pods-OrigamiAcademy.debug.xcconfig"; sourceTree = "<group>"; };
@@ -193,6 +195,7 @@
 				1131BB231DC2794300836EFE /* UploadManagerController.swift */,
 				1131BB251DC279BA00836EFE /* InstructionCreatorController.swift */,
 				1131BB271DC27A2A00836EFE /* StepEditorController.swift */,
+				11EE37221DCBD2EE00F76850 /* butterfly_instructions.strings */,
 			);
 			path = OrigamiAcademy;
 			sourceTree = "<group>";
@@ -353,6 +356,7 @@
 			files = (
 				1136FB1A1DA42B5A00B86782 /* IMG_0762.JPG in Resources */,
 				0EAB440A1DB70182003CDE56 /* Assets.xcassets in Resources */,
+				11EE37231DCBD2EE00F76850 /* butterfly_instructions.strings in Resources */,
 				1136FAF11DA42B4600B86782 /* LaunchScreen.storyboard in Resources */,
 				1118BFA41DB5B16C00C95EF3 /* instruction_list.strings in Resources */,
 				1102F0521DB6F43D0094CFA0 /* lilly_instructions.strings in Resources */,

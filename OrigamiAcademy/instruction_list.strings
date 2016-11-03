@@ -6,7 +6,8 @@
   Copyright © 2016 adams. All rights reserved.
 */
 
-"instructionNumber" = "3";
+"instructionNumber" = "4";
 "instruction1" = "crane";
 "instruction2" = "frog";
 "instruction3" = "lilly";
+"instruction4" = "butterfly";
