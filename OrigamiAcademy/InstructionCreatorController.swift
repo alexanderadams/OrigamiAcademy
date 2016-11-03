@@ -9,6 +9,8 @@
 import UIKit
 import CoreData
 
+import Firebase
+
 class InstructionCreatorController : UIViewController, UITableViewDataSource, UITableViewDelegate   {
     
     var editInstruction:Bool = false
@@ -88,6 +90,8 @@ class InstructionCreatorController : UIViewController, UITableViewDataSource, UI
         instruction?.setValue(creationNameText.text, forKey: "creation")
         instruction?.setValue(descriptionText.text, forKey: "summary")
         instruction?.setValue(stepList.count, forKey: "numOfSteps")
+        let curUser = FIRAuth.auth()?.currentUser?.email
+        instruction?.setValue(curUser, forKey: "author")
         let lastStep = stepList.lastObject as? NSObject
         instruction!.setValue(lastStep?.valueForKey("image"), forKey: "finishedImage")
         
