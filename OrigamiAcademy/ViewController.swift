@@ -22,6 +22,7 @@ class ViewController: UIViewController {
         if !instructionsInstalled() {
             instructionsInstaller()
         }
+        navigationItem.hidesBackButton = true
     }
 
     override func didReceiveMemoryWarning() {

@@ -690,7 +690,21 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Main Menu" id="sL9-JU-pak"/>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Main Menu" id="sL9-JU-pak">
+                        <barButtonItem key="rightBarButtonItem" title="Logout" style="plain" id="M0w-r9-jc2">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="HJ5-Pa-vQt">
+                                <rect key="frame" x="302" y="7" width="92" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Logout"/>
+                                <connections>
+                                    <action selector="logoutButton:" destination="bBt-P7-AXr" eventType="touchUpInside" id="P4j-ET-8nc"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" identifier="logoutSegue" id="sdz-3b-xO9"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HVc-PV-E99" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -937,9 +951,9 @@
         <image name="ijSS5.png" width="600" height="113"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="HyM-Pq-tA8"/>
+        <segue reference="sdz-3b-xO9"/>
         <segue reference="DH9-Jc-XNW"/>
-        <segue reference="32x-9f-L7q"/>
-        <segue reference="mMR-1J-DCn"/>
         <segue reference="ZAc-9w-QAU"/>
         <segue reference="bbw-hn-Zio"/>
     </inferredMetricsTieBreakers>
