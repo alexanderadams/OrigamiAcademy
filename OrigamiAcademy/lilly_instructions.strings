@@ -7,7 +7,7 @@
 */
 
 "stepNumber" = "21";
-"author" = "Origami Academy";
+"author" = "origami@origamiacademy.com";
 "description" = "A lilly in 21 steps. Uses a square piece of paper.";
 "step1" = "Start with a square piece of paper.";
 "step2" = "Fold the paper in half.";

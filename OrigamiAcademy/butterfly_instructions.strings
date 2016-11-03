@@ -7,7 +7,7 @@
 */
 
 "stepNumber" = "17";
-"author" = "Test Account";
+"author" = "bulko@example.com";
 "description" = "A butterfly in 17 steps. Uses a square piece of paper.";
 "step1" = "Start with a square piece of paper.";
 "step2" = "Fold in half vertically then unfold.";

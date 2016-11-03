@@ -7,7 +7,7 @@
 */
 
 "stepNumber" = "24";
-"author" = "Origami Academy";
+"author" = "origami@origamiacademy.com";
 "description" = "A simple crane in 24 steps. Uses a square piece of paper.";
 "step1" = "Start with a square piece of paper.";
 "step2" = "Fold the paper in half along the diagonal.";
