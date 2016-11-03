@@ -71,9 +71,6 @@ class AuthenticationController: UIViewController {
                     return
                 }
 
-                let defaults = NSUserDefaults.standardUserDefaults()
-                defaults.setObject(userName, forKey: "loggedInUser")
-
                 self.performSegueWithIdentifier("loginRegisterSegue", sender: self)
             }
         }
