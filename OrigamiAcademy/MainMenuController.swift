@@ -12,10 +12,18 @@ import Firebase
 
 class MainMenuController : UIViewController {
 
+    @IBOutlet weak var logoutButton: UIButton!
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         navigationItem.hidesBackButton = true
+
+        let curUser = FIRAuth.auth()?.currentUser
+        if curUser == nil {
+            logoutButton.hidden = true
+            navigationItem.hidesBackButton = false
+        }
     }
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
