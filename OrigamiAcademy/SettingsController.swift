@@ -21,8 +21,6 @@ class settingsController : UIViewController {
                 NSLog(error.localizedDescription)
                 return
             } else {
-                let defaults = NSUserDefaults.standardUserDefaults()
-                defaults.removeObjectForKey("loggedInUser")
                 self.performSegueWithIdentifier("settingsToMainMenuSegue", sender: self)
             }
         }

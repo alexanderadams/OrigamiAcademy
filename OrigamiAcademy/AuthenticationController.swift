@@ -60,14 +60,6 @@ class AuthenticationController: UIViewController {
                     return
                 }
 
-//                let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-//                let managedContext = appDelegate.managedObjectContext
-//                let entity = NSEntityDescription.entityForName("User", inManagedObjectContext: managedContext)
-//                let user = NSManagedObject(entity: entity!, insertIntoManagedObjectContext: managedContext)
-//
-//                user.setValue(userName, forKey: "userName")
-//                user.setValue(password, forKey: "password")
-
                 self.performSegueWithIdentifier("loginRegisterSegue", sender: self)
             }
         } else {
