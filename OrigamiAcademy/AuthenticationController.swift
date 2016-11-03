@@ -9,6 +9,8 @@
 import UIKit
 import CoreData
 
+import Firebase
+
 class AuthenticationController: UIViewController {
 
     @IBOutlet weak var loginRegisterLabel: UILabel!
@@ -50,69 +52,28 @@ class AuthenticationController: UIViewController {
         let userName:String = usernameTextField.text!
         let password:String = passwordTextField.text!
         if newUser! {
-            let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-            let managedContext = appDelegate.managedObjectContext
-            let entity = NSEntityDescription.entityForName("User", inManagedObjectContext: managedContext)
-            let user = NSManagedObject(entity: entity!, insertIntoManagedObjectContext: managedContext)
-        
-            user.setValue(userName, forKey: "userName")
-            user.setValue(password, forKey: "password")
-        
-            do {
-                try managedContext.save()
+            FIRAuth.auth()?.createUserWithEmail(userName, password: password) { (user, error) in
+                if let error = error {
+                    NSLog(error.localizedDescription)
+                    self.errorLabel.text = error.localizedDescription
+                    self.errorLabel.hidden = false
+                    return
+                }
+
                 self.performSegueWithIdentifier("loginRegisterSegue", sender: self)
-            } catch {
-                let nserror = error as NSError
-                NSLog("Unresolved error \(nserror), \(nserror.userInfo)")
-                abort()
             }
-            
         } else {
-            let user = fetchUser(userName, password: password)
-            if user != nil {
-                let defaults = NSUserDefaults.standardUserDefaults()
-                defaults.setObject(userName, forKey: "loggedInUser")
+            FIRAuth.auth()?.signInWithEmail(userName, password: password) { (user, error) in
+                if let error = error {
+                    NSLog(error.localizedDescription)
+                    self.errorLabel.text = error.localizedDescription
+                    self.errorLabel.hidden = false
+                    return
+                }
+
                 self.performSegueWithIdentifier("loginRegisterSegue", sender: self)
-            } else {
-                errorLabel.hidden = false
-                
             }
         }
-        
-    }
-    func fetchUser(userName:String, password:String) -> NSManagedObject? {
-        let fetchedResults = retrieveUsers()
-        var tempUserName:String? = nil
-        var tempPassword:String? = nil
-        
-        for user in fetchedResults {
-            tempUserName = user.valueForKey("userName") as? String
-            tempPassword = user.valueForKey("password") as? String
-            
-            if userName == tempUserName && password == tempPassword {
-                return user
-            }
-        }
-        
-        return nil
-    }
-    
-    func retrieveUsers() -> [NSManagedObject] {
-        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-        let managedContext = appDelegate.managedObjectContext
-        
-        let fetchRequest = NSFetchRequest(entityName: "User")
-        var fetchedResults:[NSManagedObject]? = nil
-        
-        do {
-            try fetchedResults = managedContext.executeFetchRequest(fetchRequest) as? [NSManagedObject]
-        } catch {
-            let nserror = error as NSError
-            NSLog("Unresolved error \(nserror), \(nserror.userInfo)")
-            abort()
-        }
-        
-        return(fetchedResults)!
         
     }
 }
