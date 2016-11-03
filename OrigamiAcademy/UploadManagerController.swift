@@ -9,6 +9,8 @@
 import UIKit
 import CoreData
 
+import Firebase
+
 class UploadManagerController : UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     var editor:Bool = false
@@ -35,7 +37,9 @@ class UploadManagerController : UIViewController, UITableViewDataSource, UITable
         }
         
         for instruction in managedList! {
-            instructionList.addObject(instruction)
+            if FIRAuth.auth()?.currentUser?.email == instruction.valueForKey("author") as? String {
+                instructionList.addObject(instruction)
+            }
         }
     }
     

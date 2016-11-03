@@ -7,7 +7,7 @@
 */
 
 "stepNumber" = "12";
-"author" = "Origami Academy";
+"author" = "origami@origamiacademy.com";
 "description" = "A jumping frog in 12 steps. Uses a rectangular piece of paper. Press your finger on the back of the frog to make it hop around.";
 "step1" = "Start with a rectangular piece of paper.";
 "step2" = "Fold the paper in half lengthwise.";
