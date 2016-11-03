@@ -1,0 +1,28 @@
+/* 
+  butterfly_instructions.strings
+  OrigamiAcademy
+
+  Created by Alexander Adams on 11/3/16.
+  Copyright © 2016 adams. All rights reserved.
+*/
+
+"stepNumber" = "17";
+"author" = "Test Account";
+"description" = "A butterfly in 17 steps. Uses a square piece of paper.";
+"step1" = "Start with a square piece of paper.";
+"step2" = "Fold in half vertically then unfold.";
+"step3" = "Fold in half horizontally then unfold.";
+"step4" = "Flip paper over then fold diagonally.";
+"step5" = "Unfold and fold along the other diagonal.";
+"step6" = "Unfold the paper.";
+"step7" = "Grab both sides at the folds and bring them together.";
+"step8" = "Fold the corners of the top layer towards the bottom.";
+"step9" = "Flip paper over and fold the bottom upwards. Make sure to fold slightly higher than halfway up.";
+"step10" = "Take the flaps on the top layer and bring them downwards.";
+"step11" = "Fold the sides flat.";
+"step12" = "Flip the paper over and fold the top corner down.";
+"step13" = "Fold part of the top back to form the head of the butterfly.";
+"step14" = "Fold the entire figure in half.";
+"step15" = "Fold one wing over along a diagonal.";
+"step16" = "Repeat with the other wing.";
+"step17" = "Unfold the wing and the butterfly is complete.";
