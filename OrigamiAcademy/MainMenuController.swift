@@ -13,6 +13,7 @@ import Firebase
 class MainMenuController : UIViewController {
 
     @IBOutlet weak var logoutButton: UIButton!
+    @IBOutlet weak var createInstructionsButton: UIButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,6 +23,7 @@ class MainMenuController : UIViewController {
         let curUser = FIRAuth.auth()?.currentUser
         if curUser == nil {
             logoutButton.hidden = true
+            createInstructionsButton.hidden = true
             navigationItem.hidesBackButton = false
         }
     }
