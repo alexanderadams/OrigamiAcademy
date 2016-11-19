@@ -613,6 +613,9 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rEW-OR-kkU">
                                 <rect key="frame" x="183" y="621" width="49" height="30"/>
                                 <state key="normal" title="Submit"/>
+                                <connections>
+                                    <action selector="submitted:" destination="f9O-Dp-7PM" eventType="touchUpInside" id="pvt-Cg-fKw"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Add A Comment" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3V0-Kq-Jc0">
                                 <rect key="frame" x="144" y="357" width="126" height="21"/>
@@ -630,18 +633,19 @@
                                 <rect key="frame" x="97" y="201" width="220" height="40"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" layoutMarginsFollowReadableWidth="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Write your comment here" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CpE-3s-d5R">
-                                <rect key="frame" x="20" y="411" width="374" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Write your comment here" translatesAutoresizingMaskIntoConstraints="NO" id="igw-M8-wjz">
+                                <rect key="frame" x="20" y="401" width="374" height="200"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textField>
+                            </textView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.84081179101221637" green="0.84081179101221637" blue="0.84081179101221637" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" title="Rating" id="xWo-xf-Pv3"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
                     <connections>
-                        <outlet property="comment" destination="CpE-3s-d5R" id="sfZ-aw-RSn"/>
+                        <outlet property="comment" destination="igw-M8-wjz" id="9M6-fN-Eih"/>
                         <outlet property="ratingBar" destination="EAr-Jh-mlh" id="bYW-Nq-f2a"/>
                         <outlet property="submitButton" destination="rEW-OR-kkU" id="t13-BZ-hJM"/>
                     </connections>
@@ -698,7 +702,7 @@
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Main Menu" id="sL9-JU-pak">
-                        <barButtonItem key="rightBarButtonItem" title="Logout" style="plain" id="M0w-r9-jc2">
+                        <barButtonItem key="rightBarButtonItem" title="Logout" id="M0w-r9-jc2">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="HJ5-Pa-vQt">
                                 <rect key="frame" x="302" y="7" width="92" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -810,9 +814,6 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ijSS5.png" translatesAutoresizingMaskIntoConstraints="NO" id="NbD-XS-CGW">
-                                <rect key="frame" x="87" y="152" width="240" height="34"/>
-                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Description/Summary" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fee-0Q-5lW">
                                 <rect key="frame" x="124" y="246" width="166" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -855,6 +856,10 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cys-QH-gXw" customClass="RatingsBarController" customModule="OrigamiAcademy" customModuleProvider="target">
+                                <rect key="frame" x="97" y="175" width="220" height="50"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -958,7 +963,6 @@
     <resources>
         <image name="IMG_0761.JPG" width="1536" height="2048"/>
         <image name="IMG_0762.JPG" width="1536" height="2048"/>
-        <image name="ijSS5.png" width="600" height="113"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="HyM-Pq-tA8"/>

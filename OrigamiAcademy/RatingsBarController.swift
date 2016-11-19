@@ -50,8 +50,6 @@ class RatingsBarController: UIView {
     func ratingButtonTapped(button: UIButton) {
         rating = ratingButtons.indexOf(button)! + 1
         updateButtonSelectionStates()
-        
-        //update rating on object
     }
     
     func updateButtonSelectionStates() {
