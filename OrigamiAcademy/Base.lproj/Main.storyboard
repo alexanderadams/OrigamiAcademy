@@ -601,7 +601,7 @@
         <!--Rating-->
         <scene sceneID="P1p-Va-dcP">
             <objects>
-                <viewController id="f9O-Dp-7PM" sceneMemberID="viewController">
+                <viewController id="f9O-Dp-7PM" customClass="RatingCreatorController" customModule="OrigamiAcademy" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Mt4-As-NoN"/>
                         <viewControllerLayoutGuide type="bottom" id="qgd-mg-6aL"/>
@@ -610,11 +610,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CpE-3s-d5R">
-                                <rect key="frame" x="20" y="408" width="374" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rEW-OR-kkU">
                                 <rect key="frame" x="183" y="621" width="49" height="30"/>
                                 <state key="normal" title="Submit"/>
@@ -631,15 +626,25 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EAr-Jh-mlh" customClass="RatingsBarController" customModule="OrigamiAcademy" customModuleProvider="target">
-                                <rect key="frame" x="47" y="195" width="320" height="65"/>
+                            <view contentMode="center" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EAr-Jh-mlh" customClass="RatingsBarController" customModule="OrigamiAcademy" customModuleProvider="target">
+                                <rect key="frame" x="97" y="201" width="220" height="40"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" layoutMarginsFollowReadableWidth="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Write your comment here" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CpE-3s-d5R">
+                                <rect key="frame" x="20" y="411" width="374" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Rating" id="xWo-xf-Pv3"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
+                    <connections>
+                        <outlet property="comment" destination="CpE-3s-d5R" id="sfZ-aw-RSn"/>
+                        <outlet property="ratingBar" destination="EAr-Jh-mlh" id="bYW-Nq-f2a"/>
+                        <outlet property="submitButton" destination="rEW-OR-kkU" id="t13-BZ-hJM"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wk3-IC-JmR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
