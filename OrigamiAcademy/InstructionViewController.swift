@@ -50,7 +50,11 @@ class InstructionViewController: UIPageViewController, UIPageViewControllerDataS
         if stepIndex < numOfSteps {
             let stepController = self.storyboard!.instantiateViewControllerWithIdentifier("StepView") as! StepViewController
             stepController.stepIndex = stepIndex
-            stepController.imageName = String(images[stepIndex])
+            
+            let stringDocumentsURL = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as NSString
+
+            stepController.imageName = "\(stringDocumentsURL)/\(images[stepIndex]).jpg"
+    
             stepController.instructions = String(instructions[stepIndex])
             return stepController
         }

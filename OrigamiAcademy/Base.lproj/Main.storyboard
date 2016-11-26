@@ -962,10 +962,10 @@
         <image name="no_image.png" width="512" height="512"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="bbw-hn-Zio"/>
-        <segue reference="ZAc-9w-QAU"/>
         <segue reference="HyM-Pq-tA8"/>
         <segue reference="sdz-3b-xO9"/>
         <segue reference="DH9-Jc-XNW"/>
+        <segue reference="ZAc-9w-QAU"/>
+        <segue reference="bbw-hn-Zio"/>
     </inferredMetricsTieBreakers>
 </document>
