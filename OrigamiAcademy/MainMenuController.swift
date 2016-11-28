@@ -17,28 +17,45 @@ class MainMenuController : UIViewController {
     @IBOutlet weak var createInstructionsButton: UIButton!
 
     override func viewDidLoad() {
-        super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         navigationItem.hidesBackButton = true
 
+        clearCoreData()
+        
         let curUser = FIRAuth.auth()?.currentUser
 
         if curUser == nil {
             logoutButton.hidden = true
             createInstructionsButton.hidden = true
             navigationItem.hidesBackButton = false
+            FIRAuth.auth()?.signInWithEmail("origami@origamiacademy.com", password: "123456") { (curUser, error) in
+                if let error = error {
+                    NSLog(error.localizedDescription)
+                }
+                else
+                {
+                    if !self.instructionsInstalled2(curUser!.uid)
+                    {
+                        self.instructionsInstaller2(curUser!.uid)
+                    }
+
+                }
+            }
+            
         } else {
             
-            instructionsInstaller2(curUser!.uid)
-            instructionsInstalled2(curUser!.uid)
+            if !instructionsInstalled2(curUser!.uid)
+            {
+                instructionsInstaller2(curUser!.uid)
+            }
         }
+        super.viewDidLoad()
+
         
-//        if !instructionsInstalled() {
-//            instructionsInstaller()
-//        }
     }
 
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)
+    {
         ms.playSound()
     }
 
@@ -48,6 +65,18 @@ class MainMenuController : UIViewController {
         } catch _ {
             NSLog("Error signing out")
         }
+        clearCoreData()
+        clearImages()
+    }
+    
+    override func willMoveToParentViewController(parent: UIViewController?) {
+        do {
+            try FIRAuth.auth()!.signOut()
+        } catch _ {
+            NSLog("Error signing out")
+        }
+        clearCoreData()
+        clearImages()
     }
     
     func instructionsInstalled() -> Bool { 
@@ -157,7 +186,7 @@ class MainMenuController : UIViewController {
             abort()
         }
         
-        if instructionsList != nil{
+        if instructionsList?.count != 0{
             return true
         }
         
@@ -253,6 +282,73 @@ class MainMenuController : UIViewController {
             NSLog("Unresolved error \(nserror), \(nserror.userInfo)")
             abort()
         }
+    }
+    
+    func clearCoreData() {
+        
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        let managedContext = appDelegate.managedObjectContext
+        
+        var fetchRequest = NSFetchRequest(entityName: "Instruction")
+        var fetchedResults:[NSManagedObject]
+        
+        do {
+            try fetchedResults = managedContext.executeFetchRequest(fetchRequest) as! [NSManagedObject]
+            
+            if fetchedResults.count > 0 {
+                
+                for result:AnyObject in fetchedResults {
+                    managedContext.deleteObject(result as! NSManagedObject)
+                }
+            }
+            try managedContext.save()
+            
+        } catch {
+            // If an error occurs
+            let nserror = error as NSError
+            NSLog("Unresolved error \(nserror), \(nserror.userInfo)")
+            abort()
+        }
+        
+        fetchRequest = NSFetchRequest(entityName: "Step")
+        
+        do {
+            try fetchedResults = managedContext.executeFetchRequest(fetchRequest) as! [NSManagedObject]
+            
+            if fetchedResults.count > 0 {
+                
+                for result:AnyObject in fetchedResults {
+                    managedContext.deleteObject(result as! NSManagedObject)
+                }
+            }
+            try managedContext.save()
+            
+        } catch {
+            // If an error occurs
+            let nserror = error as NSError
+            NSLog("Unresolved error \(nserror), \(nserror.userInfo)")
+            abort()
+        }
+    }
+    
+    func clearImages() ->Bool
+    {
+        let folderPath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as NSString
+        let fileManager = NSFileManager.defaultManager()
+        let enumerator:NSDirectoryEnumerator = fileManager.enumeratorAtPath(folderPath as String)!
+        
+        while let element = enumerator.nextObject() as? String {
+            if element.hasSuffix("jpg") {
+                do {
+                try fileManager.removeItemAtPath("\(folderPath)/\(element)")}
+                catch {
+                    let nserror = error as NSError
+                    NSLog("Unresolved error \(nserror), \(nserror.userInfo)")
+                    abort()}
+            }
+        }
+        
+        return true
     }
 
 }
