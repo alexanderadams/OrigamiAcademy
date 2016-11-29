@@ -72,6 +72,7 @@ class OrigamiListViewController: UIViewController, UITableViewDataSource, UITabl
             destination.creation = "\(instruction.valueForKey("creation")!)"
             destination.author = "\(instruction.valueForKey("author")!)"
             destination.summary = "\(instruction.valueForKey("summary")!)"
+            destination.imagePath = "\(instruction.valueForKey("finishedImage")!)"
         }
     }
 
