@@ -109,7 +109,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fYK-Qq-wUy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1758" y="1639"/>
+            <point key="canvasLocation" x="2081" y="1607"/>
         </scene>
         <!--User Creation Menu-->
         <scene sceneID="ZQl-az-CLD">
@@ -158,7 +158,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cpq-6W-fcQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2278" y="1639"/>
+            <point key="canvasLocation" x="2726" y="1121"/>
         </scene>
         <!--Manage Uploads-->
         <scene sceneID="97i-NR-EtW">
@@ -180,31 +180,32 @@
                                 <rect key="frame" x="0.0" y="158" width="414" height="578"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CreationCell" textLabel="ZdZ-V6-lNy" detailTextLabel="3Nw-0d-ah7" style="IBUITableViewCellStyleValue1" id="Vwn-qG-JMm">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CreationCell" id="SCl-9c-Tua" customClass="CreationCell" customModule="OrigamiAcademy" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Vwn-qG-JMm" id="w1J-VX-r0q">
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="SCl-9c-Tua" id="MsQ-3i-KBu">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Creation Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ZdZ-V6-lNy">
-                                                    <rect key="frame" x="15" y="12" width="109" height="20"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="3Nw-0d-ah7">
-                                                    <rect key="frame" x="357" y="12" width="42" height="20"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <color key="textColor" red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="calibratedRGB"/>
+                                                <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iag-ok-ph2">
+                                                    <rect key="frame" x="286" y="7" width="120" height="30"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                                                    <state key="normal" title="Publish"/>
+                                                    <connections>
+                                                        <action selector="creationButton:" destination="nHQ-DC-iVv" eventType="touchUpInside" id="KRC-LS-dsS"/>
+                                                    </connections>
+                                                </button>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Creation Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pHc-aw-xKQ">
+                                                    <rect key="frame" x="8" y="11" width="240" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="u86-0l-fmK" kind="show" id="bbw-hn-Zio"/>
+                                            <outlet property="creationButton" destination="iag-ok-ph2" id="fBC-Bg-ra1"/>
+                                            <outlet property="creationName" destination="pHc-aw-xKQ" id="oNH-oe-AyL"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -228,10 +229,10 @@
             </objects>
             <point key="canvasLocation" x="2278" y="2602"/>
         </scene>
-        <!--Instruction Creation Interface-->
+        <!--instructionCreator-->
         <scene sceneID="nY4-c4-6Yy">
             <objects>
-                <viewController id="u86-0l-fmK" customClass="InstructionCreatorController" customModule="OrigamiAcademy" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="instructionCreator" id="u86-0l-fmK" customClass="InstructionCreatorController" customModule="OrigamiAcademy" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="tZR-o0-9lf"/>
                         <viewControllerLayoutGuide type="bottom" id="1p5-73-PNo"/>
@@ -528,22 +529,36 @@
                                 <rect key="frame" x="0.0" y="576" width="414" height="160"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="RatingCell" textLabel="SUg-wY-UTT" style="IBUITableViewCellStyleDefault" id="wEn-fV-xCb">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="RatingCell" id="qEz-3H-ewl" customClass="RatingCell" customModule="OrigamiAcademy" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="wEn-fV-xCb" id="VeN-cU-nbe">
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="qEz-3H-ewl" id="3jI-Y2-j8n">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Rating/Comments" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="SUg-wY-UTT">
-                                                    <rect key="frame" x="15" y="0.0" width="384" height="43"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sCS-6y-a0O" customClass="RatingsBarController" customModule="OrigamiAcademy" customModuleProvider="target">
+                                                    <rect key="frame" x="8" y="0.0" width="120" height="35"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </view>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Comment goes here" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sGu-C2-jPY">
+                                                    <rect key="frame" x="136" y="0.0" width="270" height="35"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <gestureRecognizers/>
                                         </tableViewCellContentView>
+                                        <accessibility key="accessibilityConfiguration">
+                                            <accessibilityTraits key="traits" button="YES"/>
+                                            <bool key="isElement" value="NO"/>
+                                        </accessibility>
+                                        <gestureRecognizers/>
+                                        <connections>
+                                            <outlet property="commentLabel" destination="sGu-C2-jPY" id="1Pp-x6-V6f"/>
+                                            <outlet property="ratingBar" destination="sCS-6y-a0O" id="yaB-7A-jvZ"/>
+                                            <segue destination="rNb-3N-L9X" kind="show" identifier="CommentPopoverSegue" id="l9b-Nw-wJl"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -574,7 +589,7 @@
                             <constraint firstItem="dOH-Q3-itG" firstAttribute="top" secondItem="ITv-Th-YZk" secondAttribute="bottom" constant="10" id="JlE-oE-bER"/>
                             <constraint firstItem="jn9-v2-evS" firstAttribute="top" secondItem="i6H-a3-5Q9" secondAttribute="bottom" constant="10" id="MY1-iN-FsE"/>
                             <constraint firstItem="i6H-a3-5Q9" firstAttribute="trailing" secondItem="ITv-Th-YZk" secondAttribute="trailing" constant="-60" id="Vyk-dE-chE"/>
-                            <constraint firstItem="rFZ-3k-ywG" firstAttribute="top" secondItem="Jqw-pF-S89" secondAttribute="bottom" id="XBV-xt-zu4"/>
+                            <constraint firstItem="rFZ-3k-ywG" firstAttribute="top" secondItem="Jqw-pF-S89" secondAttribute="bottom" constant="-44" id="XBV-xt-zu4"/>
                             <constraint firstItem="zo3-hc-dr8" firstAttribute="leading" secondItem="i6H-a3-5Q9" secondAttribute="leading" id="YZu-As-hl6"/>
                             <constraint firstItem="ITv-Th-YZk" firstAttribute="top" secondItem="i6H-a3-5Q9" secondAttribute="bottom" constant="240" id="YvQ-wk-S0f"/>
                             <constraint firstItem="i6H-a3-5Q9" firstAttribute="top" secondItem="zo3-hc-dr8" secondAttribute="bottom" constant="10" id="c2S-ut-fov"/>
@@ -608,11 +623,12 @@
                         <outlet property="creationNameLabel" destination="zo3-hc-dr8" id="ehe-RF-a9R"/>
                         <outlet property="descriptionLabel" destination="ITv-Th-YZk" id="YkN-CM-Kv8"/>
                         <outlet property="imageFrame" destination="jn9-v2-evS" id="2YZ-io-sVC"/>
+                        <outlet property="ratingTable" destination="Jqw-pF-S89" id="Lbx-wq-gB3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aHg-qe-yFS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3336" y="274"/>
+            <point key="canvasLocation" x="3296" y="282"/>
         </scene>
         <!--Instruction View-->
         <scene sceneID="NFW-1l-lXh">
@@ -626,7 +642,7 @@
                 </pageViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="E6B-nh-HR8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4200" y="-122"/>
+            <point key="canvasLocation" x="3825" y="57"/>
         </scene>
         <!--Instructions-->
         <scene sceneID="jRt-pm-Khy">
@@ -668,7 +684,43 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gqf-wJ-jFK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4833" y="-174"/>
+            <point key="canvasLocation" x="4374" y="57"/>
+        </scene>
+        <!--Comment Popover-->
+        <scene sceneID="stf-QB-2U8">
+            <objects>
+                <viewController id="rNb-3N-L9X" customClass="CommentPopover" customModule="OrigamiAcademy" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="7Oe-Jm-hWf"/>
+                        <viewControllerLayoutGuide type="bottom" id="QdX-zA-im9"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="uiH-LV-fJW">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Comment" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="20" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EBX-Ur-q8M">
+                                <rect key="frame" x="16" y="20" width="288" height="460"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="EBX-Ur-q8M" firstAttribute="leading" secondItem="uiH-LV-fJW" secondAttribute="leadingMargin" id="R4F-9a-AXa"/>
+                            <constraint firstItem="QdX-zA-im9" firstAttribute="top" secondItem="EBX-Ur-q8M" secondAttribute="bottom" id="tmG-Ub-cHc"/>
+                            <constraint firstItem="EBX-Ur-q8M" firstAttribute="top" secondItem="7Oe-Jm-hWf" secondAttribute="bottom" id="vlw-Or-O2N"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="EBX-Ur-q8M" secondAttribute="trailing" id="wND-Vz-A2k"/>
+                        </constraints>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <outlet property="comment" destination="EBX-Ur-q8M" id="GWj-Ks-rL0"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sKI-ic-O2v" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3301" y="1070"/>
         </scene>
         <!--Rating-->
         <scene sceneID="P1p-Va-dcP">
@@ -695,7 +747,7 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Rating (Not yet implemented)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gfG-4e-U7c">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Review These Instructions" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gfG-4e-U7c">
                                 <rect key="frame" x="20" y="97" width="374" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -723,7 +775,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wk3-IC-JmR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4833" y="654"/>
+            <point key="canvasLocation" x="3825" y="908"/>
         </scene>
         <!--Main Menu-->
         <scene sceneID="rpx-bO-exP">
@@ -883,10 +935,9 @@
         <image name="no_image.png" width="512" height="512"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="mMR-1J-DCn"/>
+        <segue reference="HyM-Pq-tA8"/>
+        <segue reference="al0-jc-1Jk"/>
         <segue reference="DH9-Jc-XNW"/>
-        <segue reference="sdz-3b-xO9"/>
-        <segue reference="fvq-Rt-6Od"/>
         <segue reference="ZAc-9w-QAU"/>
     </inferredMetricsTieBreakers>
 </document>

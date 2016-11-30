@@ -31,19 +31,19 @@ class MainMenuController : UIViewController {
             logoutButton.hidden = true
             createInstructionsButton.hidden = true
             navigationItem.hidesBackButton = false
-//            FIRAuth.auth()?.signInWithEmail("origami@origamiacademy.com", password: "123456") { (curUser, error) in
-//                if let error = error {
-//                    NSLog(error.localizedDescription)
-//                }
-//                else
-//                {
-//                    if !self.instructionsInstalled(curUser!.uid)
-//                    {
-//                        self.instructionsInstaller(curUser!.uid)
-//                    }
-//
-//                }
-//            }
+            FIRAuth.auth()?.signInWithEmail("origami@origamiacademy.com", password: "123456") { (curUser, error) in
+                if let error = error {
+                    NSLog(error.localizedDescription)
+                }
+                else
+                {
+                    if !self.instructionsInstalled(curUser!.uid)
+                    {
+                        self.instructionsInstaller(curUser!.uid)
+                    }
+
+                }
+            }
             
         } else {
              print("should come here")

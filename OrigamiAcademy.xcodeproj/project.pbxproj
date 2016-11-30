@@ -14,6 +14,7 @@
 		0EAB440A1DB70182003CDE56 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0EAB44091DB70182003CDE56 /* Assets.xcassets */; };
 		0EB55F7C1DB5A771003E0075 /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB55F7B1DB5A771003E0075 /* SettingsController.swift */; };
 		0F7CDAFE645E11C7DFF77CC7 /* Pods_OrigamiAcademyUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EFD07A3251FE3B359DDFD930 /* Pods_OrigamiAcademyUITests.framework */; };
+		111E866D1DEE723000DA0F40 /* RatingsCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111E866C1DEE723000DA0F40 /* RatingsCellTableViewCell.swift */; };
 		1131BB221DC278FB00836EFE /* UserCreationMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1131BB211DC278FB00836EFE /* UserCreationMenuController.swift */; };
 		1131BB241DC2794300836EFE /* UploadManagerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1131BB231DC2794300836EFE /* UploadManagerController.swift */; };
 		1131BB261DC279BA00836EFE /* InstructionCreatorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1131BB251DC279BA00836EFE /* InstructionCreatorController.swift */; };
@@ -65,6 +66,7 @@
 		0E51432F1DB70493004752AE /* MainMenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMenuController.swift; sourceTree = "<group>"; };
 		0EAB44091DB70182003CDE56 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0EB55F7B1DB5A771003E0075 /* SettingsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsController.swift; sourceTree = "<group>"; };
+		111E866C1DEE723000DA0F40 /* RatingsCellTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatingsCellTableViewCell.swift; sourceTree = "<group>"; };
 		1131BB211DC278FB00836EFE /* UserCreationMenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserCreationMenuController.swift; sourceTree = "<group>"; };
 		1131BB231DC2794300836EFE /* UploadManagerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UploadManagerController.swift; sourceTree = "<group>"; };
 		1131BB251DC279BA00836EFE /* InstructionCreatorController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstructionCreatorController.swift; sourceTree = "<group>"; };
@@ -175,6 +177,7 @@
 				82B622CE1DB83C150044B654 /* OrigamiListViewController.swift */,
 				11803C4A1DE0F2A3009CD556 /* RatingCreatorController.swift */,
 				11E16C5E1DDBD87200A9C73A /* RatingsBarController.swift */,
+				111E866C1DEE723000DA0F40 /* RatingsCellTableViewCell.swift */,
 				0EB55F7B1DB5A771003E0075 /* SettingsController.swift */,
 				0E2BE2D11DB6E6E100E483FA /* SoundController.swift */,
 				1131BB271DC27A2A00836EFE /* StepEditorController.swift */,
@@ -518,6 +521,7 @@
 			files = (
 				1136FAEC1DA42B4600B86782 /* OrigamiAcademy.xcdatamodeld in Sources */,
 				11803C4B1DE0F2A3009CD556 /* RatingCreatorController.swift in Sources */,
+				111E866D1DEE723000DA0F40 /* RatingsCellTableViewCell.swift in Sources */,
 				0E4087AC1DB4107C0066ED52 /* AuthenticationController.swift in Sources */,
 				82B622D71DB846250044B654 /* InstructionDetailViewController.swift in Sources */,
 				1131BB261DC279BA00836EFE /* InstructionCreatorController.swift in Sources */,

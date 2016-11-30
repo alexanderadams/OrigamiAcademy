@@ -14,6 +14,7 @@ class RatingsBarController: UIView {
     var ratingButtons = [UIButton]()
     var buttonSize = 40
     var buttonSpacing = 5
+    var locked:Bool = false
     
 
     required init?(coder aDecoder: NSCoder) {
@@ -35,11 +36,11 @@ class RatingsBarController: UIView {
     }
     
     override func intrinsicContentSize() -> CGSize {
-        return CGSize(width: 240, height: 44)
+        return CGSize(width: buttonSize + 4*(buttonSize + buttonSpacing), height: buttonSize)
     }
     
     override func layoutSubviews() {
-        var buttonFrame = CGRect(x: 0, y: 0, width: 44, height: 44)
+        var buttonFrame = CGRect(x: 0, y: 0, width: buttonSize, height: buttonSize)
         
         for (index, button) in ratingButtons.enumerate() {
             buttonFrame.origin.x = CGFloat(index * (buttonSize + buttonSpacing))
@@ -48,8 +49,10 @@ class RatingsBarController: UIView {
     }
     
     func ratingButtonTapped(button: UIButton) {
-        rating = ratingButtons.indexOf(button)! + 1
-        updateButtonSelectionStates()
+        if !locked {
+            rating = ratingButtons.indexOf(button)! + 1
+            updateButtonSelectionStates()
+        }
     }
     
     func updateButtonSelectionStates() {
