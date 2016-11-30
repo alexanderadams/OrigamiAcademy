@@ -18,39 +18,43 @@ class MainMenuController : UIViewController {
 
     override func viewDidLoad() {
         // Do any additional setup after loading the view, typically from a nib.
-        navigationItem.hidesBackButton = true
-
-        clearCoreData()
         
+        super.viewDidLoad()
+        
+        
+        clearCoreData()
+    
         let curUser = FIRAuth.auth()?.currentUser
-
+        
+        print(curUser)
         if curUser == nil {
             logoutButton.hidden = true
             createInstructionsButton.hidden = true
             navigationItem.hidesBackButton = false
-            FIRAuth.auth()?.signInWithEmail("origami@origamiacademy.com", password: "123456") { (curUser, error) in
-                if let error = error {
-                    NSLog(error.localizedDescription)
-                }
-                else
-                {
-                    if !self.instructionsInstalled(curUser!.uid)
-                    {
-                        self.instructionsInstaller(curUser!.uid)
-                    }
-
-                }
-            }
+//            FIRAuth.auth()?.signInWithEmail("origami@origamiacademy.com", password: "123456") { (curUser, error) in
+//                if let error = error {
+//                    NSLog(error.localizedDescription)
+//                }
+//                else
+//                {
+//                    if !self.instructionsInstalled(curUser!.uid)
+//                    {
+//                        self.instructionsInstaller(curUser!.uid)
+//                    }
+//
+//                }
+//            }
             
         } else {
-            
+             print("should come here")
+            createInstructionsButton.hidden = false
+            navigationItem.hidesBackButton = true
+            logoutButton.hidden = false
             if !instructionsInstalled(curUser!.uid)
             {
                 instructionsInstaller(curUser!.uid)
             }
         }
-        super.viewDidLoad()
-
         
     }
 
