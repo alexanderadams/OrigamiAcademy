@@ -20,6 +20,9 @@ class AuthenticationController: UIViewController {
     @IBOutlet weak var errorLabel: UILabel!
     
     var newUser:Bool? = nil
+    var userHolder:FIRUser? = nil
+    var userNameHolder:String? = nil
+    var passwordHolder:String? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,7 +43,11 @@ class AuthenticationController: UIViewController {
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        
+        if segue.identifier == "loginRegisterSegue" {
+            let mainMenu = segue.destinationViewController as? MainMenuController
+            mainMenu?.userName = userNameHolder
+            mainMenu?.password = passwordHolder
+        }
     }
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
@@ -72,9 +79,10 @@ class AuthenticationController: UIViewController {
                 }
                 if user != nil {
                     print("signed in")
+                    self.userNameHolder = userName
+                    self.passwordHolder = password
+                    self.performSegueWithIdentifier("loginRegisterSegue", sender: self)
                 }
-
-                self.performSegueWithIdentifier("loginRegisterSegue", sender: self)
             }
         }
         

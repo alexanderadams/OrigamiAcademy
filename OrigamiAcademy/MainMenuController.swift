@@ -15,46 +15,47 @@ class MainMenuController : UIViewController {
 
     @IBOutlet weak var logoutButton: UIButton!
     @IBOutlet weak var createInstructionsButton: UIButton!
-
+    var curUser:FIRUser? = nil
+    var userName:String? = nil
+    var password:String? = nil
+    
     override func viewDidLoad() {
         // Do any additional setup after loading the view, typically from a nib.
-        
-        super.viewDidLoad()
-        
-        
+
         clearCoreData()
-    
-        let curUser = FIRAuth.auth()?.currentUser
-        
-        print(curUser)
-        if curUser == nil {
-            logoutButton.hidden = true
-            createInstructionsButton.hidden = true
-            navigationItem.hidesBackButton = false
-//            FIRAuth.auth()?.signInWithEmail("origami@origamiacademy.com", password: "123456") { (curUser, error) in
-//                if let error = error {
-//                    NSLog(error.localizedDescription)
-//                }
-//                else
-//                {
-//                    if !self.instructionsInstalled(curUser!.uid)
-//                    {
-//                        self.instructionsInstaller(curUser!.uid)
-//                    }
-//
-//                }
-//            }
-            
-        } else {
-             print("should come here")
-            createInstructionsButton.hidden = false
-            navigationItem.hidesBackButton = true
-            logoutButton.hidden = false
-            if !instructionsInstalled(curUser!.uid)
-            {
-                instructionsInstaller(curUser!.uid)
+        if userName != nil && password != nil {
+            FIRAuth.auth()?.signInWithEmail(userName!, password: password!) { (user, error) in
+                if let error = error {
+                    NSLog(error.localizedDescription)
+                }
+                else {
+                self.curUser = user
+                self.createInstructionsButton.hidden = false
+                self.navigationItem.hidesBackButton = true
+                self.logoutButton.hidden = false
+                if !self.instructionsInstalled(self.curUser!.uid) {
+                    self.instructionsInstaller(self.curUser!.uid)
+                    }
+                }
             }
+        } else {
+                self.logoutButton.hidden = true
+                self.createInstructionsButton.hidden = true
+                self.navigationItem.hidesBackButton = false
+                FIRAuth.auth()?.signInWithEmail("origami@origamiacademy.com", password: "123456") { (curUser, error) in
+                    if let error = error {
+                        NSLog(error.localizedDescription)
+                    } else {
+                        if !self.instructionsInstalled(curUser!.uid) {
+                            self.instructionsInstaller(curUser!.uid)
+                        }
+                        
+                    }
+                }
+                
         }
+        
+                super.viewDidLoad()
         
     }
 
