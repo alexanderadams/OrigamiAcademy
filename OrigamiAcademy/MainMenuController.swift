@@ -112,9 +112,9 @@ class MainMenuController : UIViewController {
             let managedContext = appDelegate.managedObjectContext
         
             let ref = FIRDatabase.database().reference()
-            ref.child("users").child(uid).observeSingleEventOfType(.Value, withBlock: { snapshot in
-            let userData = snapshot.value as? NSDictionary
-            let instructionKeys = userData!["instructions"] as? NSDictionary
+            ref.child("instructions").observeSingleEventOfType(.Value, withBlock: { snapshot in
+            let instructions = snapshot.value as? NSDictionary
+            let instructionKeys = instructions
             for instructionKey in instructionKeys!
             {
                 // read in instruction information to create instruction entity
