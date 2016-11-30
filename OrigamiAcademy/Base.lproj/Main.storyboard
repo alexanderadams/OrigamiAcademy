@@ -139,7 +139,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kcx-gg-FU8">
                                 <rect key="frame" x="40" y="484" width="334" height="30"/>
-                                <state key="normal" title="Manage Uploads (Not yet implemented)"/>
+                                <state key="normal" title="Publish Uploads"/>
                                 <connections>
                                     <segue destination="nHQ-DC-iVv" kind="show" identifier="ManageUploadsSegue" id="ZAc-9w-QAU"/>
                                 </connections>
@@ -223,6 +223,7 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
                     <connections>
                         <outlet property="instructionTable" destination="B0X-se-aQE" id="BFa-Qu-z0j"/>
+                        <segue destination="u86-0l-fmK" kind="show" identifier="editorSegue" id="ine-GL-d89"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qe7-3l-ihf" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -232,7 +233,7 @@
         <!--instructionCreator-->
         <scene sceneID="nY4-c4-6Yy">
             <objects>
-                <viewController title="instructionCreator" id="u86-0l-fmK" customClass="InstructionCreatorController" customModule="OrigamiAcademy" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="instructionCreator" title="instructionCreator" useStoryboardIdentifierAsRestorationIdentifier="YES" id="u86-0l-fmK" customClass="InstructionCreatorController" customModule="OrigamiAcademy" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="tZR-o0-9lf"/>
                         <viewControllerLayoutGuide type="bottom" id="1p5-73-PNo"/>
@@ -319,7 +320,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Instruction Creation Interface" id="Zwj-Fe-1CA"/>
+                    <navigationItem key="navigationItem" title="Title" id="YpD-Qf-jix"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
                     <connections>
                         <outlet property="creationNameText" destination="GNO-Uh-49F" id="DEV-2r-IIr"/>
@@ -962,6 +963,7 @@
         <segue reference="HyM-Pq-tA8"/>
         <segue reference="al0-jc-1Jk"/>
         <segue reference="DH9-Jc-XNW"/>
-        <segue reference="ZAc-9w-QAU"/>
+        <segue reference="fvq-Rt-6Od"/>
+        <segue reference="6yM-40-8lg"/>
     </inferredMetricsTieBreakers>
 </document>
