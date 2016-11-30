@@ -26,7 +26,6 @@ class MainMenuController : UIViewController {
         clearCoreData()
         navigationItem.hidesBackButton = true
         let curUser = FIRAuth.auth()?.currentUser
-        print(NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as NSString)
         if curUser == nil {
             backButton.hidden = false
             logoutButton.hidden = true

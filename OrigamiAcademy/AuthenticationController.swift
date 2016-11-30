@@ -71,7 +71,6 @@ class AuthenticationController: UIViewController {
                     return
                 }
                 if user != nil {
-                    print("signed in")
                     self.performSegueWithIdentifier("loginRegisterSegue", sender: self)
                 }
 
