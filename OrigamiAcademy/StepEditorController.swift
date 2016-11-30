@@ -9,6 +9,8 @@
 import UIKit
 import CoreData
 
+import Firebase
+
 class StepEditorController : UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     var stepNumber:Int = 0
@@ -57,6 +59,34 @@ class StepEditorController : UIViewController, UIImagePickerControllerDelegate, 
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
         if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
             image.contentMode = .ScaleAspectFit
+
+            // Generate UUID name for picked file
+            let generatedName = NSUUID().UUIDString
+            NSLog("image name: \(generatedName)")
+            imageName = generatedName
+
+            // Save image to cache area as JPEG
+            let jpegImageBytes = UIImageJPEGRepresentation(pickedImage, 0.4)
+            let StringDocumentURL = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as NSString
+            let stringLocalURL = "\(StringDocumentURL)/\(imageName).jpg"
+            let success = NSFileManager.defaultManager().createFileAtPath(stringLocalURL, contents: jpegImageBytes, attributes: nil)
+
+            if success == false {
+                NSLog("Failed to save file")
+            }
+
+            // Upload image to Firebase
+            let storageRef = FIRStorage.storage().reference()
+            let imageRef = storageRef.child("images/\(imageName).jpg")
+            let fileURL = NSURL(fileURLWithPath: stringLocalURL)
+            let _ = imageRef.putFile(fileURL, metadata: nil) { metadata, error in
+                if (error != nil) {
+                    NSLog(error!.localizedDescription)
+                } else {
+                    NSLog("Uploaded file to Firebase: \(metadata!.downloadURL()?.absoluteString)")
+                }
+            }
+
             image.image = pickedImage
         }
         dismissViewControllerAnimated(true, completion: nil)
