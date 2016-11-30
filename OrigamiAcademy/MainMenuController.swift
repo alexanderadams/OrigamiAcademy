@@ -14,20 +14,23 @@ import Firebase
 class MainMenuController : UIViewController {
 
     @IBOutlet weak var logoutButton: UIButton!
+    @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var createInstructionsButton: UIButton!
 
     override func viewDidLoad() {
         // Do any additional setup after loading the view, typically from a nib.
-        navigationItem.hidesBackButton = true
-
-        clearCoreData()
         
+        super.viewDidLoad()
+        
+        
+        clearCoreData()
+        navigationItem.hidesBackButton = true
         let curUser = FIRAuth.auth()?.currentUser
-
+        print(NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as NSString)
         if curUser == nil {
+            backButton.hidden = false
             logoutButton.hidden = true
             createInstructionsButton.hidden = true
-            navigationItem.hidesBackButton = false
             FIRAuth.auth()?.signInWithEmail("origami@origamiacademy.com", password: "123456") { (curUser, error) in
                 if let error = error {
                     NSLog(error.localizedDescription)
@@ -43,20 +46,32 @@ class MainMenuController : UIViewController {
             }
             
         } else {
-            
+            backButton.hidden = true
+            createInstructionsButton.hidden = false
+            logoutButton.hidden = false
             if !instructionsInstalled(curUser!.uid)
             {
                 instructionsInstaller(curUser!.uid)
             }
         }
-        super.viewDidLoad()
-
         
     }
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)
     {
         ms.playSound()
+    }
+    
+    
+    @IBAction func back(sender: AnyObject) {
+        do {
+            try FIRAuth.auth()!.signOut()
+        } catch _ {
+            NSLog("Error signing out")
+        }
+        clearCoreData()
+        clearImages()
+        self.navigationController?.popViewControllerAnimated(true)
     }
 
     @IBAction func logoutButton(sender: AnyObject) {
@@ -68,17 +83,6 @@ class MainMenuController : UIViewController {
         clearCoreData()
         clearImages()
     }
-    
-    override func willMoveToParentViewController(parent: UIViewController?) {
-        do {
-            try FIRAuth.auth()!.signOut()
-        } catch _ {
-            NSLog("Error signing out")
-        }
-        clearCoreData()
-        clearImages()
-    }
-    
     
     func instructionsInstalled(uid:String) -> Bool {
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
