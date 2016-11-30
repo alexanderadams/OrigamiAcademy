@@ -883,10 +883,10 @@
         <image name="no_image.png" width="512" height="512"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="HyM-Pq-tA8"/>
-        <segue reference="sdz-3b-xO9"/>
+        <segue reference="mMR-1J-DCn"/>
         <segue reference="DH9-Jc-XNW"/>
-        <segue reference="ZAc-9w-QAU"/>
+        <segue reference="sdz-3b-xO9"/>
         <segue reference="fvq-Rt-6Od"/>
+        <segue reference="ZAc-9w-QAU"/>
     </inferredMetricsTieBreakers>
 </document>
