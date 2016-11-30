@@ -14,6 +14,7 @@ import Firebase
 class MainMenuController : UIViewController {
 
     @IBOutlet weak var logoutButton: UIButton!
+    @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var createInstructionsButton: UIButton!
 
     override func viewDidLoad() {
@@ -23,32 +24,30 @@ class MainMenuController : UIViewController {
         
         
         clearCoreData()
-    
+        navigationItem.hidesBackButton = true
         let curUser = FIRAuth.auth()?.currentUser
-        
-        print(curUser)
+        print(NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as NSString)
         if curUser == nil {
+            backButton.hidden = false
             logoutButton.hidden = true
             createInstructionsButton.hidden = true
-            navigationItem.hidesBackButton = false
-//            FIRAuth.auth()?.signInWithEmail("origami@origamiacademy.com", password: "123456") { (curUser, error) in
-//                if let error = error {
-//                    NSLog(error.localizedDescription)
-//                }
-//                else
-//                {
-//                    if !self.instructionsInstalled(curUser!.uid)
-//                    {
-//                        self.instructionsInstaller(curUser!.uid)
-//                    }
-//
-//                }
-//            }
+            FIRAuth.auth()?.signInWithEmail("origami@origamiacademy.com", password: "123456") { (curUser, error) in
+                if let error = error {
+                    NSLog(error.localizedDescription)
+                }
+                else
+                {
+                    if !self.instructionsInstalled(curUser!.uid)
+                    {
+                        self.instructionsInstaller(curUser!.uid)
+                    }
+
+                }
+            }
             
         } else {
-             print("should come here")
+            backButton.hidden = true
             createInstructionsButton.hidden = false
-            navigationItem.hidesBackButton = true
             logoutButton.hidden = false
             if !instructionsInstalled(curUser!.uid)
             {
@@ -62,6 +61,18 @@ class MainMenuController : UIViewController {
     {
         ms.playSound()
     }
+    
+    
+    @IBAction func back(sender: AnyObject) {
+        do {
+            try FIRAuth.auth()!.signOut()
+        } catch _ {
+            NSLog("Error signing out")
+        }
+        clearCoreData()
+        clearImages()
+        self.navigationController?.popViewControllerAnimated(true)
+    }
 
     @IBAction func logoutButton(sender: AnyObject) {
         do {
@@ -72,17 +83,6 @@ class MainMenuController : UIViewController {
         clearCoreData()
         clearImages()
     }
-    
-    override func willMoveToParentViewController(parent: UIViewController?) {
-        do {
-            try FIRAuth.auth()!.signOut()
-        } catch _ {
-            NSLog("Error signing out")
-        }
-        clearCoreData()
-        clearImages()
-    }
-    
     
     func instructionsInstalled(uid:String) -> Bool {
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
