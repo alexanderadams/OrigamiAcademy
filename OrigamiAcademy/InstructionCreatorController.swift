@@ -91,9 +91,37 @@ class InstructionCreatorController : UIViewController, UITableViewDataSource, UI
         instruction?.setValue(descriptionText.text, forKey: "summary")
         instruction?.setValue(stepList.count, forKey: "numOfSteps")
         let curUser = FIRAuth.auth()?.currentUser?.email
+        let curUserID = FIRAuth.auth()?.currentUser?.uid
         instruction?.setValue(curUser, forKey: "author")
         let lastStep = stepList.lastObject as? NSObject
         instruction!.setValue(lastStep?.valueForKey("image"), forKey: "finishedImage")
+
+        // Save instruction to Firebase
+        let ref = FIRDatabase.database().reference()
+        let instructionsRef = ref.child("instructions")
+        let userRef = ref.child("users")
+        
+        let generatedName = NSUUID().UUIDString
+        NSLog("Key for Instruction: \(generatedName)")
+        let instructionMetadata:[String: AnyObject] = ["author": curUser!,
+                                   "creation": creationNameText.text!,
+                                   "finishedImage": (lastStep?.valueForKey("image"))!,
+                                   "numOfSteps": stepList.count,
+                                   "summary": descriptionText.text!]
+        
+        instructionsRef.child(generatedName).setValue(instructionMetadata)
+        userRef.child(curUserID!).child("instructions").updateChildValues([generatedName: true])
+        
+        let stepRef = ref.child("steps").child(generatedName)
+        for step in stepList {
+            let stepID = NSUUID().UUIDString
+            let stepMetadata:[String: AnyObject] = ["details": step.valueForKey("details")!,
+                                                   "image": step.valueForKey("image")!,
+                                                   "stepNumber": step.valueForKey("number")!]
+
+            stepRef.child(stepID).setValue(stepMetadata)
+            
+        }
         
         do {
             try managedContext.save()
