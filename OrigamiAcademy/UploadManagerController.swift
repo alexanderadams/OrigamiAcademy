@@ -52,24 +52,41 @@ class UploadManagerController : UIViewController, UITableViewDataSource, UITable
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("CreationCell", forIndexPath: indexPath)
+        let cell = tableView.dequeueReusableCellWithIdentifier("CreationCell", forIndexPath: indexPath) as! CreationCell
         
         let row = indexPath.row
         let instruction = instructionList[row]
         
-        cell.textLabel?.text = instruction.valueForKey("creation") as? String
+        cell.creationName.text = instruction.valueForKey("creation") as? String
+        cell.creationButton.tag = row
         
         if editor {
-            cell.detailTextLabel!.text = "Edit"
+            cell.creationButton.titleLabel?.text = "Edit"
         }
         else {
-            cell.detailTextLabel!.text = "Upload (Not Yet Implemented)"
+            // Firebase stuff here
             
-            // FINAL RELEASE STUFF
-            // set cell button text to "Upload" or "Remove"
+            cell.creationButton.titleLabel?.text = "Publish" // if already published, say unpublish or something
+            
         }
         
         return cell
+    }
+    
+    @IBAction func creationButton(sender: AnyObject) {
+        let row = sender.tag
+        let instruction = instructionList[row]
+        if editor {
+            ms.playSound()
+            let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+            let nextViewController = storyBoard.instantiateViewControllerWithIdentifier("instructionCreator") as! InstructionCreatorController
+            nextViewController.editInstruction = true
+            nextViewController.creationName = instruction.valueForKey("creation") as! String
+            self.presentViewController(nextViewController, animated:true, completion:nil)
+        }
+        else {
+            // Publish/Unpublish the instructions
+        }
     }
     
     override func shouldPerformSegueWithIdentifier(identifier: String, sender: AnyObject?) -> Bool {
@@ -78,14 +95,11 @@ class UploadManagerController : UIViewController, UITableViewDataSource, UITable
         }
         return false
     }
+}
+
+class CreationCell: UITableViewCell {
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        ms.playSound()
-        if let destination = segue.destinationViewController as? InstructionCreatorController,
-            dataIndex = instructionTable.indexPathForSelectedRow?.row {
-            destination.editInstruction = true
-            let instruction = instructionList[dataIndex] as? NSObject
-            destination.creationName = (instruction!.valueForKey("creation") as? String)!
-        }
-    }
+    @IBOutlet weak var creationName: UILabel!
+    @IBOutlet weak var creationButton: UIButton!
+    
 }
