@@ -737,32 +737,28 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QiI-6A-HUb">
-                                <rect key="frame" x="179" y="651" width="57" height="30"/>
-                                <state key="normal" title="Settings"/>
-                                <connections>
-                                    <segue destination="1F7-BX-Ybr" kind="show" id="wCZ-U3-Xrl"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hIa-Fe-cX8">
-                                <rect key="frame" x="138" y="287" width="139" height="30"/>
+                                <rect key="frame" x="138" y="353" width="139" height="30"/>
                                 <state key="normal" title="Origami Instructions"/>
                                 <connections>
                                     <segue destination="DQy-gl-ITf" kind="show" id="R5K-Nm-BUX"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BVo-vQ-kwa">
-                                <rect key="frame" x="20" y="410" width="374" height="30"/>
-                                <state key="normal" title="Download Instructions (Not yet implemented)"/>
-                            </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OdO-gI-dfE">
-                                <rect key="frame" x="87" y="96" width="240" height="128"/>
+                                <rect key="frame" x="87" y="100" width="240" height="200"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mjM-CI-taL">
-                                <rect key="frame" x="107" y="522" width="201" height="30"/>
+                                <rect key="frame" x="107" y="462" width="201" height="30"/>
                                 <state key="normal" title="Create Your Own Instructions"/>
                                 <connections>
                                     <segue destination="iyF-hl-LPk" kind="show" id="as1-GE-nng"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QiI-6A-HUb">
+                                <rect key="frame" x="179" y="583" width="57" height="30"/>
+                                <state key="normal" title="Settings"/>
+                                <connections>
+                                    <segue destination="1F7-BX-Ybr" kind="show" id="wCZ-U3-Xrl"/>
                                 </connections>
                             </button>
                         </subviews>
