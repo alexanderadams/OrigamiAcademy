@@ -123,7 +123,8 @@ class MainMenuController : UIViewController {
                 // Create the entity we want to save
                 let entity =  NSEntityDescription.entityForName("Instruction", inManagedObjectContext: managedContext)
                 let instruction = NSManagedObject(entity: entity!, insertIntoManagedObjectContext:managedContext)
-                
+                let instructionStringKey = instructionKey.key as? String
+                    
                 let instructionData = snapshot.value as? NSDictionary
                 
                 let numOfSteps = instructionData!["numOfSteps"] as? Int
@@ -133,6 +134,7 @@ class MainMenuController : UIViewController {
                     instruction.setValue(instructionData!["author"], forKey: "author")
                     instruction.setValue(instructionData!["summary"], forKey: "summary")
                     instruction.setValue(instructionData!["finishedImage"], forKey: "finishedImage")
+                    instruction.setValue(instructionStringKey, forKey: "uid")
                     
                     // read the steps and create the entities
                     let stepSet:NSMutableOrderedSet = []
@@ -140,15 +142,17 @@ class MainMenuController : UIViewController {
                         
                         let setOfSteps = snapshot.value as? NSDictionary
                         
-                        for (_,stepData) in setOfSteps! {
+                        for (stepKey,stepData) in setOfSteps! {
                             
                             let entity =  NSEntityDescription.entityForName("Step", inManagedObjectContext: managedContext)
                             let step = NSManagedObject(entity: entity!, insertIntoManagedObjectContext:managedContext)
+                            let stepKeyString = stepKey as? String
                             
                             step.setValue(stepData["stepNumber"], forKey: "number")
                             step.setValue(stepData["details"], forKey: "details")
                             step.setValue(stepData["image"], forKey: "image")
                             step.setValue(instruction, forKey: "instruction")
+                            step.setValue(stepKeyString, forKey: "uid")
                             stepSet.addObject(step)
                             
                             // now download the image for each step
