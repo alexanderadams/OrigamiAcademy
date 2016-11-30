@@ -18,15 +18,11 @@ class MainMenuController : UIViewController {
 
     override func viewDidLoad() {
         // Do any additional setup after loading the view, typically from a nib.
-        
-        super.viewDidLoad()
-        
+        navigationItem.hidesBackButton = true
         
         clearCoreData()
     
         let curUser = FIRAuth.auth()?.currentUser
-        
-        print(curUser)
         if curUser == nil {
             logoutButton.hidden = true
             createInstructionsButton.hidden = true
@@ -46,16 +42,12 @@ class MainMenuController : UIViewController {
             }
             
         } else {
-             print("should come here")
-            createInstructionsButton.hidden = false
-            navigationItem.hidesBackButton = true
-            logoutButton.hidden = false
             if !instructionsInstalled(curUser!.uid)
             {
                 instructionsInstaller(curUser!.uid)
             }
         }
-        
+        super.viewDidLoad()
     }
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)
