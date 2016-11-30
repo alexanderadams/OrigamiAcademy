@@ -61,12 +61,12 @@ class UploadManagerController : UIViewController, UITableViewDataSource, UITable
         cell.creationButton.tag = row
         
         if editor {
-            cell.creationButton.titleLabel?.text = "Edit"
+            cell.creationButton.setTitle("Edit", forState: .Normal)
         }
         else {
             // Firebase stuff here
             
-            cell.creationButton.titleLabel?.text = "Publish" // if already published, say unpublish or something
+            cell.creationButton.setTitle("Publish", forState: .Normal) // if already published, say unpublish or something
             
         }
         
@@ -75,14 +75,10 @@ class UploadManagerController : UIViewController, UITableViewDataSource, UITable
     
     @IBAction func creationButton(sender: AnyObject) {
         let row = sender.tag
-        let instruction = instructionList[row]
+        let _ = instructionList[row]
         if editor {
             ms.playSound()
-            let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-            let nextViewController = storyBoard.instantiateViewControllerWithIdentifier("instructionCreator") as! InstructionCreatorController
-            nextViewController.editInstruction = true
-            nextViewController.creationName = instruction.valueForKey("creation") as! String
-            self.presentViewController(nextViewController, animated:true, completion:nil)
+            performSegueWithIdentifier("editorSegue", sender: sender)
         }
         else {
             // Publish/Unpublish the instructions
@@ -94,6 +90,16 @@ class UploadManagerController : UIViewController, UITableViewDataSource, UITable
             return true
         }
         return false
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        ms.playSound()
+        if let destination = segue.destinationViewController as? InstructionCreatorController {
+            let row = sender!.tag
+            let instruction = instructionList[row] as? NSObject
+            destination.editInstruction = true
+            destination.creationName = (instruction!.valueForKey("creation") as? String)!
+        }
     }
 }
 
