@@ -98,7 +98,7 @@ class InstructionCreatorController : UIViewController, UITableViewDataSource, UI
         instruction?.setValue(stepList.count, forKey: "numOfSteps")
         let curUser = FIRAuth.auth()?.currentUser?.email
         let curUserID = FIRAuth.auth()?.currentUser?.uid
-        instruction?.setValue(curUserID, forKey: "uid")
+//        instruction?.setValue(curUserID, forKey: "uid")
         instruction?.setValue(curUser, forKey: "author")
         let lastStep = stepList.lastObject as? NSObject
         instruction!.setValue(lastStep?.valueForKey("image"), forKey: "finishedImage")
@@ -108,26 +108,48 @@ class InstructionCreatorController : UIViewController, UITableViewDataSource, UI
         let instructionsRef = ref.child("instructions")
         let userRef = ref.child("users")
         
-        let generatedName = NSUUID().UUIDString
-        NSLog("Key for Instruction: \(generatedName)")
-        let instructionMetadata:[String: AnyObject] = ["author": curUser!,
+        NSLog("Instruction UID before check: \(instruction!.valueForKey("uid") as? String)")
+        if instruction!.valueForKey("uid") as? String == "badObject" {
+            let generatedName = NSUUID().UUIDString
+            NSLog("Key for Instruction: \(generatedName)")
+            let instructionMetadata:[String: AnyObject] = ["author": curUser!,
                                    "creation": creationNameText.text!,
                                    "finishedImage": (lastStep?.valueForKey("image"))!,
                                    "numOfSteps": stepList.count,
                                    "summary": descriptionText.text!]
         
-        instructionsRef.child(generatedName).setValue(instructionMetadata)
-        userRef.child(curUserID!).child("instructions").updateChildValues([generatedName: true])
+            instructionsRef.child(generatedName).setValue(instructionMetadata)
+            userRef.child(curUserID!).child("instructions").updateChildValues([generatedName: true])
         
-        let stepRef = ref.child("steps").child(generatedName)
-        for step in stepList {
-            let stepID = NSUUID().UUIDString
-            let stepMetadata:[String: AnyObject] = ["details": step.valueForKey("details")!,
+        
+            let stepRef = ref.child("steps").child(generatedName)
+            for step in stepList {
+                let stepID = NSUUID().UUIDString
+                let stepMetadata:[String: AnyObject] = ["details": step.valueForKey("details")!,
                                                    "image": step.valueForKey("image")!,
                                                    "stepNumber": step.valueForKey("number")!]
 
-            stepRef.child(stepID).setValue(stepMetadata)
-            
+                stepRef.child(stepID).setValue(stepMetadata)
+            }
+        } else {
+            let instructionID = instruction!.valueForKey("uid") as? String
+            NSLog("Instruction ID for existing instruction: \(instructionID)")
+            let instructionMetadata:[String: AnyObject] = ["author": curUser!,
+                                                           "creation": creationNameText.text!,
+                                                           "finishedImage": (lastStep?.valueForKey("image"))!,
+                                                           "numOfSteps": stepList.count,
+                                                           "summary": descriptionText.text!]
+
+            instructionsRef.child(instructionID!).updateChildValues(instructionMetadata)
+            let stepRef = ref.child("steps").child(instructionID!)
+            for step in stepList {
+                let stepID = step.valueForKey("uid") as? String
+                let stepMetadata:[String: AnyObject] = ["details": step.valueForKey("details")!,
+                                                        "image": step.valueForKey("image")!,
+                                                        "stepNumber": step.valueForKey("number")!]
+                
+                stepRef.child(stepID!).updateChildValues(stepMetadata)
+            }
         }
         
         do {
