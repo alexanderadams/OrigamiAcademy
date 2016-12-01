@@ -168,6 +168,7 @@ class InstructionCreatorController : UIViewController, UITableViewDataSource, UI
         // create step object
         let entity =  NSEntityDescription.entityForName("Step", inManagedObjectContext: managedContext)
         let step = NSManagedObject(entity: entity!, insertIntoManagedObjectContext:managedContext)
+        step.setValue(" ", forKey: "details")
         step.setValue(stepList.count + 1, forKey: "number")
         step.setValue(instruction, forKey: "instruction")
         step.setValue("no_image", forKey: "image")
