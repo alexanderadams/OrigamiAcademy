@@ -10,7 +10,7 @@ import UIKit
 
 class RatingsBarController: UIView {
     
-    var rating = 0
+    var rating:Int = 0
     var ratingButtons = [UIButton]()
     var buttonSize = 40
     var buttonSpacing = 5
@@ -23,13 +23,14 @@ class RatingsBarController: UIView {
         let emptyStar = UIImage(named: "empty_star")
         let filledStar = UIImage(named: "filled_star")
         
-        for _ in 0..<5 {
+        for index in 0..<5 {
             let button = UIButton(frame: CGRect(x: 0, y: 0, width: buttonSize, height: buttonSize))
             button.setImage(emptyStar, forState: .Normal)
             button.setImage(filledStar, forState: .Selected)
             button.setImage(filledStar, forState: [.Highlighted, .Selected])
             button.adjustsImageWhenHighlighted = false
             button.addTarget(self, action: #selector(RatingsBarController.ratingButtonTapped(_:)), forControlEvents: .TouchDown)
+            button.selected = index < rating
             ratingButtons += [button]
             addSubview(button)
         }

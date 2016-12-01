@@ -28,6 +28,8 @@ class InstructionDetailViewController: UIViewController, UITableViewDataSource, 
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        ratingTable.delegate = self
+        ratingTable.dataSource = self
         creationNameLabel.text = "\(creation)"
         authorLabel.text = "\(author)"
         descriptionLabel.text = "\(summary)"
@@ -43,7 +45,7 @@ class InstructionDetailViewController: UIViewController, UITableViewDataSource, 
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         let managedContext = appDelegate.managedObjectContext
         
-        let fetchRequest = NSFetchRequest(entityName:"Instruction")
+        var fetchRequest = NSFetchRequest(entityName:"Instruction")
         var instructionsList:[NSManagedObject]? = nil
         
         do {
@@ -61,10 +63,12 @@ class InstructionDetailViewController: UIViewController, UITableViewDataSource, 
             }
         }
         
+        fetchRequest = NSFetchRequest(entityName:"Rating")
+        
         let results = instruction.valueForKey("ratings")
         
         if results != nil {
-            let ratingsSet = instruction.valueForKey("ratings") as! NSSet
+            let ratingsSet = instruction.valueForKey("ratings") as! NSMutableSet
             for r in ratingsSet {
                 ratings.append(r as! NSManagedObject)
                 //print(r.valueForKey("comment") as? String)
@@ -112,6 +116,7 @@ class InstructionDetailViewController: UIViewController, UITableViewDataSource, 
         
         cell.commentLabel.text = rating.valueForKey("comment") as? String
         cell.ratingBar.rating = rating.valueForKey("score") as! Int
+        cell.ratingBar.updateButtonSelectionStates()
         cell.ratingBar.locked = true
         cell.ratingBar.buttonSize = 20
         cell.ratingBar.buttonSpacing = 3

@@ -516,43 +516,6 @@
                                     <segue destination="f9O-Dp-7PM" kind="show" id="E7Z-Sh-sTx"/>
                                 </connections>
                             </button>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" placeholderIntrinsicWidth="414" placeholderIntrinsicHeight="160" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Jqw-pF-S89">
-                                <rect key="frame" x="0.0" y="522" width="414" height="214"/>
-                                <color key="backgroundColor" red="0.0" green="0.80000000000000004" blue="1" alpha="0.20070043100000001" colorSpace="calibratedRGB"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="RatingCell" id="qEz-3H-ewl" customClass="RatingCell" customModule="OrigamiAcademy" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="qEz-3H-ewl" id="3jI-Y2-j8n">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sCS-6y-a0O" customClass="RatingsBarController" customModule="OrigamiAcademy" customModuleProvider="target">
-                                                    <rect key="frame" x="8" y="0.0" width="120" height="35"/>
-                                                </view>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Comment goes here" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sGu-C2-jPY">
-                                                    <rect key="frame" x="136" y="0.0" width="270" height="35"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                            <color key="backgroundColor" red="0.0" green="0.80000000000000004" blue="1" alpha="0.20000000000000001" colorSpace="calibratedRGB"/>
-                                            <gestureRecognizers/>
-                                        </tableViewCellContentView>
-                                        <accessibility key="accessibilityConfiguration">
-                                            <accessibilityTraits key="traits" button="YES"/>
-                                            <bool key="isElement" value="NO"/>
-                                        </accessibility>
-                                        <gestureRecognizers/>
-                                        <connections>
-                                            <outlet property="commentLabel" destination="sGu-C2-jPY" id="1Pp-x6-V6f"/>
-                                            <outlet property="ratingBar" destination="sCS-6y-a0O" id="yaB-7A-jvZ"/>
-                                            <segue destination="rNb-3N-L9X" kind="show" identifier="CommentPopoverSegue" id="l9b-Nw-wJl"/>
-                                        </connections>
-                                    </tableViewCell>
-                                </prototypes>
-                            </tableView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="no_image.png" translatesAutoresizingMaskIntoConstraints="NO" id="jn9-v2-evS">
                                 <rect key="frame" x="80" y="102" width="254" height="200"/>
                                 <constraints>
@@ -575,6 +538,41 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" placeholderIntrinsicWidth="414" placeholderIntrinsicHeight="160" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Jqw-pF-S89">
+                                <rect key="frame" x="0.0" y="522" width="414" height="214"/>
+                                <color key="backgroundColor" red="0.0" green="0.80000000000000004" blue="1" alpha="0.20070043100000001" colorSpace="calibratedRGB"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" reuseIdentifier="RatingCell" id="qEz-3H-ewl" customClass="RatingCell" customModule="OrigamiAcademy" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="qEz-3H-ewl" id="3jI-Y2-j8n">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sCS-6y-a0O" customClass="RatingsBarController" customModule="OrigamiAcademy" customModuleProvider="target">
+                                                    <rect key="frame" x="8" y="0.0" width="120" height="35"/>
+                                                </view>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Comment goes here" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sGu-C2-jPY">
+                                                    <rect key="frame" x="136" y="0.0" width="270" height="35"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" red="0.0" green="0.80000000000000004" blue="1" alpha="0.20000000000000001" colorSpace="calibratedRGB"/>
+                                            <gestureRecognizers/>
+                                        </tableViewCellContentView>
+                                        <accessibility key="accessibilityConfiguration">
+                                            <accessibilityTraits key="traits" button="YES"/>
+                                        </accessibility>
+                                        <gestureRecognizers/>
+                                        <connections>
+                                            <outlet property="commentLabel" destination="sGu-C2-jPY" id="1Pp-x6-V6f"/>
+                                            <outlet property="ratingBar" destination="sCS-6y-a0O" id="yaB-7A-jvZ"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" red="0.78823529410000004" green="0.94509803920000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
