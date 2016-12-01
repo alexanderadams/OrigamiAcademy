@@ -9,6 +9,8 @@
 import UIKit
 import CoreData
 
+import Firebase
+
 class InstructionDetailViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UIPopoverPresentationControllerDelegate {
     
     @IBOutlet weak var creationNameLabel: UILabel!
@@ -22,6 +24,7 @@ class InstructionDetailViewController: UIViewController, UITableViewDataSource, 
     var summary:String = String()
     var imagePath:String = String()
     var ratings: [NSManagedObject] = []
+    var instructionUID = String()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,6 +40,35 @@ class InstructionDetailViewController: UIViewController, UITableViewDataSource, 
         
         
         // Get ratings object for this instruction
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        let managedContext = appDelegate.managedObjectContext
+        
+        let fetchRequest = NSFetchRequest(entityName:"Instruction")
+        var instructionsList:[NSManagedObject]? = nil
+        
+        do {
+            try instructionsList = managedContext.executeFetchRequest(fetchRequest) as? [NSManagedObject]
+        } catch {
+            // If an error occurs
+            let nserror = error as NSError
+            NSLog("Unresolved error \(nserror), \(nserror.userInfo)")
+            abort()
+        }
+        var instruction: NSManagedObject = instructionsList![0]
+        for i in instructionsList! {
+            if i.valueForKey("creation") as! String == self.creation {
+                instruction = i
+            }
+        }
+        
+        let results = instruction.valueForKey("rating")
+        
+        if results != nil {
+            let ratingsSet = instruction.valueForKey("rating") as! NSSet
+            for r in ratingsSet {
+                ratings.append(r as! NSManagedObject)
+            }
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -55,6 +87,10 @@ class InstructionDetailViewController: UIViewController, UITableViewDataSource, 
             ms.playSound()
             if let destination = segue.destinationViewController as? InstructionViewController {
                 destination.instructionSet = creation
+            }
+            if let destination = segue.destinationViewController as? RatingCreatorController {
+                destination.instructionUID = instructionUID
+                destination.instructionName = creation
             }
         }
     }
