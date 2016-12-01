@@ -134,6 +134,7 @@ class MainMenuController : UIViewController {
                     instruction.setValue(numOfSteps, forKey: "numOfSteps")
                     instruction.setValue(instructionData!["author"], forKey: "author")
                     instruction.setValue(instructionData!["summary"], forKey: "summary")
+                    instruction.setValue(instructionData!["published"], forKey: "published")
                     instruction.setValue(instructionData!["finishedImage"], forKey: "finishedImage")
                     instruction.setValue(instructionStringKey, forKey: "uid")
                     

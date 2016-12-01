@@ -116,7 +116,8 @@ class InstructionCreatorController : UIViewController, UITableViewDataSource, UI
                                    "creation": creationNameText.text!,
                                    "finishedImage": (lastStep?.valueForKey("image"))!,
                                    "numOfSteps": stepList.count,
-                                   "summary": descriptionText.text!]
+                                   "summary": descriptionText.text!,
+                                   "published": false]
         
             instructionsRef.child(generatedName).setValue(instructionMetadata)
             userRef.child(curUserID!).child("instructions").updateChildValues([generatedName: true])
