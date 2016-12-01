@@ -112,6 +112,7 @@ class MainMenuController : UIViewController {
             let managedContext = appDelegate.managedObjectContext
         
             let ref = FIRDatabase.database().reference()
+            let ratingsRef = ref.child("ratings")
             ref.child("instructions").observeSingleEventOfType(.Value, withBlock: { snapshot in
             let instructions = snapshot.value as? NSDictionary
             let instructionKeys = instructions
@@ -186,6 +187,24 @@ class MainMenuController : UIViewController {
 
                     })
                     
+                    let ratingSet:NSMutableSet = []
+                    let ratingsDict = instructionData!["ratings"] as? NSDictionary
+                    
+                    for (ratingsKey, _) in ratingsDict! {
+                        ratingsRef.child(ratingsKey as! String).observeSingleEventOfType(.Value, withBlock: {
+                        snapshot in
+                            let ratingsData = snapshot.value as? NSDictionary
+                            
+                            let entity =  NSEntityDescription.entityForName("Rating", inManagedObjectContext: managedContext)
+                            let rating = NSManagedObject(entity: entity!, insertIntoManagedObjectContext:managedContext)
+                            
+                            rating.setValue(ratingsData!["comment"], forKey: "comment")
+                            rating.setValue(ratingsData!["score"], forKey: "score")
+                            rating.setValue(instruction, forKey: "instruction")
+                            ratingSet.addObject(rating)
+                        })
+                    }
+                    instruction.setValue(ratingSet, forKey: "ratings")
                 })
             }
 

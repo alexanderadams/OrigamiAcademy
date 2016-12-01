@@ -61,12 +61,13 @@ class InstructionDetailViewController: UIViewController, UITableViewDataSource, 
             }
         }
         
-        let results = instruction.valueForKey("rating")
+        let results = instruction.valueForKey("ratings")
         
         if results != nil {
-            let ratingsSet = instruction.valueForKey("rating") as! NSSet
+            let ratingsSet = instruction.valueForKey("ratings") as! NSSet
             for r in ratingsSet {
                 ratings.append(r as! NSManagedObject)
+                //print(r.valueForKey("comment") as? String)
             }
         }
     }
