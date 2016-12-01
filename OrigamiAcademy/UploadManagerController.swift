@@ -36,9 +36,21 @@ class UploadManagerController : UIViewController, UITableViewDataSource, UITable
             abort()
         }
         
-        for instruction in managedList! {
+        for (index, instruction) in managedList!.enumerate() {
             if FIRAuth.auth()?.currentUser?.email == instruction.valueForKey("author") as? String {
                 instructionList.addObject(instruction)
+            }
+            if instruction.valueForKey("creation") as! String == "badObject" {
+                managedList?.removeAtIndex(index)
+                managedContext.deleteObject(instruction)
+                do {
+                    try managedContext.save()
+                } catch {
+                    // If an error occurs
+                    let nserror = error as NSError
+                    NSLog("Unresolved error \(nserror), \(nserror.userInfo)")
+                    abort()
+                }
             }
         }
     }

@@ -61,6 +61,21 @@ class OrigamiListViewController: UIViewController, UITableViewDataSource, UITabl
             abort()
         }
         
+        for (index, instruction) in instructionsList!.enumerate() {
+            if instruction.valueForKey("creation") as! String == "badObject" {
+                instructionsList?.removeAtIndex(index)
+                managedContext.deleteObject(instruction)
+                do {
+                    try managedContext.save()
+                } catch {
+                    // If an error occurs
+                    let nserror = error as NSError
+                    NSLog("Unresolved error \(nserror), \(nserror.userInfo)")
+                    abort()
+                }
+            }
+        }
+        
         return instructionsList!
     }
     

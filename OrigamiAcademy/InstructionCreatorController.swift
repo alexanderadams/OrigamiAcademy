@@ -54,6 +54,12 @@ class InstructionCreatorController : UIViewController, UITableViewDataSource, UI
             // create instrucion object
             var entity =  NSEntityDescription.entityForName("Instruction", inManagedObjectContext: managedContext)
             instruction = NSManagedObject(entity: entity!, insertIntoManagedObjectContext:managedContext)
+            instruction?.setValue("badObject", forKey: "creation")
+            instruction?.setValue("badObject", forKey: "summary")
+            instruction?.setValue(-1, forKey: "numOfSteps")
+            instruction?.setValue("badObject", forKey: "uid")
+            instruction?.setValue("badObject", forKey: "author")
+            instruction!.setValue("no_image", forKey: "finishedImage")
             
             // create first step
             entity =  NSEntityDescription.entityForName("Step", inManagedObjectContext: managedContext)
@@ -92,6 +98,7 @@ class InstructionCreatorController : UIViewController, UITableViewDataSource, UI
         instruction?.setValue(stepList.count, forKey: "numOfSteps")
         let curUser = FIRAuth.auth()?.currentUser?.email
         let curUserID = FIRAuth.auth()?.currentUser?.uid
+        instruction?.setValue(curUserID, forKey: "uid")
         instruction?.setValue(curUser, forKey: "author")
         let lastStep = stepList.lastObject as? NSObject
         instruction!.setValue(lastStep?.valueForKey("image"), forKey: "finishedImage")
