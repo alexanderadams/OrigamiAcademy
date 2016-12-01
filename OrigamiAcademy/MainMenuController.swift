@@ -190,6 +190,7 @@ class MainMenuController : UIViewController {
                     let ratingSet:NSMutableSet = []
                     let ratingsDict = instructionData!["ratings"] as? NSDictionary
                     
+                    if ratingsDict != nil {
                     for (ratingsKey, _) in ratingsDict! {
                         ratingsRef.child(ratingsKey as! String).observeSingleEventOfType(.Value, withBlock: {
                         snapshot in
@@ -205,6 +206,7 @@ class MainMenuController : UIViewController {
                         })
                     }
                     instruction.setValue(ratingSet, forKey: "ratings")
+                    }
                 })
             }
 
