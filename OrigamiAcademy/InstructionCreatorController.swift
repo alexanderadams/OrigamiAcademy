@@ -49,6 +49,15 @@ class InstructionCreatorController : UIViewController, UITableViewDataSource, UI
             descriptionText.text = instruction?.valueForKey("summary") as? String
             // get step objects and store them in array
             stepList = instruction!.valueForKey("steps") as! NSMutableOrderedSet
+            let sorted_arr: NSMutableArray = []
+            for _ in 0...(instruction?.valueForKey("numOfSteps") as! Int - 1) {
+                sorted_arr.addObject("Bad_Step")
+            }
+            for step in stepList {
+                sorted_arr.replaceObjectAtIndex(step.valueForKey("number") as! Int, withObject: step)
+            }
+            stepList.removeAllObjects()
+            stepList.addObjectsFromArray(sorted_arr as [AnyObject])
         }
         else {
             // create instrucion object

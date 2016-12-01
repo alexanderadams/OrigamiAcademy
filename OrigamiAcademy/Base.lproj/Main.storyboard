@@ -434,13 +434,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Step Editor" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cwG-oa-OqV">
-                                <rect key="frame" x="165" y="45" width="85" height="21"/>
+                                <rect key="frame" x="165" y="84" width="85" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Instruction:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kDL-yo-TRW">
                                 <rect key="frame" x="20" y="175" width="87" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="87" id="Qtb-VV-pNq"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -464,7 +467,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Step Number" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IRc-DU-WbL">
-                                <rect key="frame" x="156" y="96" width="102" height="21"/>
+                                <rect key="frame" x="156" y="125" width="102" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -485,7 +488,7 @@
                         </subviews>
                         <color key="backgroundColor" red="0.78823529410000004" green="0.94509803920000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="IRc-DU-WbL" firstAttribute="top" secondItem="cwG-oa-OqV" secondAttribute="bottom" constant="30" id="2Zf-O0-Fhw"/>
+                            <constraint firstItem="IRc-DU-WbL" firstAttribute="top" secondItem="cwG-oa-OqV" secondAttribute="bottom" constant="20" id="2Zf-O0-Fhw"/>
                             <constraint firstItem="CpJ-rH-Elg" firstAttribute="top" secondItem="Las-EL-Xwg" secondAttribute="bottom" constant="20" id="Fva-lU-KXU"/>
                             <constraint firstItem="O4e-K2-mJv" firstAttribute="top" secondItem="Y6W-Pu-u5J" secondAttribute="bottom" id="JM1-oi-HBR"/>
                             <constraint firstItem="Y6W-Pu-u5J" firstAttribute="top" secondItem="CpJ-rH-Elg" secondAttribute="bottom" constant="10" id="L5l-1J-ky1"/>
@@ -499,7 +502,7 @@
                             <constraint firstItem="CpJ-rH-Elg" firstAttribute="centerX" secondItem="a47-OL-hJK" secondAttribute="centerX" id="YYP-kt-csN"/>
                             <constraint firstItem="Aay-HE-Ocd" firstAttribute="leading" secondItem="kDL-yo-TRW" secondAttribute="trailing" constant="15" id="d6W-CT-bg3"/>
                             <constraint firstItem="Las-EL-Xwg" firstAttribute="centerX" secondItem="a47-OL-hJK" secondAttribute="centerX" id="jle-vt-fC1"/>
-                            <constraint firstItem="cwG-oa-OqV" firstAttribute="top" secondItem="epP-fx-Q64" secondAttribute="bottom" constant="25" id="mWt-0o-JVT"/>
+                            <constraint firstItem="cwG-oa-OqV" firstAttribute="top" secondItem="epP-fx-Q64" secondAttribute="bottom" constant="20" id="mWt-0o-JVT"/>
                             <constraint firstItem="Y6W-Pu-u5J" firstAttribute="centerX" secondItem="a47-OL-hJK" secondAttribute="centerX" id="rvK-a3-jEr"/>
                             <constraint firstItem="cwG-oa-OqV" firstAttribute="centerX" secondItem="a47-OL-hJK" secondAttribute="centerX" id="xH6-7V-SeR"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Y6W-Pu-u5J" secondAttribute="trailing" constant="-20" id="z2w-C0-uTD"/>
@@ -1135,7 +1138,7 @@
     <inferredMetricsTieBreakers>
         <segue reference="mMR-1J-DCn"/>
         <segue reference="DH9-Jc-XNW"/>
-        <segue reference="al0-jc-1Jk"/>
+        <segue reference="32x-9f-L7q"/>
         <segue reference="ZAc-9w-QAU"/>
         <segue reference="ine-GL-d89"/>
     </inferredMetricsTieBreakers>
