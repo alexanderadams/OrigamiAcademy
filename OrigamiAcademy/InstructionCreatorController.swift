@@ -57,6 +57,7 @@ class InstructionCreatorController : UIViewController, UITableViewDataSource, UI
             instruction?.setValue("badObject", forKey: "creation")
             instruction?.setValue("badObject", forKey: "summary")
             instruction?.setValue(-1, forKey: "numOfSteps")
+            instruction?.setValue(false, forKey: "published")
             instruction?.setValue("badObject", forKey: "uid")
             instruction?.setValue("badObject", forKey: "author")
             instruction!.setValue("no_image", forKey: "finishedImage")
@@ -116,7 +117,8 @@ class InstructionCreatorController : UIViewController, UITableViewDataSource, UI
                                    "creation": creationNameText.text!,
                                    "finishedImage": (lastStep?.valueForKey("image"))!,
                                    "numOfSteps": stepList.count,
-                                   "summary": descriptionText.text!]
+                                   "summary": descriptionText.text!,
+                                   "published": false]
         
             instructionsRef.child(generatedName).setValue(instructionMetadata)
             userRef.child(curUserID!).child("instructions").updateChildValues([generatedName: true])
