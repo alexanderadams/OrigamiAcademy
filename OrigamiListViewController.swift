@@ -62,9 +62,11 @@ class OrigamiListViewController: UIViewController, UITableViewDataSource, UITabl
         }
         
         for (index, instruction) in instructionsList!.enumerate() {
-            if instruction.valueForKey("creation") as! String == "badObject" {
+            let creationName = instruction.valueForKey("creation") as! String
+            let published = instruction.valueForKey("published") as! Bool
+            if creationName == "badObject" || published == false {
                 instructionsList?.removeAtIndex(index)
-                managedContext.deleteObject(instruction)
+//                managedContext.deleteObject(instruction)
                 do {
                     try managedContext.save()
                 } catch {
