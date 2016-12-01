@@ -7,13 +7,13 @@
         <attribute name="numOfSteps" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="summary" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="uid" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="rating" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Rating" inverseName="instruction" inverseEntity="Rating" syncable="YES"/>
+        <relationship name="ratings" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Rating" inverseName="instruction" inverseEntity="Rating" syncable="YES"/>
         <relationship name="steps" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="Step" inverseName="instruction" inverseEntity="Step" syncable="YES"/>
     </entity>
     <entity name="Rating" syncable="YES">
         <attribute name="comment" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="score" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
-        <relationship name="instruction" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Instruction" inverseName="rating" inverseEntity="Instruction" syncable="YES"/>
+        <relationship name="instruction" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Instruction" inverseName="ratings" inverseEntity="Instruction" syncable="YES"/>
     </entity>
     <entity name="Step" syncable="YES">
         <attribute name="details" optional="YES" attributeType="String" syncable="YES"/>

@@ -9,6 +9,8 @@
 import UIKit
 import CoreData
 
+import Firebase
+
 class InstructionDetailViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UIPopoverPresentationControllerDelegate {
     
     @IBOutlet weak var creationNameLabel: UILabel!
@@ -22,9 +24,12 @@ class InstructionDetailViewController: UIViewController, UITableViewDataSource, 
     var summary:String = String()
     var imagePath:String = String()
     var ratings: [NSManagedObject] = []
+    var instructionUID = String()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        ratingTable.delegate = self
+        ratingTable.dataSource = self
         creationNameLabel.text = "\(creation)"
         authorLabel.text = "\(author)"
         descriptionLabel.text = "\(summary)"
@@ -37,6 +42,38 @@ class InstructionDetailViewController: UIViewController, UITableViewDataSource, 
         
         
         // Get ratings object for this instruction
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        let managedContext = appDelegate.managedObjectContext
+        
+        var fetchRequest = NSFetchRequest(entityName:"Instruction")
+        var instructionsList:[NSManagedObject]? = nil
+        
+        do {
+            try instructionsList = managedContext.executeFetchRequest(fetchRequest) as? [NSManagedObject]
+        } catch {
+            // If an error occurs
+            let nserror = error as NSError
+            NSLog("Unresolved error \(nserror), \(nserror.userInfo)")
+            abort()
+        }
+        var instruction: NSManagedObject = instructionsList![0]
+        for i in instructionsList! {
+            if i.valueForKey("creation") as! String == self.creation {
+                instruction = i
+            }
+        }
+        
+        fetchRequest = NSFetchRequest(entityName:"Rating")
+        
+        let results = instruction.valueForKey("ratings")
+        
+        if results != nil {
+            let ratingsSet = instruction.valueForKey("ratings") as! NSMutableSet
+            for r in ratingsSet {
+                ratings.append(r as! NSManagedObject)
+                //print(r.valueForKey("comment") as? String)
+            }
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -55,6 +92,10 @@ class InstructionDetailViewController: UIViewController, UITableViewDataSource, 
             ms.playSound()
             if let destination = segue.destinationViewController as? InstructionViewController {
                 destination.instructionSet = creation
+            }
+            if let destination = segue.destinationViewController as? RatingCreatorController {
+                destination.instructionUID = instructionUID
+                destination.instructionName = creation
             }
         }
     }
@@ -75,6 +116,7 @@ class InstructionDetailViewController: UIViewController, UITableViewDataSource, 
         
         cell.commentLabel.text = rating.valueForKey("comment") as? String
         cell.ratingBar.rating = rating.valueForKey("score") as! Int
+        cell.ratingBar.updateButtonSelectionStates()
         cell.ratingBar.locked = true
         cell.ratingBar.buttonSize = 20
         cell.ratingBar.buttonSpacing = 3
