@@ -81,22 +81,13 @@ class InstructionDetailViewController: UIViewController, UITableViewDataSource, 
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "CommentPopoverSegue" {
-            let vc = segue.destinationViewController as? CommentPopover
-            let controller = vc!.popoverPresentationController
-            if controller != nil {
-                controller?.delegate = self
-            }
+        ms.playSound()
+        if let destination = segue.destinationViewController as? InstructionViewController {
+            destination.instructionSet = creation
         }
-        else {
-            ms.playSound()
-            if let destination = segue.destinationViewController as? InstructionViewController {
-                destination.instructionSet = creation
-            }
-            if let destination = segue.destinationViewController as? RatingCreatorController {
-                destination.instructionUID = instructionUID
-                destination.instructionName = creation
-            }
+        if let destination = segue.destinationViewController as? RatingCreatorController {
+            destination.instructionUID = instructionUID
+            destination.instructionName = creation
         }
     }
     
@@ -114,6 +105,7 @@ class InstructionDetailViewController: UIViewController, UITableViewDataSource, 
         let row = indexPath.row
         let rating = ratings[row]
         
+        cell.tag = row
         cell.commentLabel.text = rating.valueForKey("comment") as? String
         cell.ratingBar.rating = rating.valueForKey("score") as! Int
         cell.ratingBar.updateButtonSelectionStates()
@@ -130,9 +122,3 @@ class RatingCell: UITableViewCell {
     @IBOutlet weak var commentLabel: UILabel!
     
 }
-
-class CommentPopover: UIViewController {
-    @IBOutlet weak var comment: UILabel!
-    
-}
-

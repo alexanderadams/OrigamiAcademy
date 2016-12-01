@@ -665,7 +665,7 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" verticalHuggingPriority="248" verticalCompressionResistancePriority="748" placeholderIntrinsicWidth="414" placeholderIntrinsicHeight="160" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Jqw-pF-S89">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" verticalHuggingPriority="248" verticalCompressionResistancePriority="748" placeholderIntrinsicWidth="414" placeholderIntrinsicHeight="160" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Jqw-pF-S89">
                                 <rect key="frame" x="0.0" y="512" width="414" height="180"/>
                                 <color key="backgroundColor" red="0.0" green="0.80000000000000004" blue="1" alpha="0.20070043100000001" colorSpace="calibratedRGB"/>
                                 <prototypes>
@@ -834,42 +834,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gqf-wJ-jFK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4374" y="57"/>
-        </scene>
-        <!--Comment Popover-->
-        <scene sceneID="stf-QB-2U8">
-            <objects>
-                <viewController id="rNb-3N-L9X" customClass="CommentPopover" customModule="OrigamiAcademy" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="7Oe-Jm-hWf"/>
-                        <viewControllerLayoutGuide type="bottom" id="QdX-zA-im9"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="uiH-LV-fJW">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Comment" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="20" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EBX-Ur-q8M">
-                                <rect key="frame" x="16" y="20" width="288" height="460"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" red="0.78823529410000004" green="0.94509803920000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                        <constraints>
-                            <constraint firstItem="EBX-Ur-q8M" firstAttribute="leading" secondItem="uiH-LV-fJW" secondAttribute="leadingMargin" id="R4F-9a-AXa"/>
-                            <constraint firstItem="QdX-zA-im9" firstAttribute="top" secondItem="EBX-Ur-q8M" secondAttribute="bottom" id="geA-hs-Dtu"/>
-                            <constraint firstItem="EBX-Ur-q8M" firstAttribute="top" secondItem="7Oe-Jm-hWf" secondAttribute="bottom" id="vlw-Or-O2N"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="EBX-Ur-q8M" secondAttribute="trailing" id="wND-Vz-A2k"/>
-                        </constraints>
-                    </view>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
-                    <connections>
-                        <outlet property="comment" destination="EBX-Ur-q8M" id="GWj-Ks-rL0"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="sKI-ic-O2v" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3301" y="1070"/>
         </scene>
         <!--Rating-->
         <scene sceneID="P1p-Va-dcP">
