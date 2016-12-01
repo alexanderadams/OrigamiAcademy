@@ -76,10 +76,12 @@ class UploadManagerController : UIViewController, UITableViewDataSource, UITable
             cell.creationButton.setTitle("Edit", forState: .Normal)
         }
         else {
-            // Firebase stuff here
-            
-            cell.creationButton.setTitle("Publish", forState: .Normal) // if already published, say unpublish or something
-            
+            let publish = instruction.valueForKey!("published") as? Bool
+            if publish == true {
+                cell.creationButton.setTitle("Unpublish", forState: .Normal)
+            } else {
+                cell.creationButton.setTitle("Publish", forState: .Normal)
+            }
         }
         
         return cell
@@ -87,13 +89,25 @@ class UploadManagerController : UIViewController, UITableViewDataSource, UITable
     
     @IBAction func creationButton(sender: AnyObject) {
         let row = sender.tag
-        let _ = instructionList[row]
+        let instruction = instructionList[row]
         if editor {
             ms.playSound()
             performSegueWithIdentifier("editorSegue", sender: sender)
         }
         else {
             // Publish/Unpublish the instructions
+            let instructionID = instruction.valueForKey("uid") as? String
+            let ref = FIRDatabase.database().reference()
+            let instructionsRef = ref.child("instructions")
+            let publish:Bool
+            if instruction.valueForKey!("published") as? Bool == true {
+                publish = false
+            } else {
+                publish = true
+            }
+            NSLog("Setting published status of Instruction \(instructionID) to \(publish)")
+            instructionsRef.child(instructionID!).updateChildValues(["publish": publish])
+            instruction.setValue(publish, forKey: "published")
         }
     }
     

@@ -57,6 +57,7 @@ class InstructionCreatorController : UIViewController, UITableViewDataSource, UI
             instruction?.setValue("badObject", forKey: "creation")
             instruction?.setValue("badObject", forKey: "summary")
             instruction?.setValue(-1, forKey: "numOfSteps")
+            instruction?.setValue(false, forKey: "published")
             instruction?.setValue("badObject", forKey: "uid")
             instruction?.setValue("badObject", forKey: "author")
             instruction!.setValue("no_image", forKey: "finishedImage")
