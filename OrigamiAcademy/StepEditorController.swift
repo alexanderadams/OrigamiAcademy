@@ -29,7 +29,9 @@ class StepEditorController : UIViewController, UIImagePickerControllerDelegate, 
         stepName.text = "Step \(stepNumber)"
         instructionText.text = stepObject?.valueForKey("details") as? String
         imageName = stepObject!.valueForKey("image") as! String
-        image.image = UIImage(named:imageName)
+        let stringDocumentsURL = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as NSString
+        
+        image.image = UIImage(named: "\(stringDocumentsURL)/\(imageName).jpg")
     }
     
     @IBAction func saveStep(sender: AnyObject) {

@@ -19,7 +19,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="OAlogo" translatesAutoresizingMaskIntoConstraints="NO" id="Aq1-uC-4UF">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="OAlogo" translatesAutoresizingMaskIntoConstraints="NO" id="Aq1-uC-4UF">
                                 <rect key="frame" x="80" y="94" width="254" height="169"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Aq1-uC-4UF" secondAttribute="height" multiplier="3:2" id="djt-PX-A6L"/>
@@ -416,13 +416,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Step Editor" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cwG-oa-OqV">
-                                <rect key="frame" x="165" y="84" width="85" height="21"/>
+                                <rect key="frame" x="165" y="40" width="85" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Instruction:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kDL-yo-TRW">
-                                <rect key="frame" x="20" y="175" width="87" height="21"/>
+                                <rect key="frame" x="20" y="204" width="87" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="87" id="Qtb-VV-pNq"/>
                                 </constraints>
@@ -431,38 +431,38 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Aay-HE-Ocd">
-                                <rect key="frame" x="122" y="171" width="272" height="30"/>
+                                <rect key="frame" x="122" y="200" width="272" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Las-EL-Xwg">
-                                <rect key="frame" x="160" y="311" width="95" height="30"/>
+                                <rect key="frame" x="160" y="340" width="95" height="30"/>
                                 <state key="normal" title="Upload Image"/>
                                 <connections>
                                     <action selector="uploadImage:" destination="T7f-hu-fpg" eventType="touchUpInside" id="dxp-sB-mUY"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Image Preview" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CpJ-rH-Elg">
-                                <rect key="frame" x="151" y="361" width="112" height="21"/>
+                                <rect key="frame" x="151" y="390" width="112" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Step Number" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IRc-DU-WbL">
-                                <rect key="frame" x="156" y="125" width="102" height="21"/>
+                                <rect key="frame" x="156" y="81" width="102" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DJI-bU-xhz">
-                                <rect key="frame" x="190" y="241" width="34" height="30"/>
+                                <rect key="frame" x="190" y="270" width="34" height="30"/>
                                 <state key="normal" title="Save"/>
                                 <connections>
                                     <action selector="saveStep:" destination="T7f-hu-fpg" eventType="touchUpInside" id="Rqu-Vh-Uay"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="no_image.png" translatesAutoresizingMaskIntoConstraints="NO" id="Y6W-Pu-u5J">
-                                <rect key="frame" x="0.0" y="392" width="414" height="300"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" verticalCompressionResistancePriority="749" placeholderIntrinsicWidth="374" placeholderIntrinsicHeight="271" image="no_image.png" translatesAutoresizingMaskIntoConstraints="NO" id="Y6W-Pu-u5J">
+                                <rect key="frame" x="20" y="421" width="374" height="271"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Y6W-Pu-u5J" secondAttribute="height" multiplier="69:50" id="6ho-1y-n2e"/>
                                 </constraints>
@@ -479,7 +479,7 @@
                             <constraint firstItem="Aay-HE-Ocd" firstAttribute="trailing" secondItem="a47-OL-hJK" secondAttribute="trailingMargin" id="Q4p-Uc-rSs"/>
                             <constraint firstItem="IRc-DU-WbL" firstAttribute="centerX" secondItem="a47-OL-hJK" secondAttribute="centerX" id="QkP-OR-UM8"/>
                             <constraint firstItem="DJI-bU-xhz" firstAttribute="top" secondItem="Aay-HE-Ocd" secondAttribute="bottom" constant="40" id="ReG-RB-8nD"/>
-                            <constraint firstItem="Y6W-Pu-u5J" firstAttribute="leading" secondItem="a47-OL-hJK" secondAttribute="leadingMargin" constant="-20" id="Shd-fP-0gO"/>
+                            <constraint firstItem="Y6W-Pu-u5J" firstAttribute="leading" secondItem="a47-OL-hJK" secondAttribute="leadingMargin" id="Shd-fP-0gO"/>
                             <constraint firstItem="Aay-HE-Ocd" firstAttribute="centerY" secondItem="kDL-yo-TRW" secondAttribute="centerY" id="TAh-2V-fe0"/>
                             <constraint firstItem="CpJ-rH-Elg" firstAttribute="centerX" secondItem="a47-OL-hJK" secondAttribute="centerX" id="YYP-kt-csN"/>
                             <constraint firstItem="Aay-HE-Ocd" firstAttribute="leading" secondItem="kDL-yo-TRW" secondAttribute="trailing" constant="15" id="d6W-CT-bg3"/>
@@ -487,7 +487,7 @@
                             <constraint firstItem="cwG-oa-OqV" firstAttribute="top" secondItem="epP-fx-Q64" secondAttribute="bottom" constant="20" id="mWt-0o-JVT"/>
                             <constraint firstItem="Y6W-Pu-u5J" firstAttribute="centerX" secondItem="a47-OL-hJK" secondAttribute="centerX" id="rvK-a3-jEr"/>
                             <constraint firstItem="cwG-oa-OqV" firstAttribute="centerX" secondItem="a47-OL-hJK" secondAttribute="centerX" id="xH6-7V-SeR"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Y6W-Pu-u5J" secondAttribute="trailing" constant="-20" id="z2w-C0-uTD"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Y6W-Pu-u5J" secondAttribute="trailing" id="z2w-C0-uTD"/>
                             <constraint firstItem="kDL-yo-TRW" firstAttribute="leading" secondItem="a47-OL-hJK" secondAttribute="leadingMargin" id="ztW-rF-h3y"/>
                         </constraints>
                     </view>
