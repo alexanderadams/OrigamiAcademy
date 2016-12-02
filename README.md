@@ -1,41 +1,51 @@
 # OrigamiAcademy
 
-## Contributions: 
+# About
 
-Alexander Adams (40): 
- * worked on uploadManagerController 
-   so that Users can edit their 
-   instructions and in the future upload 
-   them
- * worked on InstructionCreater so that
-   users can create new instructions
-   and save them (without pictures)
- * worked on StepEditor which allows 
-   users to step edit each instruction
+#### Group Number: 14
 
-Christiano Contreras (30):
-  * Worked on saving authentication information
-    to firebase (login,delete account)
-  * stripped out core data way of storing
-    user authentication
-  * pair programmed with Cedric on implementing
-    logout control flow
+#### Team Members:
 
-Cedric Charly (30):
-  * Worked on implementing logout
-    control flow
-  * worked on current user signed 
-    in control flow
-  * integrated Firebase with 
-    OrigamiAcademy
+* Cedric Charly
+
+* Alexander Adams
+
+* Christiano Contreras
+
+# Dependencies
+
+Swift 2 (XCode 7.3.1)
+
+Pods:
+
+* pod 'Firebase/Auth'
+* pod 'Firebase/Database'
+* pod 'Firebase/RemoteConfig'
+* pod 'Firebase/Storage'
+
+Found in Podfile
+
+## Contributions:
+
+|Feature   	|Release   	|Release Actual   	|Deviation   	|Credit   	|
+|---	|---	|---	|---	|---	|
+|Registration   	|Alpha   	|Alpha   	|Switched to Firebase   	|Christiano (50), Cedric(50)   	|
+|Settings  	|Alpha   	|Alpha   	|Changed from language to delete user   	|Christiano   	|
+|Sound   	|Alpha   	|Alpha   	|   	|Christiano   	|
+|Origami List View   	|Alpha   	|Alpha   	|   	|Alexander   	|
+|Preset Origami Instructions   	|Alpha   	|Alpha   	|   	|Alexander   	|
+|User Creations   	|Beta   	|Beta   	|   	|Alexander(75), Cedric(25)   	|
+|Downloading User Creations   	|Beta   	|Final   	|Caching in Final   	|Cedric(20) Christiano(80)   	|
+|Uploading User Creations   	|Beta   	|Final   	|   	|Cedric   	|
+|Rating Creations   	|Final   	|Final   	|   	|Cedric(25), Alexander(75)   	|
+|Firebase Database Design   	|Beta   	|Final   	|Significant refactor to support Firebase   	|Cedric   	|
 
 ## Differences:
-At the moment you can only create and save new origami instructions without pictures.
+* Dropped language support
 
-### Languages
-We planned on language support for Aplha, after feedback from instructor we pushed languages to beta to focus on images
+* Changed from managing uploads to managing visibility to other users using a published flag on origami owned by user
 
-## comments 
+## comments
 We made a profile for you to login and test our app
 
 username: bulko@example.com
