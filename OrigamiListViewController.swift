@@ -61,6 +61,23 @@ class OrigamiListViewController: UIViewController, UITableViewDataSource, UITabl
             abort()
         }
         
+        for (index, instruction) in instructionsList!.enumerate() {
+            let creationName = instruction.valueForKey("creation") as! String
+            let published = instruction.valueForKey("published") as! Bool
+            if creationName == "badObject" || published == false {
+                instructionsList?.removeAtIndex(index)
+//                managedContext.deleteObject(instruction)
+                do {
+                    try managedContext.save()
+                } catch {
+                    // If an error occurs
+                    let nserror = error as NSError
+                    NSLog("Unresolved error \(nserror), \(nserror.userInfo)")
+                    abort()
+                }
+            }
+        }
+        
         return instructionsList!
     }
     
@@ -72,6 +89,8 @@ class OrigamiListViewController: UIViewController, UITableViewDataSource, UITabl
             destination.creation = "\(instruction.valueForKey("creation")!)"
             destination.author = "\(instruction.valueForKey("author")!)"
             destination.summary = "\(instruction.valueForKey("summary")!)"
+            destination.imagePath = "\(instruction.valueForKey("finishedImage")!)"
+            destination.instructionUID = instruction.valueForKey("uid") as! String
         }
     }
 

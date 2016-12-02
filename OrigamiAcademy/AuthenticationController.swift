@@ -70,8 +70,11 @@ class AuthenticationController: UIViewController {
                     self.errorLabel.hidden = false
                     return
                 }
+                if user != nil {
+                    self.performSegueWithIdentifier("loginRegisterSegue", sender: self)
+                }
 
-                self.performSegueWithIdentifier("loginRegisterSegue", sender: self)
+                
             }
         }
         

@@ -36,9 +36,21 @@ class UploadManagerController : UIViewController, UITableViewDataSource, UITable
             abort()
         }
         
-        for instruction in managedList! {
+        for (index, instruction) in managedList!.enumerate() {
             if FIRAuth.auth()?.currentUser?.email == instruction.valueForKey("author") as? String {
                 instructionList.addObject(instruction)
+            }
+            if instruction.valueForKey("creation") as! String == "badObject" {
+                managedList?.removeAtIndex(index)
+                managedContext.deleteObject(instruction)
+                do {
+                    try managedContext.save()
+                } catch {
+                    // If an error occurs
+                    let nserror = error as NSError
+                    NSLog("Unresolved error \(nserror), \(nserror.userInfo)")
+                    abort()
+                }
             }
         }
     }
@@ -52,24 +64,51 @@ class UploadManagerController : UIViewController, UITableViewDataSource, UITable
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("CreationCell", forIndexPath: indexPath)
+        let cell = tableView.dequeueReusableCellWithIdentifier("CreationCell", forIndexPath: indexPath) as! CreationCell
         
         let row = indexPath.row
         let instruction = instructionList[row]
         
-        cell.textLabel?.text = instruction.valueForKey("creation") as? String
+        cell.creationName.text = instruction.valueForKey("creation") as? String
+        cell.creationButton.tag = row
         
         if editor {
-            cell.detailTextLabel!.text = "Edit"
+            cell.creationButton.setTitle("Edit", forState: .Normal)
         }
         else {
-            cell.detailTextLabel!.text = "Upload (Not Yet Implemented)"
-            
-            // FINAL RELEASE STUFF
-            // set cell button text to "Upload" or "Remove"
+            let publish = instruction.valueForKey!("published") as? Bool
+            if publish == true {
+                cell.creationButton.setTitle("Unpublish", forState: .Normal)
+            } else {
+                cell.creationButton.setTitle("Publish", forState: .Normal)
+            }
         }
         
         return cell
+    }
+    
+    @IBAction func creationButton(sender: AnyObject) {
+        let row = sender.tag
+        let instruction = instructionList[row]
+        if editor {
+            ms.playSound()
+            performSegueWithIdentifier("editorSegue", sender: sender)
+        }
+        else {
+            // Publish/Unpublish the instructions
+            let instructionID = instruction.valueForKey("uid") as? String
+            let ref = FIRDatabase.database().reference()
+            let instructionsRef = ref.child("instructions")
+            let publish:Bool
+            if instruction.valueForKey!("published") as? Bool == true {
+                publish = false
+            } else {
+                publish = true
+            }
+            NSLog("Setting published status of Instruction \(instructionID) to \(publish)")
+            instructionsRef.child(instructionID!).updateChildValues(["publish": publish])
+            instruction.setValue(publish, forKey: "published")
+        }
     }
     
     override func shouldPerformSegueWithIdentifier(identifier: String, sender: AnyObject?) -> Bool {
@@ -81,11 +120,18 @@ class UploadManagerController : UIViewController, UITableViewDataSource, UITable
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         ms.playSound()
-        if let destination = segue.destinationViewController as? InstructionCreatorController,
-            dataIndex = instructionTable.indexPathForSelectedRow?.row {
+        if let destination = segue.destinationViewController as? InstructionCreatorController {
+            let row = sender!.tag
+            let instruction = instructionList[row] as? NSObject
             destination.editInstruction = true
-            let instruction = instructionList[dataIndex] as? NSObject
             destination.creationName = (instruction!.valueForKey("creation") as? String)!
         }
     }
+}
+
+class CreationCell: UITableViewCell {
+    
+    @IBOutlet weak var creationName: UILabel!
+    @IBOutlet weak var creationButton: UIButton!
+    
 }

@@ -49,11 +49,29 @@ class InstructionCreatorController : UIViewController, UITableViewDataSource, UI
             descriptionText.text = instruction?.valueForKey("summary") as? String
             // get step objects and store them in array
             stepList = instruction!.valueForKey("steps") as! NSMutableOrderedSet
+            if stepList.count > 1 {
+                let sorted_arr: NSMutableArray = []
+                for _ in 0...(instruction?.valueForKey("numOfSteps") as! Int - 1) {
+                    sorted_arr.addObject("Bad_Step")
+                }
+                for step in stepList {
+                    sorted_arr.replaceObjectAtIndex(step.valueForKey("number") as! Int, withObject: step)
+                }
+                stepList.removeAllObjects()
+                stepList.addObjectsFromArray(sorted_arr as [AnyObject])
+            }
         }
         else {
             // create instrucion object
             var entity =  NSEntityDescription.entityForName("Instruction", inManagedObjectContext: managedContext)
             instruction = NSManagedObject(entity: entity!, insertIntoManagedObjectContext:managedContext)
+            instruction?.setValue("badObject", forKey: "creation")
+            instruction?.setValue("badObject", forKey: "summary")
+            instruction?.setValue(-1, forKey: "numOfSteps")
+            instruction?.setValue(false, forKey: "published")
+            instruction?.setValue("badObject", forKey: "uid")
+            instruction?.setValue("badObject", forKey: "author")
+            instruction!.setValue("no_image", forKey: "finishedImage")
             
             // create first step
             entity =  NSEntityDescription.entityForName("Step", inManagedObjectContext: managedContext)
@@ -91,9 +109,63 @@ class InstructionCreatorController : UIViewController, UITableViewDataSource, UI
         instruction?.setValue(descriptionText.text, forKey: "summary")
         instruction?.setValue(stepList.count, forKey: "numOfSteps")
         let curUser = FIRAuth.auth()?.currentUser?.email
+        let curUserID = FIRAuth.auth()?.currentUser?.uid
+//        instruction?.setValue(curUserID, forKey: "uid")
         instruction?.setValue(curUser, forKey: "author")
         let lastStep = stepList.lastObject as? NSObject
         instruction!.setValue(lastStep?.valueForKey("image"), forKey: "finishedImage")
+
+        // Save instruction to Firebase
+        let ref = FIRDatabase.database().reference()
+        let instructionsRef = ref.child("instructions")
+        let userRef = ref.child("users")
+        
+        NSLog("Instruction UID before check: \(instruction!.valueForKey("uid") as? String)")
+        if instruction!.valueForKey("uid") as? String == "badObject" {
+            let generatedName = NSUUID().UUIDString
+            NSLog("Key for Instruction: \(generatedName)")
+            instruction?.setValue(generatedName, forKey: "uid")
+            instruction?.setValue(stepList, forKey: "steps")
+            let instructionMetadata:[String: AnyObject] = ["author": curUser!,
+                                   "creation": creationNameText.text!,
+                                   "finishedImage": (lastStep?.valueForKey("image"))!,
+                                   "numOfSteps": stepList.count,
+                                   "summary": descriptionText.text!,
+                                   "published": false]
+        
+            instructionsRef.child(generatedName).setValue(instructionMetadata)
+            userRef.child(curUserID!).child("instructions").updateChildValues([generatedName: true])
+        
+        
+            let stepRef = ref.child("steps").child(generatedName)
+            for step in stepList {
+                let stepID = NSUUID().UUIDString
+                let stepMetadata:[String: AnyObject] = ["details": step.valueForKey("details")!,
+                                                   "image": step.valueForKey("image")!,
+                                                   "stepNumber": step.valueForKey("number")!]
+
+                stepRef.child(stepID).setValue(stepMetadata)
+            }
+        } else {
+            let instructionID = instruction!.valueForKey("uid") as? String
+            NSLog("Instruction ID for existing instruction: \(instructionID)")
+            let instructionMetadata:[String: AnyObject] = ["author": curUser!,
+                                                           "creation": creationNameText.text!,
+                                                           "finishedImage": (lastStep?.valueForKey("image"))!,
+                                                           "numOfSteps": stepList.count,
+                                                           "summary": descriptionText.text!]
+
+            instructionsRef.child(instructionID!).updateChildValues(instructionMetadata)
+            let stepRef = ref.child("steps").child(instructionID!)
+            for step in stepList {
+                let stepID = step.valueForKey("uid") as? String
+                let stepMetadata:[String: AnyObject] = ["details": step.valueForKey("details")!,
+                                                        "image": step.valueForKey("image")!,
+                                                        "stepNumber": step.valueForKey("number")!]
+                
+                stepRef.child(stepID!).updateChildValues(stepMetadata)
+            }
+        }
         
         do {
             try managedContext.save()
@@ -111,6 +183,7 @@ class InstructionCreatorController : UIViewController, UITableViewDataSource, UI
         // create step object
         let entity =  NSEntityDescription.entityForName("Step", inManagedObjectContext: managedContext)
         let step = NSManagedObject(entity: entity!, insertIntoManagedObjectContext:managedContext)
+        step.setValue(" ", forKey: "details")
         step.setValue(stepList.count + 1, forKey: "number")
         step.setValue(instruction, forKey: "instruction")
         step.setValue("no_image", forKey: "image")

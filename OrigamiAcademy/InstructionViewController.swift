@@ -15,8 +15,8 @@ class InstructionViewController: UIPageViewController, UIPageViewControllerDataS
     
     var instructionSet: String = ""
     var numOfSteps: Int = 0
-    var instructions: [String] = []
-    var images: [String] = []
+    var instructions: NSMutableArray = []
+    var images: NSMutableArray = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,7 +50,11 @@ class InstructionViewController: UIPageViewController, UIPageViewControllerDataS
         if stepIndex < numOfSteps {
             let stepController = self.storyboard!.instantiateViewControllerWithIdentifier("StepView") as! StepViewController
             stepController.stepIndex = stepIndex
-            stepController.imageName = String(images[stepIndex])
+            
+            let stringDocumentsURL = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as NSString
+
+            stepController.imageName = "\(stringDocumentsURL)/\(images[stepIndex]).jpg"
+    
             stepController.instructions = String(instructions[stepIndex])
             return stepController
         }
@@ -84,9 +88,14 @@ class InstructionViewController: UIPageViewController, UIPageViewControllerDataS
         
         let steps = instruction.valueForKey("steps") as! NSOrderedSet
         
+        for _ in 0...numOfSteps {
+            instructions.addObject("Instructions not found")
+            images.addObject("no_image")
+        }
         for step in steps {
-            instructions.append(step.valueForKey("details") as! String)
-            images.append(step.valueForKey("image") as! String)
+            let index = step.valueForKey("number") as! Int
+            instructions.replaceObjectAtIndex(index, withObject: step.valueForKey("details") as! String)
+            images.replaceObjectAtIndex(index, withObject: step.valueForKey("image") as! String)
         }
     }
     
